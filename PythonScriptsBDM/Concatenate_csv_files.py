@@ -17,9 +17,9 @@ logging.basicConfig(level=logging.INFO, format='%(message)s')
 
 # Set paths
 folder_path = 'C:/Data/CSV_updated'
-combined_csv_path = 'C:/Data/Final_Combined/combined_all.csv'
-final_excel_path = 'C:/Data/Final_Combined/Combined_all.xlsx'
-final_html_path = 'C:/Data/Final_Combined/Combined_all.html'
+combined_csv_path = 'C:/Data/Final_Combined/server_dashboard.csv'
+final_excel_path = 'C:/Data/Final_Combined/server_dashboard.xlsx'
+final_html_path = 'C:/Data/Final_Combined/server_dashboard.html'
 
 # Ensure output directory exists
 os.makedirs(os.path.dirname(final_excel_path), exist_ok=True)

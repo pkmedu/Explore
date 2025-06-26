@@ -11,15 +11,15 @@ import subprocess
 import django
 
 # Set up Django environment
-sys.path.append('C:/Users/pmuhuri/DjangoProjects/bdm_django/bdm_project')
+sys.path.append('C:/Explore/DjangoProjects/bdm_django/bdm_project')
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bdm_project.settings')
 django.setup()
 
 # Path to your virtual environment's Python executable
-venv_python = r"C:\Users\pmuhuri\DjangoProjects\bdm_django\venv\Scripts\python.exe"
+venv_python = r"C:\Explore\DjangoProjects\bdm_django\venv\Scripts\python.exe"
 
 # Path to your manage.py
-manage_py = r"C:\Users\pmuhuri\DjangoProjects\bdm_django\bdm_project\manage.py"
+manage_py = r"C:\Explore\DjangoProjects\bdm_django\bdm_project\manage.py"
 
 # Function to run Django management commands
 def run_command(command):
