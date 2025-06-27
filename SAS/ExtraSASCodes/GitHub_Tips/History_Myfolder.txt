@@ -1,0 +1,500 @@
+   33  cd ..
+   34  git status
+   35  git add -A
+   36  git commit -m "Updated 1/31"
+   37  git push
+   38  cd..
+   39  cd /c/sascourse/
+   40  git status
+   41  cd /c/sascourse/
+   42  git status
+   43  git add -A
+   44  git commit -m "Updated 2/1"
+   45  git push
+   46  git status
+   47  git add -A
+   48  git commit -m "Update agein 2/2"
+   49  git push
+   50  cd ..
+   51  cd python
+   52  git statu
+   53  git status
+   54  git add -A
+   55  git commit -m "Another Update 2/1"
+   56  git push
+   57  cd /c/sascourse/
+   58  git status
+   59  git add -A
+   60  git commit -m "Updated 2/2"
+   61  git push
+   62  git status
+   63  git status
+   64  git add -A
+   65  git commit -m "2nd update 2/2"
+   66  git push
+   67  git status
+   68  git add -A
+   69  git commit -m "3rd update 2/2"
+   70  git push
+   71  git status
+   72  git add -A
+   73  git commit -m "4th update 2/2"
+   74  git push
+   75  cd /c/SASCourse/SAS_Windowing_JupyterLab/
+   76  dir
+   77  git rm -r Licensed_SAS_JupyterLab.docx
+   78  git rm -f Licensed_SAS_JupyterLab.docx
+   79  git rm --catched Licensed_SAS_JupyterLab.docx
+   80  git rm --cached Licensed_SAS_JupyterLab.docx
+   81  git status
+   82  cd /c//sascourse/
+   83  git status
+   84  git add -A
+   85  git commit -m "Updated 2/3"
+   86  git push
+   87  cd ..
+   88  cd /python/
+   89  cd /c/Python/
+   90  git status
+   91  git add -A
+   92  git commit -m "Updated again 2/3"
+   93  git push
+   94  cd sascourse
+   95  cd /c/sascourse/
+   96  git status
+   97  git add -A
+   98  git commit -m "Updated 2/4"
+   99  git push
+  100  cd /c/Python/
+  101  git status
+  102  git add -A
+  103  git commit -m "Updated 2/5"
+  104  git push
+  105  cd /c/Python/
+  106  git status
+  107  git add -A
+  108  git commit -m "2nd update 2/5"
+  109  git push
+  110  cd /c/Python/
+  111  git status
+  112  git add -A
+  113  git commit -m "3rd update - 2/5"
+  114  git push
+  115  cd /c/sascourse/week4/
+  116  git rm -r Example_call_sortn.sas
+  117  git mv Example_Largest.sas Ex36_Largest.sas
+  118  git mv Example_largest.sas Ex36_Largest.sas
+  119  cd ..
+  120  dir
+  121  git status
+  122  git add -A
+  123  git commit -m "2nd update 2/5"
+  124  git push
+  125  git status
+  126  git add -A
+  127  git commit -m "Another Update 2/5"
+  128  git push
+  129  cd /c/Python/
+  130  git status
+  131  git add -A
+  132  git commit -m "Folder added"
+  133  git push
+  134  cd /c/Python/
+  135  git status
+  136  git add -A
+  137  git commit -m "Updated 2/7"
+  138  git push
+  139  cd ..
+  140  cd /c/SASCourse/
+  141  git status
+  142  cd /c/Python/Jupyterlab
+  143  dir
+  144  git rm -r WhatisJupyterLab.md
+  145  git rm WhatisJupyterLab.md
+  146  git rm -f WhatisJupyterLab.md
+  147  git rm WhatisJupyterLab.md
+  148  git mv jupyterlab_nstallation.md jupyterlab_installation_Notes.md
+  149  git status
+  150  git mv jupyterlab_nstallation.md jupyterlab_Notes.md
+  151  dir
+  152  git rm media
+  153  git rm -r media
+  154  git rm -r media
+  155  dir
+  156  mv jupyterlab.pdf jupyterlab_Documentation.pdf
+  157  dir
+  158  mv jupyterlab_nstallation.md jupyterlab_Notes.md
+  159  dir
+  160  git status
+  161  git add -A
+  162  git commit -m "Updated 2/8"
+  163  git push
+  164  dir
+  165  git rm WhatisJupyterLab.md
+  166  rm WhatisJupyterLab.md
+  167  git status
+  168  git add -A
+  169  git commit -m "2nd update - 2/8"
+  170  git push
+  171  rm media
+  172  git rm media
+  173  cd media
+  174  dir
+  175  git rm 4580242749842c3bc19f4b2aab4b3e57.png
+  176  rm 4580242749842c3bc19f4b2aab4b3e57.png
+  177  rm  bb6aa9a92f2af8218ffd5b72aa0a0bf0.png
+  178  git add -A
+  179  git commit -m "3rd update 2/8"
+  180  git push
+  181  git status
+  182  git status
+  183  git add -A
+  184  git commit -m "File added"
+  185  git push
+  186  cd /c/sascourse/
+  187  cd week5
+  188  dir
+  189  git rm BY_VAR.txt
+  190  git rm Ex_List_File_Names.sas  
+  191  git status
+  192  rm  Ex8_multi_transpose.sas
+  193  git status
+  194  git status
+  195  git status
+  196  git add -A 
+  197  git commit -m "Updated 2/10"
+  198  git push
+  199  cd /c/sascourse/
+  200  git status
+  201  git add -A
+  202  git commit -m "Updated 2/13"
+  203  git push
+  204  cd /c/sascourse/
+  205  git status
+  206  git add -A
+  207  git commit -m "updated 2/14"
+  208  git push
+  209  git status
+  210  git add -A
+  211  git commit -m "Updated 2nd time"
+  212  git push
+  213  cd /c/sascourse/week5/
+  214  dir
+  215  git rm -r  Ex8_multi_transpose_x.html
+  216  git rm -r Ex5_how_many_obs.html
+  217  git rm -r Ex8_multi_transpose_x.ipynb
+  218  git status
+  219  git add -A
+  220  git commit -m "Final update"
+  221  git push
+  222  git status
+  223  cd /c/sascourse/
+  224  git status
+  225  git add -A
+  226  git commit -m "Updated 2/16"
+  227  git push
+  228  cd /c/Python/My_py_scripts/
+  229  dir
+  230  gitb rm -r Ex12_pathlib_glob\ -\ Copy.py
+  231  git rm -r Ex12_pathlib_glob\ -\ Copy.py
+  232  git status
+  233  git rm -r Ex12_pathlib_glob - Copy.py
+  234  git status
+  235  git add -A
+  236  git commit -m "Updated 2/19"
+  237  git push
+  238  cd ..
+  239  cd ..
+  240  cd /c/sascourse/
+  241  git status
+  242  git add -A
+  243  git commit -m "Updated 2/19 AM"
+  244  git push
+  245  cd /c/sascourse/
+  246  git status
+  247  git add -A
+  248  git commit -m "Updated 2/20/2019"
+  249  git push
+  250  cd /c/sascourse/
+  251  git status
+  252  git add -A
+  253  git commit -m "updated 2/22/19"
+  254  git push
+  255  cd /c/sascourse/
+  256  git status
+  257  git add -A
+  258  git commit -m "Updated 2/23/2019"
+  259  git push
+  260  cd /c/sascourse/
+  261  git status
+  262  git add -A
+  263  git commit -m "Updated 3/7/2019"
+  264  git push
+  265  cd /c/sascourse/
+  266  git status
+  267  git add -A
+  268  git commit -m "updated 3/15/2019"
+  269  git push
+  270  cd /c/sascourse/
+  271  git status
+  272  git add -A
+  273  git commit -m "Updated 3/21/2019"
+  274  git push 
+  275  cd /c/sascoourse/
+  276  cd /c/sascourse/
+  277  git status
+  278  git status
+  279  git status
+  280  git add -A
+  281  git commit -m "Updated 3/26/2019"
+  282  git push
+  283  cd /c/sascourse/
+  284  git status
+  285  git add -A
+  286  git commit -m "Updated 3/30/2019"
+  287  git push
+  288  cd /c/sascourse/
+  289  git status
+  290  git add -A
+  291  git commit -m "Updated 3/20/2019"
+  292  git push
+  293  cd /c/sascourse/week11/
+  294  dir
+  295  git tm --cached Ex_Download_Data_from_MEPS_Site.sas
+  296  git rm --cached Ex_Download_Data_from_MEPS_Site.sas
+  297  dir
+  298  git status
+  299  git add -A
+  300  git commit -m "Updated 4/4/2019"
+  301  git push
+  302  dir
+  303  cd ..
+  304  git status
+  305  cd /week11/
+  306  cd /week11
+  307  cd /c/sascourse/week11/
+  308  dir
+  309  git rm -r Ex_Download_Data_from_MEPS_Site.sas
+  310  git status
+  311  git add -A
+  312  git commit -m "Updated 2nd time 4/4"
+  313  git push
+  314  dir
+  315  cd /c/sascourse/
+  316  git add -A
+  317  git commit -m "Updated again 4/4"
+  318  git push
+  319  cd /c/sascourse/
+  320  git statu
+  321  git status
+  322  git add -A
+  323  git commit -m "Updated 4/9/2019"
+  324  git push
+  325  cd /c/sascourse/
+  326  git status
+  327  git add -A
+  328  git commit -m "Updated 4/10/2019"
+  329  git push
+  330  git status
+  331  git add -A
+  332  git commit -m "Updated again 4/10"
+  333  git push
+  334  git status
+  335  git status
+  336  git status
+  337  git add -A
+  338  git commit -m "Updates 2nd time - 4/10/2019"
+  339  git push
+  340  git status
+  341  git add -A
+  342  git commit -m "Updated further 4/10/2019"
+  343  git push
+  344  git status
+  345  git add -A
+  346  git commit -m "Updated once more"
+  347  git push
+  348  cd /c/sascourse
+  349  git status
+  350  git add -A
+  351  git commit -m "Updated late 4/10/2019"
+  352  git push
+  353  cd /c/sascourse
+  354  git status
+  355  git add -A
+  356  git commit -m "Updated 4/11"
+  357  git push
+  358  cd /c/sascourse/
+  359  git rm Week14 Week13
+  360  dir
+  361  git mv Week14 Week13
+  362  git mv Week15 Week14F
+  363  git add -A
+  364  git commit -m "Updated 4/14/2019"
+  365  git push
+  366  git mv Week14F Week14
+  367  cd Week13
+  368  dir
+  369  git mv  Week14_Handouts.docx  Week13_Handouts.docx
+  370  git status
+  371  git add -A
+  372  git commit -m "Updated again 4/14/2019"
+  373  git push
+  374  cd /c/sascourse
+  375  git status
+  376  git add -A
+  377  git commit -m "Updated 4/17/2019"
+  378  git push
+  379  cd /c/sascourse
+  380  git status
+  381  git add -A
+  382  git commit -m "Updated 4/25/2019"
+  383  git push
+  384  git status
+  385  git add -A
+  386  git commit -m "Updated again 4/25/2019"
+  387  git push
+  388  git status
+  389  cd /c/sascourse
+  390  git status
+  391  git add -A
+  392  git commit -M "Updated 5/12/2019"
+  393  git commit -m "Updated 5/12/2019"
+  394  git push
+  395  cd /c/SAScourse
+  396  git status
+  397  git add -A
+  398  git commit -m "updated 5/13/2019"
+  399  git push
+  400  cd /c/Python
+  401  git status
+  402  git add -A
+  403  git commit -m "re-updated 5/13/2019"
+  404  git push
+  405  cd /c/sascourse
+  406  git status
+  407  git add -A
+  408  git commit -m "Once more 5/13"
+  409  git push
+  410  cd /c/sascourse
+  411  git status
+  412  git add -A
+  413  git commit -m "5/15/2019"
+  414  git push
+  415  cd /c/sascourse/
+  416  git status
+  417  cd /c/sascourse/
+  418  git status
+  419  git add -A
+  420  git commit -m "updated 5/25/2019"
+  421  git push
+  422  cd /c/sascourse/
+  423  git status
+  424  git add -A
+  425  git commit -m "Updated 6/3/2019"
+  426  git push
+  427  git status
+  428  cd c/sascourse
+  429  git status
+  430  git add -A
+  431  git commit -m "Updated 6/5/2019"
+  432  git push
+  433  cd sascourse
+  434  cd /c/sascourse
+  435  git status
+  436  git status
+  437  git add -A
+  438  git commit -m "Updated 7/6/2019"
+  439  git push
+  440  cd /c/sascourse
+  441  git pull
+  442  cd /c/sascourse
+  443  git status
+  444  git status
+  445  git add -A
+  446  git commit -m "Updated again 7/6/19"
+  447  git push
+  448  git status
+  449  git add -A
+  450  git commit -m "3rd Update 7/6"
+  451  git push
+  452  git status
+  453  git add -A
+  454  git commit -m "Further 7/6/19"
+  455  git push
+  456  git status
+  457  git push
+  458  git diff
+  459  git pull
+  460  git status
+  461  git add -A
+  462  git commit -m "Try1 7/6/19"
+  463  git push
+  464  git status
+  465  git add -A
+  466  git commit -m "Try2 7/6/2019"
+  467  git push
+  468  cd /c/sascourse
+  469  git status
+  470  git add -A
+  471  git commit -m "Updated night 7/6/19"
+  472  git push
+  473  cd c/sascourse
+  474  git status
+  475  git add -A
+  476  git commit -m "Updated 7/10/2019"
+  477  git push
+  478  cd /c/sascourse
+  479  git status
+  480  git status
+  481  git add -A
+  482  git commit -m "Updated 7/15/2019"
+  483  git push
+  484  cd /c/sascourse/
+  485  git status
+  486  git add -A
+  487  git commit -m "Updated Huly 18, 2019"
+  488  git push
+  489  cd /c/sascourse
+  490  git status
+  491  git status
+  492  git add -A
+  493  git commit -m "Updated 7/22/2019"
+  494  git push 
+  495  cd /c/sascourse
+  496  git status
+  497  git add- A
+  498  git add -A
+  499  git commit -m "Updated again 7/22"
+  500  git push
+  501  pwd
+  502  cd C:/
+  503  pwd
+  504  cd 
+  505  pwd
+  506  cd ../..
+  507  cd SASCourse/
+  508  ll
+  509  cd ../
+  510  mkdir SASCourse_Fall2019
+  511  cd SASCourse_Fall2019/
+  512  git init
+  513  ll
+  514  cp -r ../SASCourse/Week1 ./
+  515  ll
+  516  git add .
+  517  git commit -m "first week added"
+  518  git push
+  519  git remote add origin https://github.com/SASGateway/SASCourse_Fall2019.git
+  520  git push -u origin master
+  521  history 
+  522  pwd
+  523  history > ../Users/pmuhuri/Documents/history.txt
+  524  cp -r ../SASCourse/Week2 ./
+  525  ll
+  526  git status
+  527  git add -A
+  528  git commit -m "UPD 8/3/2019"
+  529  git push
+  530  git pull
+  531  ll
+  532  history > ../Users/pmuhuri/Documents/history.txt

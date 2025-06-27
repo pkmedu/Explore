@@ -1,0 +1,171 @@
+117  *Ex10_Macro_Read_Zipped.sas;
+118  Options nocenter nodate nonumber;
+119  %Let Path = c:\SASCourse\Week10;
+120  Libname mylib "&Path";
+NOTE: Libref MYLIB was successfully assigned as follows:
+      Engine:        V9
+      Physical Name: c:\SASCourse\Week10
+121  %macro readraw (first=, last=);
+122      Filename ZIPFILE SASZIPAM "&Path\names.zip";
+123      %do year=&first %to &last;
+124          DATA mylib.DSN&Year;
+125            INFILE ZIPFILE(yob&year..txt) DLM=',';
+126            INPUT gender $ name $ number;
+127          RUN;
+128          title " Data File for &Year";
+129          proc print data=mylib.DSN&Year(obs=5);
+130          run;
+131       %end ;
+132  %mend readraw;
+133  %readraw(first=2000, last=2005)
+
+NOTE: The infile library ZIPFILE is:
+      Stream=c:\SASCourse\Week10\names.zip
+
+NOTE: The infile ZIPFILE(yob2000.txt) is:
+      File Name=yob2000.txt,
+      Compressed Size=122833,
+      Uncompressed Size=384998,Compression Level=-1,
+      Clear Text=Yes
+
+NOTE: A total of 29764 records were read from the infile library ZIPFILE.
+NOTE: 29764 records were read from the infile ZIPFILE(yob2000.txt).
+NOTE: The data set MYLIB.DSN2000 has 29764 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+
+
+
+NOTE: There were 5 observations read from the data set MYLIB.DSN2000.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
+
+NOTE: The infile library ZIPFILE is:
+      Stream=c:\SASCourse\Week10\names.zip
+
+NOTE: The infile ZIPFILE(yob2001.txt) is:
+      File Name=yob2001.txt,
+      Compressed Size=124678,
+      Uncompressed Size=391069,Compression Level=-1,
+      Clear Text=Yes
+
+NOTE: A total of 30266 records were read from the infile library ZIPFILE.
+NOTE: 30266 records were read from the infile ZIPFILE(yob2001.txt).
+NOTE: The data set MYLIB.DSN2001 has 30266 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+
+
+
+NOTE: There were 5 observations read from the data set MYLIB.DSN2001.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
+
+NOTE: The infile library ZIPFILE is:
+      Stream=c:\SASCourse\Week10\names.zip
+
+NOTE: The infile ZIPFILE(yob2002.txt) is:
+      File Name=yob2002.txt,
+      Compressed Size=125881,
+      Uncompressed Size=394764,Compression Level=-1,
+      Clear Text=Yes
+
+NOTE: A total of 30560 records were read from the infile library ZIPFILE.
+NOTE: 30560 records were read from the infile ZIPFILE(yob2002.txt).
+NOTE: The data set MYLIB.DSN2002 has 30560 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+
+
+
+NOTE: There were 5 observations read from the data set MYLIB.DSN2002.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
+
+NOTE: The infile library ZIPFILE is:
+      Stream=c:\SASCourse\Week10\names.zip
+
+NOTE: The infile ZIPFILE(yob2003.txt) is:
+      File Name=yob2003.txt,
+      Compressed Size=128647,
+      Uncompressed Size=402553,Compression Level=-1,
+      Clear Text=Yes
+
+NOTE: A total of 31180 records were read from the infile library ZIPFILE.
+NOTE: 31180 records were read from the infile ZIPFILE(yob2003.txt).
+NOTE: The data set MYLIB.DSN2003 has 31180 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+
+
+
+NOTE: There were 5 observations read from the data set MYLIB.DSN2003.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+
+NOTE: The infile library ZIPFILE is:
+      Stream=c:\SASCourse\Week10\names.zip
+
+NOTE: The infile ZIPFILE(yob2004.txt) is:
+      File Name=yob2004.txt,
+      Compressed Size=131700,
+      Uncompressed Size=413457,Compression Level=-1,
+      Clear Text=Yes
+
+NOTE: A total of 32045 records were read from the infile library ZIPFILE.
+NOTE: 32045 records were read from the infile ZIPFILE(yob2004.txt).
+NOTE: The data set MYLIB.DSN2004 has 32045 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+
+
+
+NOTE: There were 5 observations read from the data set MYLIB.DSN2004.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+
+
+NOTE: The infile library ZIPFILE is:
+      Stream=c:\SASCourse\Week10\names.zip
+
+NOTE: The infile ZIPFILE(yob2005.txt) is:
+      File Name=yob2005.txt,
+      Compressed Size=133758,
+      Uncompressed Size=420134,Compression Level=-1,
+      Clear Text=Yes
+
+NOTE: A total of 32543 records were read from the infile library ZIPFILE.
+NOTE: 32543 records were read from the infile ZIPFILE(yob2005.txt).
+NOTE: The data set MYLIB.DSN2005 has 32543 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.03 seconds
+
+
+
+NOTE: There were 5 observations read from the data set MYLIB.DSN2005.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+
+
+

@@ -1,0 +1,12 @@
+*Ex6_random_assignment.sas;
+data dp;
+CALL STREAMINIT(12345);
+LENGTH Group $ 7;
+ set sashelp.class;
+  random_num = RAND("UNIFORM");
+  if random_num >0.5 then Group='Drug';
+  else group='Placebo';
+run;
+proc print data=dp noobs; 
+ var Name Sex Age Height Weight random_num group;
+run;

@@ -1,0 +1,519 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+37   
+38   /*****************************************************************
+39   The Sashelp.demographics data set provides the 2004 revision of data derived
+40   from world population prospects. The data set contains 197 observations (countries)
+41   and 18 variables, including the following three (i.e., NAME, pop, and region).
+42   
+43   Below are the attributes of those three variables.
+44   
+45   NAME        TYPE             LABEL
+46   
+47   NAME      Character          GLC Country Name
+48   pop       Numeric            Population (2005)
+49   region    Character          Region
+50   
+51   Task: Create a table showing the population count and percentage distribution
+52   of the count by world region (six regions).
+53   *****************************************************************/
+54   
+55   
+56   
+57   proc format;
+58   value $regionfmt
+59       'AFR' = 'Africa'
+60       'AMR' = 'Americas'
+61       'EUR' = 'Europe'
+62       'EMR'  ='Eastern Mediterranean'
+63       'SEAR' = 'South-East Asia'
+64       'WPR' = 'Western Pacific';
+NOTE: Format $REGIONFMT has been output.
+65   
+66   invalue order
+67       'AFR' = 1
+68       'AMR' = 2
+69       'EUR' = 3
+70       'EMR'  = 4
+71       'SEAR' = 5
+72       'WPR' = 6
+73       other = 7;
+NOTE: Informat ORDER has been output.
+74   run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+75   
+76   * Method 1 - Data step approach;
+77   proc sort data=sashelp.demographics out=demographics;
+78     by region; run;
+
+NOTE: There were 197 observations read from the data set SASHELP.DEMOGRAPHICS.
+NOTE: The data set WORK.DEMOGRAPHICS has 197 observations and 18 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.32 seconds
+      cpu time            0.00 seconds
+      
+
+79   data want1(keep= region countries sum_pop);
+80     set demographics;
+81     by region;
+82     if first.region then do;
+83       sum_pop=pop;
+84       countries=1;
+85     end;
+86     else do;
+87       sum_pop+pop;
+88       countries+1;
+89     end;
+90     if last.region then output;
+91    run;
+
+NOTE: There were 197 observations read from the data set WORK.DEMOGRAPHICS.
+NOTE: The data set WORK.WANT1 has 6 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.18 seconds
+      cpu time            0.01 seconds
+      
+
+92   
+93    data want1x;
+94       set want1 end=lastobs;
+95       total + sum_pop;
+96       if lastobs then do;
+97        call symputx('total', total);
+98       output;
+99       end;
+100   run;
+
+NOTE: There were 6 observations read from the data set WORK.WANT1.
+NOTE: The data set WORK.WANT1X has 1 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+101  %put &=total;
+TOTAL=6672447870
+102  
+103   data running_pct;
+104    set want1;
+105    running_pct = sum_pop/&total;
+106  run;
+
+NOTE: There were 6 observations read from the data set WORK.WANT1.
+NOTE: The data set WORK.RUNNING_PCT has 6 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+107  
+108  Title "Summarization Method 1 (DATA STEP Approach)";
+109  proc print data=running_pct;
+110  var region countries sum_pop running_pct;
+111  sum countries sum_pop running_pct;
+112  format region $regionfmt. sum_pop comma14. running_pct percent8.1;
+113  run;
+
+NOTE: There were 6 observations read from the data set WORK.RUNNING_PCT.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.00 seconds
+      
+
+114  
+115  * Method 2;
+116  proc means  data=sashelp.demographics noprint;
+117    var pop;
+118    output out=summary2(drop=_:) N= countries sum= sum_pop;
+119  run;
+
+NOTE: There were 197 observations read from the data set SASHELP.DEMOGRAPHICS.
+NOTE: The data set WORK.SUMMARY2 has 1 observations and 2 variables.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.00 seconds
+      
+
+120  
+121  proc means data=sashelp.demographics noprint nway;
+122    class region;
+123    var pop;
+124    output out=want2(drop=_:) N=countries sum=sum_pop;
+125  run;
+
+NOTE: There were 197 observations read from the data set SASHELP.DEMOGRAPHICS.
+NOTE: The data set WORK.WANT2 has 6 observations and 3 variables.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+126  
+127  data want2x ;
+128    set want2 summary2(in=in2);
+129    if in2=1 then region='TOTAL';
+130  if region='TOTAL' then call symputx('total2', sum_pop);
+131  run;
+
+NOTE: There were 6 observations read from the data set WORK.WANT2.
+NOTE: There were 1 observations read from the data set WORK.SUMMARY2.
+NOTE: The data set WORK.WANT2X has 7 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+132  
+133  %put &=total2;
+TOTAL2=6672447870
+134  
+135   data running_pct2;
+136    set want2x;
+137    running_pct = sum_pop/&total2;
+138  run;
+
+NOTE: There were 7 observations read from the data set WORK.WANT2X.
+NOTE: The data set WORK.RUNNING_PCT2 has 7 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+139  %put &=total2;
+TOTAL2=6672447870
+140  
+141  Title "Summarization Method 2 (PROC MEANS)";
+142  proc print data=running_pct2;
+143  format region $regionfmt. sum_pop comma14. running_pct percent8.1;
+144  run;
+
+NOTE: There were 7 observations read from the data set WORK.RUNNING_PCT2.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+145  
+146  * Method 3;
+147  
+148  proc summary data=sashelp.demographics ;
+149    var pop;
+150    output out=summary3 (drop=_:)
+151             n=Countries
+152             sum=sum_pop;
+153  run;
+
+NOTE: There were 197 observations read from the data set SASHELP.DEMOGRAPHICS.
+NOTE: The data set WORK.SUMMARY3 has 1 observations and 2 variables.
+NOTE: PROCEDURE SUMMARY used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+154  
+155  proc summary data=sashelp.demographics nway;
+156    var pop;
+157    class region;
+158    output out=want3
+159             n=Countries
+160             sum=sum_pop;
+161  run;
+
+NOTE: There were 197 observations read from the data set SASHELP.DEMOGRAPHICS.
+NOTE: The data set WORK.WANT3 has 6 observations and 5 variables.
+NOTE: PROCEDURE SUMMARY used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+162  
+163  data want3x (drop=_:);
+164    set want3 summary3(in=in3);
+165    if in3=1 then region='TOTAL';
+166     if region='TOTAL' then call symputx('total3', sum_pop);
+167  run;
+
+NOTE: There were 6 observations read from the data set WORK.WANT3.
+NOTE: There were 1 observations read from the data set WORK.SUMMARY3.
+NOTE: The data set WORK.WANT3X has 7 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+168  %put &=total3;
+TOTAL3=6672447870
+169  
+170   data running_pct3;
+171    set want3x;
+172    running_pct = sum_pop/&total3;
+173  run;
+
+NOTE: There were 7 observations read from the data set WORK.WANT3X.
+NOTE: The data set WORK.RUNNING_PCT3 has 7 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+174  %put &=total3;
+TOTAL3=6672447870
+175  
+176  Title "Summarization Method 3 (PROC SUMMARY)";
+177  proc print data=running_pct3;;
+178  format region $regionfmt. sum_pop comma14. running_pct percent8.1;
+179  run;
+
+NOTE: There were 7 observations read from the data set WORK.RUNNING_PCT3.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+180  
+181  * Method 4;
+182  Title "Summarization Method 4 (PROC TABULATE)";
+183  proc tabulate data=sashelp.demographics ;
+184    class region;
+185    var pop;
+186    tables  region all, pop*(N*f=4.0 sum*f=comma14. pctsum*f=7.1);
+187    format region $regionfmt.;
+188  run;
+
+NOTE: There were 197 observations read from the data set SASHELP.DEMOGRAPHICS.
+NOTE: PROCEDURE TABULATE used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.01 seconds
+      
+
+189  
+190  * Method 5;
+191  Title "Summarization Method 5 (PROC REPORT)";
+192  ods listing;
+193  proc report data=sashelp.demographics  headline headskip;
+194    column region pop pop=sum pop=pct;
+195    define region / group format=$regionfmt. ;
+196    define pop / analysis 'N'  n;
+197    define sum / analysis 'Sum'  format=comma14.;
+198    define pct / analysis 'Percent of Total' pctsum format=percent8.1;
+199  
+200    compute after;
+201        region = 'Total';
+202    endcomp;
+203   rbreak after / skip summarize ;
+204  run;
+
+NOTE: There were 197 observations read from the data set SASHELP.DEMOGRAPHICS.
+NOTE: PROCEDURE REPORT used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.03 seconds
+      
+
+205  
+206  
+207  * Method 6;
+208  Title "Summarization Method 6 (PROC SQL)";
+209  proc sql;
+210  create table want1 as(
+211  select region format= $regionfmt.,
+212        sum(pop) as sum_pop format=comma14.,
+213        sum(pop)/ (select sum(pop) from  sashelp.demographics)*100 as percent_pop format=8.1
+214      from
+215          sashelp.demographics
+216      group by region
+217  
+218                        )
+219    union
+220   select 'Total',
+221           sum(pop) as sum_pop format=comma14.,
+222           sum(pop)*100/sum(pop) as percent_pop format=8.1
+223     from sashelp.demographics;
+NOTE: Table WORK.WANT1 created, with 7 rows and 3 columns.
+
+224    select *
+225     from want1
+226     order by input(region, order.);
+NOTE: The query as specified involves ordering by an item that doesn't appear in its SELECT clause.
+227  quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.34 seconds
+      cpu time            0.07 seconds
+      
+
+228  
+229  
+230  proc sort data=sashelp.demographics out=demographics;
+231    by region;
+232  run;
+
+NOTE: There were 197 observations read from the data set SASHELP.DEMOGRAPHICS.
+NOTE: The data set WORK.DEMOGRAPHICS has 197 observations and 18 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+233  
+234  data want1(keep=region countries sum_pop);
+235    if _n_ = 1 then do;
+236      declare hash h(ordered:'a');
+237      h.definekey('region');
+238      h.definedata('region', 'countries', 'sum_pop');
+239      h.definedone();
+240    end;
+241  
+242    set demographics end=eof;
+243    by region;
+244  
+245    if h.find() ne 0 then do;
+246      countries = 1;
+247      sum_pop = pop;
+248    end;
+249    else do;
+250      countries + 1;
+251      sum_pop + pop;
+252    end;
+253  
+254    h.replace();
+255  
+256    if last.region or eof then do;
+257      h.find();
+258      output;
+259    end;
+260  run;
+
+NOTE: There were 197 observations read from the data set WORK.DEMOGRAPHICS.
+NOTE: The data set WORK.WANT1 has 6 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.01 seconds
+      
+
+261  
+262  data want1x;
+263    set want1 end=lastobs;
+264    total + sum_pop;
+265    if lastobs then do;
+266      call symputx('total', total);
+267      output;
+268    end;
+269  run;
+
+NOTE: There were 6 observations read from the data set WORK.WANT1.
+NOTE: The data set WORK.WANT1X has 1 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+270  
+271  %put &=total;
+TOTAL=6672447870
+272  
+273  data running_pct;
+274    set want1;
+275    running_pct = sum_pop/&total;
+276  run;
+
+NOTE: There were 6 observations read from the data set WORK.WANT1.
+NOTE: The data set WORK.RUNNING_PCT has 6 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+277  
+278  Title "Summarization Method 7 (Hash Object Approach)";
+279  proc print data=running_pct;
+280    var region countries sum_pop running_pct;
+281    sum countries sum_pop running_pct;
+282    format region $regionfmt. sum_pop comma14. running_pct percent8.1;
+283  run;
+
+NOTE: There were 6 observations read from the data set WORK.RUNNING_PCT.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+284  
+285  Title "Summarization Method 8 (PROC IML Approach)";
+286  proc iml;
+NOTE: IML Ready
+287      /* Read the data */
+288      use sashelp.demographics;
+289      read all var {"Region" "Pop"};
+290      close sashelp.demographics;
+291  
+292      /* Get unique regions */
+293      unique_regions = unique(Region);
+294      n_regions = ncol(unique_regions);
+295  
+296      /* Initialize result matrices */
+297      result_n = j(1, n_regions, 0);
+298      result_sum = j(1, n_regions, 0);
+299  
+300      /* Calculate N and Sum for each region */
+301      do i = 1 to n_regions;
+302          region_mask = (Region = unique_regions[i]);
+303          result_n[i] = sum(region_mask);
+304          result_sum[i] = sum(Pop # region_mask);
+305      end;
+306  
+307      /* Calculate percentages */
+308      total_sum = sum(result_sum);
+309      result_pct = result_sum / total_sum;
+310  
+311      /* Create final result matrices */
+312      region_col = (unique_regions || "Total")`;
+313      n_col = (result_n || sum(result_n))`;
+314      sum_col = (result_sum || total_sum)`;
+315      pct_col = (result_pct || 1)`;
+316  
+317      /* Create column names */
+318      col_names = {"Region" "N" "Sum" "Percent_of_Total"};
+319  
+320      /* Print results */
+321      *print region_col n_col sum_col pct_col[colname=col_names];
+322  
+323      /* Create a dataset for PROC PRINT */
+324      create work.result var {region_col n_col sum_col pct_col};
+325      append;
+326      close work.result;
+NOTE: The data set WORK.RESULT has 7 observations and 4 variables.
+327  quit;
+NOTE: Exiting IML.
+NOTE: PROCEDURE IML used (Total process time):
+      real time           0.26 seconds
+      cpu time            0.00 seconds
+      
+
+328  
+329  /* Use PROC PRINT for formatted output */
+330  proc print data=work.result noobs label;
+331      var region_col n_col sum_col pct_col;
+332      label region_col = "Region"
+333            n_col = "N"
+334            sum_col = "Sum"
+335            pct_col = "Percent of Total";
+336      format n_col comma8. sum_col comma14. pct_col percent8.1;
+337  run;
+
+NOTE: There were 7 observations read from the data set WORK.RESULT.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+338  
+339  PROC PRINTTO;
+340  RUN;
+

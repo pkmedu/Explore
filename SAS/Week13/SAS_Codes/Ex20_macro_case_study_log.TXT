@@ -1,0 +1,313 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+319  %let vars_kept = totexp:  opfex: opdexp: obvexp: erfexp: erdexp:
+320                   ipfexp: ipdexp:  rxexp: dvtexp: visexp: hhaexp: hhnexp: othexp: ;
+321  %macro setmeps(yr,file) / mindelimiter=',' minoperator;
+322     data FY_&yr;
+323       set pufmeps.&file
+324                  (keep=
+325                          %if &file in (h12, h20, h28) %then %do;
+326                              wtdper:
+327                          %end;
+328                          %else  %do;
+329                              perwt:
+330                          %end;
+331  
+332                          %if &file in (h12, h20, h28, h38, h50, h60) %then %do;
+333                                varstr&yr varpsu&yr
+334                          %end;
+335                          %else %do;
+336                             varstr varpsu
+337                          %end;
+338  
+339                          &vars_kept
+340  
+341                   rename=(
+342                          %if &file in (h12, h20, h28) %then %do;
+343                              wtdper&yr=perwtf
+344                          %end;
+345                          %else %do;
+346                              perwt&yr.f=perwtf
+347                          %end;
+348                          %if &file in (h12, h20, h28, h38, h50, h60) %then %do;
+349                             varpsu&yr=varpsu
+350                             varstr&yr=varstr
+351                          %end;
+352                           totexp&yr=totexp
+353                           opfexp&yr=opfexp
+354                           opdexp&yr=opdexp
+355                           obvexp&yr=obvexp
+356                           erfexp&yr=erfexp
+357                           erdexp&yr=erdexp
+358                           ipfexp&yr=ipfexp
+359                           ipdexp&yr=ipdexp
+360                           rxexp&yr=rxexp
+361                           dvtexp&yr=dvtexp
+362                           visexp&yr=visexp
+363                           hhaexp&yr= hhaexp
+364                           hhnexp&yr=hhnexp
+365                           othexp&yr=othexp
+366                            )
+367                     );
+368             %if &yr in (96, 97, 98, 99) %then %do;
+369               year=19&yr.;
+370             %end;
+371             %else %do;
+372              year=20&yr.;
+373             %end;
+374            *** create new variables;
+375  
+376             ambu = sum(obvexp, opdexp, opfexp, erdexp, erfexp);
+377             pmed = rxexp;
+378             inpatient = sum(ipdexp, ipfexp);
+379             other = sum(dvtexp, visexp, hhaexp, hhnexp, othexp);
+380  
+381             array vars [5] totexp ambu pmed inpatient other;
+382             array x_vars [5] c_totexp_GT_zero
+383                              c_ambu_GT_zero
+384                              c_pmed_GT_zero
+385                              c_inpatient_GT_Zero
+386                              c_other_GT_Zero;
+387             do i = 1 to 5;
+388                if vars[i] > 0 then x_vars[i]=1;
+389                else x_vars[i]=0;
+390             end;
+391  
+392             if totexp >=0 then all=1;
+393  
+394       run;
+395    %mend setmeps;
+396  %setmeps(96,h12) %setmeps(97, h20) %setmeps(98,h28)
+
+NOTE: There were 22601 observations read from the data set PUFMEPS.H12.
+NOTE: The data set WORK.FY_96 has 22601 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           1.73 seconds
+      cpu time            0.18 seconds
+      
+
+
+NOTE: There were 34551 observations read from the data set PUFMEPS.H20.
+NOTE: The data set WORK.FY_97 has 34551 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           2.52 seconds
+      cpu time            0.89 seconds
+      
+
+
+NOTE: There were 24072 observations read from the data set PUFMEPS.H28.
+NOTE: The data set WORK.FY_98 has 24072 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           1.75 seconds
+      cpu time            0.34 seconds
+      
+
+397  %setmeps(99,h38) %setmeps(00, h50) %setmeps(01,h60)
+
+NOTE: There were 24618 observations read from the data set PUFMEPS.H38.
+NOTE: The data set WORK.FY_99 has 24618 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           2.17 seconds
+      cpu time            0.48 seconds
+      
+
+
+NOTE: There were 25096 observations read from the data set PUFMEPS.H50.
+NOTE: The data set WORK.FY_00 has 25096 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           2.74 seconds
+      cpu time            1.12 seconds
+      
+
+
+NOTE: There were 33556 observations read from the data set PUFMEPS.H60.
+NOTE: The data set WORK.FY_01 has 33556 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           5.75 seconds
+      cpu time            1.36 seconds
+      
+
+398  %setmeps(02,h70) %setmeps(03, h79) %setmeps(04,h89)
+
+NOTE: There were 39165 observations read from the data set PUFMEPS.H70.
+NOTE: The data set WORK.FY_02 has 39165 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           5.26 seconds
+      cpu time            1.59 seconds
+      
+
+
+NOTE: There were 34215 observations read from the data set PUFMEPS.H79.
+NOTE: The data set WORK.FY_03 has 34215 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           3.00 seconds
+      cpu time            0.81 seconds
+      
+
+
+NOTE: There were 34403 observations read from the data set PUFMEPS.H89.
+NOTE: The data set WORK.FY_04 has 34403 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           4.31 seconds
+      cpu time            1.29 seconds
+      
+
+399  %setmeps(05,h97) %setmeps(06, h105) %setmeps(07,h113)
+
+NOTE: There were 33961 observations read from the data set PUFMEPS.H97.
+NOTE: The data set WORK.FY_05 has 33961 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           2.73 seconds
+      cpu time            0.93 seconds
+      
+
+
+NOTE: There were 34145 observations read from the data set PUFMEPS.H105.
+NOTE: The data set WORK.FY_06 has 34145 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           3.27 seconds
+      cpu time            1.01 seconds
+      
+
+
+NOTE: There were 30964 observations read from the data set PUFMEPS.H113.
+NOTE: The data set WORK.FY_07 has 30964 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           2.69 seconds
+      cpu time            0.96 seconds
+      
+
+400  %setmeps(08,h121) %setmeps(09, h129) %setmeps(10,h138)
+
+NOTE: There were 33066 observations read from the data set PUFMEPS.H121.
+NOTE: The data set WORK.FY_08 has 33066 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           3.51 seconds
+      cpu time            1.48 seconds
+      
+
+
+NOTE: There were 36855 observations read from the data set PUFMEPS.H129.
+NOTE: The data set WORK.FY_09 has 36855 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           3.84 seconds
+      cpu time            1.20 seconds
+      
+
+
+NOTE: There were 32846 observations read from the data set PUFMEPS.H138.
+NOTE: The data set WORK.FY_10 has 32846 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           4.43 seconds
+      cpu time            1.17 seconds
+      
+
+401  %setmeps(11,h147) %setmeps(12, h155) %setmeps(13,h163)
+
+NOTE: There were 35313 observations read from the data set PUFMEPS.H147.
+NOTE: The data set WORK.FY_11 has 35313 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           4.49 seconds
+      cpu time            1.07 seconds
+      
+
+
+NOTE: There were 38974 observations read from the data set PUFMEPS.H155.
+NOTE: The data set WORK.FY_12 has 38974 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           4.01 seconds
+      cpu time            1.39 seconds
+      
+
+
+NOTE: There were 36940 observations read from the data set PUFMEPS.H163.
+NOTE: The data set WORK.FY_13 has 36940 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           4.80 seconds
+      cpu time            0.87 seconds
+      
+
+402  %setmeps(14, h171) %setmeps(15,h181)
+
+NOTE: There were 34875 observations read from the data set PUFMEPS.H171.
+NOTE: The data set WORK.FY_14 has 34875 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           3.88 seconds
+      cpu time            1.32 seconds
+      
+
+
+NOTE: There were 35427 observations read from the data set PUFMEPS.H181.
+NOTE: The data set WORK.FY_15 has 35427 observations and 29 variables.
+NOTE: DATA statement used (Total process time):
+      real time           3.90 seconds
+      cpu time            1.12 seconds
+      
+
+403  
+404  *** Combine data for 1996 through 2015;
+405  options varlenchk=nowarn;
+406  data new.Yr_1996_2015 (drop=i);
+407    set FY_96 FY_97 FY_98 FY_99
+408        FY_00 FY_01 FY_02 FY_03 FY_04
+409        FY_05 FY_06 FY_07 FY_08 FY_09
+410        FY_10 FY_11 FY_12 FY_13 FY_14
+411        FY_15;
+412    run;
+
+NOTE: There were 22601 observations read from the data set WORK.FY_96.
+NOTE: There were 34551 observations read from the data set WORK.FY_97.
+NOTE: There were 24072 observations read from the data set WORK.FY_98.
+NOTE: There were 24618 observations read from the data set WORK.FY_99.
+NOTE: There were 25096 observations read from the data set WORK.FY_00.
+NOTE: There were 33556 observations read from the data set WORK.FY_01.
+NOTE: There were 39165 observations read from the data set WORK.FY_02.
+NOTE: There were 34215 observations read from the data set WORK.FY_03.
+NOTE: There were 34403 observations read from the data set WORK.FY_04.
+NOTE: There were 33961 observations read from the data set WORK.FY_05.
+NOTE: There were 34145 observations read from the data set WORK.FY_06.
+NOTE: There were 30964 observations read from the data set WORK.FY_07.
+NOTE: There were 33066 observations read from the data set WORK.FY_08.
+NOTE: There were 36855 observations read from the data set WORK.FY_09.
+NOTE: There were 32846 observations read from the data set WORK.FY_10.
+NOTE: There were 35313 observations read from the data set WORK.FY_11.
+NOTE: There were 38974 observations read from the data set WORK.FY_12.
+NOTE: There were 36940 observations read from the data set WORK.FY_13.
+NOTE: There were 34875 observations read from the data set WORK.FY_14.
+NOTE: There were 35427 observations read from the data set WORK.FY_15.
+NOTE: The data set NEW.YR_1996_2015 has 655643 observations and 28 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.68 seconds
+      cpu time            0.37 seconds
+      
+
+413  options obs=max;
+414  proc tabulate data=new.Yr_1996_2015;
+415  var c_:;
+416  class year;
+417  tables year, (C_:)*sum*F=6.; run;
+
+NOTE: There were 655643 observations read from the data set NEW.YR_1996_2015.
+NOTE: PROCEDURE TABULATE used (Total process time):
+      real time           0.38 seconds
+      cpu time            0.32 seconds
+      
+
+418  
+419  proc means data=new.Yr_1996_2015 N NMISS MIN MAX;
+420  var _numeric_;
+421  class year;
+422  run;
+
+NOTE: There were 655643 observations read from the data set NEW.YR_1996_2015.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.95 seconds
+      cpu time            1.50 seconds
+      
+
+423  proc printto;
+424  run;
+

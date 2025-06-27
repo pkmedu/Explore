@@ -1,0 +1,208 @@
+32   proc product_status;
+33   run;
+
+For Base SAS Software ...
+   Custom version information: 9.4_M7
+   Image version information: 9.04.01M7P080520
+For SAS/STAT ...
+   Custom version information: 15.2
+For SAS/GRAPH ...
+   Custom version information: 9.4_M7
+For SAS/ETS ...
+   Custom version information: 15.2
+For SAS/FSP ...
+   Custom version information: 9.4_M7
+For SAS/AF ...
+   Custom version information: 9.4_M7
+For SAS/IML ...
+   Custom version information: 15.2
+For SAS/QC ...
+   Custom version information: 15.2
+For SAS/SHARE ...
+   Custom version information: 9.4_M6
+For SAS/ASSIST ...
+   Custom version information: 9.4
+   Image version information: 9.04.01M0P061913
+For SAS/CONNECT ...
+   Custom version information: 9.4_M7
+For SAS/ACCESS to JDBC ...
+   Custom version information: 9.41
+For SAS/EIS ...
+   Custom version information: 9.4_M7
+For SAS/GIS ...
+   Custom version information: 9.4_M7
+For SAS/ACCESS Interface to Netezza ...
+   Custom version information: 9.44
+For SAS/ACCESS Interface to Greenplum ...
+   Custom version information: 9.44
+For SAS/ACCESS Interface to SAP IQ ...
+   Custom version information: 9.4_M6
+For SAS/ACCESS to Hadoop ...
+   Custom version information: 9.47
+For SAS Enterprise Miner ...
+   Custom version information: 15.2
+For SAS/ACCESS to Vertica ...
+   Custom version information: 9.4_M7
+For SAS/ACCESS to Postgres ...
+   Custom version information: 9.4_M7
+For SAS/ACCESS to Impala ...
+   Custom version information: 9.46
+For SAS/ACCESS to Amazon Redshift ...
+   Custom version information: 9.44
+For SAS Integration Technologies ...
+   Custom version information: 9.4_M7
+For High Performance Suite ...
+   Custom version information: 2.2_M8
+For SAS/ACCESS Interface to DB2 ...
+   Custom version information: 9.4_M2
+For SAS/ACCESS Interface to Oracle ...
+   Custom version information: 9.44
+For SAS/ACCESS Interface to the PI System ...
+   Custom version information: 9.45
+For SAS/ACCESS Interface to SAP ASE ...
+   Custom version information: 9.4_M6
+For SAS/ACCESS Interface to PC Files ...
+   Custom version information: 9.4_M7
+For SAS/ACCESS Interface to ODBC ...
+   Custom version information: 9.4_M7
+For SAS/ACCESS Interface to OLE DB ...
+   Custom version information: 9.4_M7
+For SAS/ACCESS Interface to R/3 ...
+   Custom version information: 4.4_M4
+For SAS/ACCESS Interface to Teradata ...
+   Custom version information: 9.47
+For SAS/ACCESS Interface to MySQL ...
+   Custom version information: 9.41_M1
+NOTE: PROCEDURE PRODUCT_STATUS used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.04 seconds
+
+
+34
+35   proc setinit;
+36   run;
+
+NOTE: PROCEDURE SETINIT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+
+Original site validation data
+Current version: 9.04.01M7P080520
+Site name:    'GEORGE WASHINGTON UNIVERSITY - SFA T&R'.
+Site number:  70158136.
+CPU A: Model name='' model number='' serial=''.
+Expiration:   14DEC2025.
+Grace Period:  0 days (ending 14DEC2025).
+Warning Period: 15 days (ending 29DEC2025).
+System birthday:   04NOV2024.
+Operating System:   WX64_WKS.
+Product expiration dates:
+---Base SAS Software
+      14DEC2025 (CPU A)
+---SAS/STAT
+      14DEC2025 (CPU A)
+---SAS/GRAPH
+      14DEC2025 (CPU A)
+---SAS/ETS
+      14DEC2025 (CPU A)
+---SAS/FSP
+      14DEC2025 (CPU A)
+---SAS/OR
+      14DEC2025 (CPU A)
+---SAS/AF
+      14DEC2025 (CPU A)
+---SAS/IML
+      14DEC2025 (CPU A)
+---SAS/QC
+      14DEC2025 (CPU A)
+---SAS/SHARE
+      14DEC2025 (CPU A)
+---SAS/ASSIST
+      14DEC2025 (CPU A)
+---SAS/CONNECT
+      14DEC2025 (CPU A)
+---SAS/EIS
+      14DEC2025 (CPU A)
+---SAS/GIS
+      14DEC2025 (CPU A)
+---SAS/SHARE*NET
+      14DEC2025 (CPU A)
+---SAS Enterprise Miner
+      14DEC2025 (CPU A)
+---MDDB Server common products
+      14DEC2025 (CPU A)
+---SAS Integration Technologies
+      14DEC2025 (CPU A)
+---SAS/Secure 168-bit
+      14DEC2025 (CPU A)
+---SAS/Secure Windows
+      14DEC2025 (CPU A)
+---SAS Enterprise Guide
+      14DEC2025 (CPU A)
+---SAS Bridge for ESRI
+      14DEC2025 (CPU A)
+---OR OPT
+      14DEC2025 (CPU A)
+---OR PRS
+      14DEC2025 (CPU A)
+---OR IVS
+      14DEC2025 (CPU A)
+---OR LSO
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to DB2
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to Oracle
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to SAP ASE
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to PC Files
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to ODBC
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to OLE DB
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to R/3
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to Teradata
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to Microsoft SQL Server
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to MySQL
+      14DEC2025 (CPU A)
+---SAS/IML Studio
+      14DEC2025 (CPU A)
+---SAS Workspace Server for Local Access
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to Netezza
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to Greenplum
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to SAP IQ
+      14DEC2025 (CPU A)
+---SAS/ACCESS to Hadoop
+      14DEC2025 (CPU A)
+---SAS/ACCESS to Vertica
+      14DEC2025 (CPU A)
+---SAS/ACCESS to Postgres
+      14DEC2025 (CPU A)
+---SAS/ACCESS to Impala
+      14DEC2025 (CPU A)
+---SAS/ACCESS to Salesforce
+      14DEC2025 (CPU A)
+---SAS/ACCESS to Amazon Redshift
+      14DEC2025 (CPU A)
+---High Performance Suite
+      14DEC2025 (CPU A)
+---SAS Add-in for Microsoft Excel
+      14DEC2025 (CPU A)
+---SAS/ACCESS to SAP HANA
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to Yellowbrick
+      14DEC2025 (CPU A)
+---SAS/ACCESS Interface to the PI System
+      14DEC2025 (CPU A)
+---SAS/ACCESS to JDBC
+      14DEC2025 (CPU A)
+---SAS/ACCESS to Snowflake
+      14DEC2025 (CPU A)
+

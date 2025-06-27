@@ -1,0 +1,235 @@
+2014 PSAQ Analytic File - Frequency Tables for Selected Variables
+
+The FREQ Procedure
+
+                  1ST RESPONDENT INDICATOR FOR R5/3
+ 
+                                            Cumulative    Cumulative
+         RESP53    Frequency     Percent     Frequency      Percent
+--------------------------------------------------------------------
+Self-Respondent        1491       68.24          1491        68.24  
+Household Proxy         694       31.76          2185       100.00  
+
+
+                            SEX
+ 
+                                   Cumulative    Cumulative
+   SEX    Frequency     Percent     Frequency      Percent
+-----------------------------------------------------------
+Male          1028       47.05          1028        47.05  
+Female        1157       52.95          2185       100.00  
+
+
+                           Race/Ethnicity Recode
+ 
+                                                   Cumulative    Cumulative
+            r_racethx2    Frequency     Percent     Frequency      Percent
+---------------------------------------------------------------------------
+NH White Only                 1534       70.21          1534        70.21  
+Racial/Ethnic Minority         651       29.79          2185       100.00  
+
+
+                           Education Recode
+ 
+                                              Cumulative    Cumulative
+      r_edrecode2    Frequency     Percent     Frequency      Percent
+----------------------------------------------------------------------
+Up to High School         941       43.18           941        43.18  
+Some College             1238       56.82          2179       100.00  
+
+                         Frequency Missing = 6
+2014 PSAQ Analytic File - Frequency Tables for Selected Variables
+
+The FREQ Procedure
+
+                            Marital Status
+ 
+                                              Cumulative    Cumulative
+        marital_s    Frequency     Percent     Frequency      Percent
+----------------------------------------------------------------------
+Currently Married        1253       57.35          1253        57.35  
+Wid-Div-Sep               716       32.77          1969        90.11  
+Never married             216        9.89          2185       100.00  
+
+
+                          Family Size
+ 
+                                       Cumulative    Cumulative
+ d_famscat    Frequency     Percent     Frequency      Percent
+---------------------------------------------------------------
+1 Person           606       27.73           606        27.73  
+2 Persons          909       41.60          1515        69.34  
+3 Persons          309       14.14          1824        83.48  
+4+ Persons         361       16.52          2185       100.00  
+
+
+                     Employment Status Recode
+ 
+                                         Cumulative    Cumulative
+   empstat13    Frequency     Percent     Frequency      Percent
+-----------------------------------------------------------------
+Employed            1027       47.05          1027        47.05  
+Not Employed        1156       52.95          2183       100.00  
+
+                      Frequency Missing = 2
+
+
+2014 PSAQ Analytic File - Frequency Tables for Selected Variables
+
+The FREQ Procedure
+
+                    Federal Poverty Levels Recode
+ 
+                                             Cumulative    Cumulative
+        r_povcat    Frequency     Percent     Frequency      Percent
+---------------------------------------------------------------------
+P/NPR/LOW INCOME         712       32.59           712        32.59  
+MIDDLE INCOME            648       29.66          1360        62.24  
+HIGH INCOME              825       37.76          2185       100.00  
+
+
+                       Geographic Region
+ 
+                                      Cumulative    Cumulative
+ r_region    Frequency     Percent     Frequency      Percent
+--------------------------------------------------------------
+Northeast         366       16.75           366        16.75  
+Midwest           489       22.38           855        39.13  
+South             834       38.17          1689        77.30  
+West              496       22.70          2185       100.00  
+
+
+                     Perceived Health Status Recode
+ 
+                                                Cumulative    Cumulative
+             health    Frequency     Percent     Frequency      Percent
+------------------------------------------------------------------------
+EXCELLENT/VERY GOOD        1123       51.40          1123        51.40  
+GOOD                        681       31.17          1804        82.56  
+FAIR/POOR                   379       17.35          2183        99.91  
+MISSING                       2        0.09          2185       100.00  
+
+
+2014 PSAQ Analytic File - Frequency Tables for Selected Variables
+
+The FREQ Procedure
+
+             HEALTH INSURANCE COVERAGE INDICATOR 13
+ 
+                                        Cumulative    Cumulative
+   INSCOV13    Frequency     Percent     Frequency      Percent
+----------------------------------------------------------------
+ANY PRIVATE        1321       60.46          1321        60.46  
+PUBLIC ONLY         659       30.16          1980        90.62  
+UNINSURED           205        9.38          2185       100.00  
+
+
+            Office-Based Provider Visits (12-Month Period) Recode
+ 
+                                                    Cumulative    Cumulative
+             obv10_plus    Frequency     Percent     Frequency      Percent
+----------------------------------------------------------------------------
+10+ Office-based visits         682       31.21           682        31.21  
+0-9 Office-based visits        1503       68.79          2185       100.00  
+2014 PSAQ Analytic File - Frequency Tables for Selected Variables
+
+The MEANS Procedure
+
+Variable       Label                                                       N         Minimum         Maximum
+------------------------------------------------------------------------------------------------------------
+PANEL          PANEL NUMBER                                             2185              18              18
+AGE53X         AGE - R5/3 (EDITED/IMPUTED)                              2185              35              85
+DOBMM          DATE OF BIRTH: MONTH                                     2185               1              12
+DOBYY          DATE OF BIRTH: YEAR                                      2185            1929            1979
+SEX            SEX                                                      2185               1               2
+PSAQAGE        PSAQ WHAT IS PERSON'S AGE                                2185              -9              85
+MEDVISIT       PSAQ HOW LONG AGO WAS LAST DR VISIT                      2185              -9               5
+FLUSHOT        PSAQ DID PERSON HAVE FLU VACCINE PAST YR                 2185              -9               2
+WEIGHED        PSAQ WAS PERSON WEIGHED IN PAST YEAR                     2185              -9               2
+PSAQBMIX       PSAQ BODY MASS INDEX CALCULATED                          2185              -9              78
+WGTLOSS        PSAQ DID DR ADVISE WGHT LOSS IN PAST YR                  2185              -9               2
+DRINKALC       PSAQ DID DR ASK ABOUT ALCOHOL PAST YR                    2185              -9               2
+DRINK5         PSAQ HAD 5+ DRINKS PER DAY IN PAST YR                    2185              -9               2
+DRINK4         PSAQ HAD 4+ DRINKS PER DAY IN PAST YR                    2185              -9               2
+STOPALC        PSAQ DID DR ADVISE DRINK LESS IN PAST YR                 2185              -9               2
+TOBACCO        PSAQ DID DR ASK ABOUT SMOKING                            2185              -9               2
+OFTTOBAC       PSAQ HOW OFTEN DID YOU SMOKE IN PAST YR                  2185              -9               3
+QUITTBAC       PSAQ DID DR ADVISE SMOKE LESS IN PAST YR                 2185              -9               2
+QUITMEDS       PSAQ DID DR ADVSE MED QUIT SMKNG PAST YR                 2185              -1               2
+QUITHELP       PSAQ DR ADVSE OTH WAY QUIT SMKNG PAST YR                 2185              -9               2
+MOODQUEX       PSAQ DID DR ASK ANXIOUS/DEPRSSED PAST YR                 2185              -9               2
+CHECKBP        PSAQ DID DR CHECK BP PAST 2 YRS                          2185              -9               2
+CHECKCHL       PSAQ DID DR CHECK CHOLESTEROL PAST 5 YRS                 2185              -9               2
+HIVTEST        PSAQ DID DR TEST FOR HIV IN PAST 5 YRS                   2185              -9               4
+PNEUSHOT       PSAQ HAVE YOU EVER HAD PNEUMONIA SHOT                    2185              -9               4
+SHINGLES       PSAQ HAVE YOU EVER HAD SHINGLES VACCINE                  2185              -9               4
+NOASPRIN       PSAQ CANT TAKE ASPRIN FOR MEDICAL REASON                 2185              -9               2
+DISASPRN       PSAQ DR DISCUSS ASPIRIN PREVENTIVE USE                   2185              -9               2
+COLONCR        PSAQ HAD COLON CANCER OR COLON REMOVED                   2185              -9               2
+COLONOSC       PSAQ HAD COLONOSCOPY IN PAST 10 YRS                      2185              -9               4
+SIGMOID        PSAQ HAD SIGMOIDOSCOPY IN PAST 5 YRS                     2185              -9               4
+BLDSTOOL       PSAQ AT-HOME BLOOD STOOL TEST IN PAST YR                 2185              -9               4
+PROSCANC       PSAQ HAS PERSON HAD PROSTATE CANCER                      2185              -9               2
+AGEPSAT        PSAQ PERSON'S AGE AT LAST PSA TEST                       2185              -9               5
+UTREMCVC       PSAQ HAD HYSTERECTOMY OR CERVICAL CANCER                 2185              -9               2
+------------------------------------------------------------------------------------------------------------
+2014 PSAQ Analytic File - Frequency Tables for Selected Variables
+
+The MEANS Procedure
+
+Variable       Label                                                       N         Minimum         Maximum
+------------------------------------------------------------------------------------------------------------
+PAPTEST        PSAQ HAD PAP SMEAR WITHIN PAST 5 YEARS                   2185              -9               2
+PAPAGE         PSAQ WHAT AGE WAS PERSON LAST PAP SMEAR                  2185              -9               6
+BREASTRC       PSAQ HAD BREASTS REMOVED/BREAST CANCER                   2185              -9               2
+MAMMGRAM       PSAQ HAD MAMMOGRAM IN PAST 2 YRS                         2185              -9               2
+OSTEOPOR       PSAQ DID DR DX PERSON WITH OSTEOPEROSIS                  2185              -9               2
+BNDENSTY       PSAQ DID PERSON HAVE BONE DENSITY SCAN                   2185              -9               2
+COMMM          PSAQ COMPLETION DATE MONTH                               2185              -9               5
+COMYYYY        PSAQ COMPLETION DATE YEAR                                2185            2015            2015
+LANGUAGE       PSAQ LANGUAGE OF SURVEY                                  2185               1               2
+PSAQWT         PSAQ PANEL 18 FINAL WEIGHT                               2185           17207          230040
+VARSTR         VARIANCE ESTIMATION STRATUM                              2185            1001            1165
+VARPSU         VARIANCE ESTIMATION PSU                                  2185               1               3
+FAMSZE53       RU SIZE INCLUDING STUDENTS - R5/3                        2185               1              14
+REGION53       CENSUS REGION - R5/3                                     2185               1               4
+RESP53         1ST RESPONDENT INDICATOR FOR R5/3                        2185               1               2
+INSC1231       INSCOPE STATUS ON 12/31/13                               2185               1               1
+AGELAST        PERSON'S AGE LAST TIME ELIGIBLE                          2185              34              85
+RACETHX        RACE/ETHNICITY (EDITED/IMPUTED)                          2185               1               5
+MARRY53X       MARITAL STATUS - R5/3 (EDITED/IMPUTED)                   2185               1              10
+EDRECODE       EDUCATION RECODE (EDITED)                                2185              -9              16
+RTHLTH53       PERCEIVED HEALTH STATUS - RD 5/3                         2185              -8               5
+EMPST53        EMPLOYMENT STATUS RD 5/3                                 2185              -9               4
+POVCAT13       FAMILY INC AS % OF POVERTY LINE - CATEGO                 2185               1               5
+INSCOV13       HEALTH INSURANCE COVERAGE INDICATOR 13                   2185               1               3
+INSURC13       FULL YEAR INSURANCE COVERAGE STATUS 2013                 2185               1               8
+TOTEXP13       TOTAL HEALTH CARE EXP 13                                 2185               0          289269
+OBTOTV13       # OFFICE-BASED PROVIDER VISITS 13                        2185               0             173
+OBVEXP13       TOTAL OFFICE-BASED EXP 13                                2185               0           83626
+OPTEXP13       TOTAL OUTPATIENT FAC + DR EXP 13                         2185               0           48610
+ERTEXP13       TOTAL ER FACILITY + DR EXP 13                            2185               0           48753
+IPTEXP13       TOT HOSP IP FACILITY + DR EXP 13                         2185               0          265143
+IPNGTD13       # NIGHTS IN HOSP FOR DISCHARGES, 2013                    2185               0              36
+RXEXP13        TOTAL RX-EXP 13                                          2185               0           96160
+PERWT13F       FINAL PERSON WEIGHT, 2013                                2185            1154           77905
+r_racethx2     Race/Ethnicity Recode                                    2185               1               2
+------------------------------------------------------------------------------------------------------------
+2014 PSAQ Analytic File - Frequency Tables for Selected Variables
+
+The MEANS Procedure
+
+Variable       Label                                                       N         Minimum         Maximum
+------------------------------------------------------------------------------------------------------------
+r_edrecode2    Education Recode                                         2179               1               2
+marital_s      Marital Status                                           2185               1               3
+d_famscat      Family Size                                              2185               1               4
+empstat13      Employment Status Recode                                 2183               1               2
+r_povcat       Federal Poverty Levels Recode                            2185               1               3
+r_region       Geographic Region                                        2185               1               4
+health         Perceived Health Status Recode                           2185               1               4
+obv10_plus     Office-Based Provider Visits (12-Month Period) Recode    2185               1               2
+x_psaqage      PSAQ Respondent Age                                      2185              35              85
+x_flushot      Whether Took Flu Shot (12-Month Period) Recode           2149               0               1
+x_ofttobac     Whether Smoke Everyday in Past Year Recode               2148               0               1
+------------------------------------------------------------------------------------------------------------

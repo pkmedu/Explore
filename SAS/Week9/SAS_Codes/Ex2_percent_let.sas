@@ -1,0 +1,15 @@
+*Ex2_percent_let.sas;
+%LET CITY1=   Washington DC;
+%LET CITY2=   "Washington DC";
+%LET CITY3=   Washington   DC;
+%LET m_sum=2+2;
+%LET msum_eval=%eval(2+2);
+%LET CALC_FRAC=%SYSEVALF(5.5/2);
+%LET amount=%sysfunc(putn(5000000, dollar14.));
+%put &=CITY1;
+%put &=CITY2;
+%put &=CITY3;
+%put &=m_sum;
+%put &=msum_eval;
+%put &=CALC_FRAC;
+%put &=amount;

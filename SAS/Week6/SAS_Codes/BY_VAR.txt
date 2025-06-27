@@ -1,0 +1,5 @@
+         ID   Total_intake
+          A       1500
+          B       1800
+          C       1650
+          D       1960
