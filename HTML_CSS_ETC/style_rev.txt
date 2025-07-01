@@ -1,0 +1,103 @@
+        /* Navigation Menu Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e2e8f0 0%, #f7fafc 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .nav-container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 0;
+            margin: 0 auto;
+            max-width: 1200px;
+            overflow: hidden;
+            border: 3px solid #e2e8f0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: nowrap;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #a0aec0);
+            white-space: nowrap;
+        }
+        nav li {
+            position: relative;
+            flex: 1;
+        }
+        nav a {
+            display: block;
+            padding: 20px 18px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 18px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            border-right: 2px solid rgba(255, 255, 255, 0.2);
+            white-space: nowrap;
+        }
+        nav li:last-child a {
+            border-right: none;
+        }
+        nav li:nth-child(1) a { background-color: #ff6b6b; }
+        nav li:nth-child(2) a { background-color: #4ecdc4; }
+        nav li:nth-child(3) a { background-color: #45b7d1; }
+        nav li:nth-child(4) a { background-color: #96ceb4; }
+        nav li:nth-child(5) a { background-color: #ffeaa7; color: #2d3748; }
+        nav li:nth-child(6) a { background-color: #a0aec0; }
+        nav a:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
+            z-index: 10;
+        }
+        nav a:active {
+            transform: translateY(0);
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #a0aec0);
+            }
+            
+            nav li {
+                flex-shrink: 0;
+                min-width: auto;
+            }
+            
+            nav a {
+                padding: 18px 15px;
+                font-size: 16px;
+                border-right: 2px solid rgba(255, 255, 255, 0.2);
+                border-bottom: none;
+            }
+            
+            nav li:last-child a {
+                border-right: none;
+            }
+            
+            .nav-container {
+                margin: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            nav a {
+                padding: 15px 12px;
+                font-size: 15px;
+            }
+        }

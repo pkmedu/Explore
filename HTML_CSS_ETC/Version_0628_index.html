@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Free code examples and tutorials for SAS, Stata, Python, and R. Open source programming resources for beginners to experts.">
-  <title>CodeHurry - Code Repository for SAS, Stata, Python, and R</title>
+  <meta name="description" content="Free code examples and tutorials for SAS, Python, R, and Stata. Open source programming resources for beginners to experts.">
+  <title>CodeHurry - Code Repository for SAS, Python, R & Stata</title>
   
   <!-- Bootstrap CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -43,67 +43,42 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 2rem 0;
-    }
-
-    .header .container-fluid {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .logo {
-      margin: 0;
+      padding: 1rem 0;
     }
     
     .sitename {
       color: var(--primary-color);
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      white-space: nowrap;
-      text-align: center;
     }
-       
-    .hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 180px 0 80px;
-      margin-top: 120px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-navmenu {
-      margin-top: 2rem;
-    }
-
-    .hero-navmenu ul {
+    
+    .navmenu ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
       gap: 2rem;
-      flex-wrap: wrap;
     }
-
-    .hero-navmenu a {
-      color: white;
+    
+    .navmenu a {
+      color: var(--dark-color);
       text-decoration: none;
       font-weight: 500;
-      font-size: 1.2rem;
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
+      transition: color 0.3s ease;
     }
-
-    .hero-navmenu a:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
+    
+    .navmenu a:hover {
+      color: var(--primary-color);
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     
     .hero::before {
@@ -121,22 +96,20 @@
       position: relative;
       z-index: 1;
     }
-
+    
     .hero h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
       font-weight: 700;
-      white-space: nowrap;
     }
     
     .hero p {
-      font-size: 2rem;
+      font-size: 1.2rem;
       opacity: 0.9;
-      white-space: nowrap;
     }
     
     .section {
-      padding: 60px 0;
+      padding: 80px 0;
     }
     
     .section-header {
@@ -145,64 +118,38 @@
     }
     
     .section-header h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: var(--dark-color);
       margin-bottom: 1rem;
     }
     
-    .section-header p {
-      font-size: 1.2rem;
-    }
-#languages .section-header h2 {
-  color: var(--primary-color);
-}
-  #acknowledgements .section-header h2 {
-  color: var(--primary-color); /* Blue color for "Acknowledgements" title */
-}
-#disclaimer .section-header h2 {
-  color: var(--primary-color); 
-}
-
     .about .content h3 {
       color: var(--primary-color);
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-
-    .about .fst-italic {
-      font-style: normal !important;
-      font-size: 1.2rem;
-    }
-
-    .about ul {
-      list-style-type: disc !important;
-      padding-left: 1.5rem;
-    }
-
+    
     .about ul li {
-      list-style: disc !important;
-      display: list-item !important;
       margin-bottom: 1rem;
-      font-size: 1.2rem;
-      align-items: initial !important;
-      gap: initial !important;
-    }
-
-    .about ul li i {
-      display: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
     }
     
-    #features {
-  padding-bottom: 30px; /* Reduce from default 60px */
-   }
+    .about .bi-check2-all {
+      color: var(--success-color);
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+    }
+    
     .features .content h3 {
       color: var(--primary-color);
       margin-bottom: 1rem;
     }
     
     .feature-item {
-      margin-bottom: 1rem;
-      padding: .8rem;
+      margin-bottom: 2rem;
+      padding: 1rem;
       border-radius: 8px;
       transition: transform 0.3s ease;
     }
@@ -215,30 +162,10 @@
     .feature-item i {
       font-size: 2rem;
       color: var(--primary-color);
-      margin-right: 1.2rem;
+      margin-right: 1rem;
       margin-top: 0.5rem;
     }
-
-    .feature-item p {
-      font-size: 1.2rem;
-    }
-
-    .features .content > p {
-      font-size: 1.2rem;
-    }
-
-    #acknowledgements .content p {
-      font-size: 1.2rem;
-    }
-
-    #acknowledgements .acknowledgement-list li {
-      font-size: 1.2rem;
-    }
-
-    #disclaimer p {
-      font-size: 1.2rem;
-    }
-
+    
     .card {
       border: none;
       border-radius: 15px;
@@ -255,11 +182,7 @@
     .card-body {
       padding: 2rem;
     }
-
-    #languages .card-text {
-      font-size: 1.2rem;
-    }
-
+    
     .icon {
       width: 80px;
       height: 80px;
@@ -325,59 +248,41 @@
     }
     
     @media (max-width: 768px) {
-      .hero-navmenu ul {
+      .navmenu ul {
         flex-direction: column;
-        gap: 1rem;
       }
       
       .hero h2 {
         font-size: 2rem;
       }
       
-      .hero p {
-        font-size: 1.2rem;
-      }
-      
-      .sitename {
-        font-size: 1.3rem;
-      }
-      
       .section {
         padding: 40px 0;
       }
     }
-    #contact .section-header h2 {
-  color: var(--primary-color); 
-}
-
-#contact p {
-  font-size: 1.2rem;
-}
-
-#contact h4 {
-  color: var(--primary-color);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-#contact ul li {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-#contact .section-header {
-  margin-bottom: 1rem; /* Reduce from default 3rem */
-}
   </style>
 </head>
 
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-center">
-      <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
-        <h1 class="sitename">CodeHurry<br>A Multi-Language Code Repository</h1>
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0 text-decoration-none">
+        <h1 class="sitename">CodeHurry - Code Repository</h1>
       </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="https://codehurry.com">Home</a></li>
+          <li><a href="https://github.com/pkmedu/Explore/tree/main/SAS">SAS</a></li>
+          <li><a href="https://github.com/pkmedu/stata-complex-surveys">Stata</a></li>
+          <li><a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM">Python</a></li>
+          <li><a href="https://github.com/pkmedu/r-basics">R</a></li>
+          <li><a href="https://codehurry.com/dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+
     </div>
   </header>
 
@@ -387,21 +292,9 @@
     <section id="hero" class="hero section">
       <div class="container">
         <div class="row justify-content-center text-center">
-          <div class="col-xl-8 col-lg-10">
-            <h2>Powerful Solutions</h2>
-            <p>SAS, Stata, Python, and R Code Examples and Dashboard</p>
-            
-            <!-- Navigation Menu -->
-            <nav id="navmenu" class="hero-navmenu">
-              <ul>
-                <li><a href="https://codehurry.com">Home</a></li>
-                <li><a href="https://github.com/pkmedu/Explore/tree/main/SAS">SAS</a></li>
-                <li><a href="https://github.com/pkmedu/stata-complex-surveys">Stata</a></li>
-                <li><a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM">Python</a></li>
-                <li><a href="https://github.com/pkmedu/r-basics">R</a></li>
-                <li><a href="https://codehurry.com/dashboard.html">Dashboard</a></li>
-              </ul>
-            </nav>
+          <div class="col-xl-6 col-lg-8">
+            <h2>Powerful Coding Solutions With CodeHurry</h2>
+            <p>Software Programs and Dashboard Examples: SAS, Stata, Python, and R</p>
           </div>
         </div>        
       </div>
@@ -422,9 +315,9 @@
               The example programs are open to everyone, from beginners to experts.
             </p>
             <ul>
-              <li>Whether you're learning to code or working on your next project, our example programs can be a valuable resource.</li>
-              <li>Choose an example program, review it, and demonstrate running it using your available software.</li>
-              <li>We are dedicated to making programming accessible and enjoyable for anyone who wants to learn coding and web data extraction.</li>
+              <li><i class="bi bi-check2-all"></i> <span>Whether you're learning to code or building your next project, our example programs will help you.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Choose an example program, review it, and demonstrate running it with your available software.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>We're dedicated to making programming accessible and enjoyable for anyone wanting to learn coding and web data extraction.</span></li>
             </ul>
           </div>
         </div>
@@ -449,7 +342,7 @@
                 <i class="bi bi-code-square flex-shrink-0"></i>
                 <div>
                   <h4>Multi-Language Support</h4>
-                  <p>Code examples in SAS, Stata, Python, and R - all in one place.</p>
+                  <p>Access examples in SAS, Python, R, and Stata - all in one place.</p>
                 </div>
               </div>
 
@@ -478,7 +371,7 @@
     <section id="languages" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Code Examples by Language</h2>
+          <h2>Programming Languages</h2>
           <p>Explore our comprehensive collection of code examples</p>
         </div>
 
@@ -490,7 +383,7 @@
                   <i class="bi bi-bar-chart-line" style="font-size: 2rem; color: #007bff;"></i>
                 </div>
                 <h5 class="card-title">SAS</h5>
-                <p class="card-text">DATA step, PROC steps (including PROC SQL, Complex Survey Analysis PROCs, and PROC IML), SAS Macro, and SASPy</p>
+                <p class="card-text">Statistical analysis and data management examples for SAS programming.</p>
                 <a href="https://github.com/pkmedu/Explore/tree/main/SAS" class="btn btn-primary">View Examples</a>
               </div>
             </div>
@@ -503,7 +396,7 @@
                   <i class="bi bi-calculator" style="font-size: 2rem; color: #28a745;"></i>
                 </div>
                 <h5 class="card-title">Stata</h5>
-                <p class="card-text">Complex survey analysis and statistical modeling</p>
+                <p class="card-text">Complex survey analysis and statistical modeling with Stata.</p>
                 <a href="https://github.com/pkmedu/stata-complex-surveys" class="btn btn-success">View Examples</a>
               </div>
             </div>
@@ -516,7 +409,7 @@
                   <i class="bi bi-code-slash" style="font-size: 2rem; color: #ffc107;"></i>
                 </div>
                 <h5 class="card-title">Python</h5>
-                <p class="card-text">Data manipulation, and web data extraction</p>
+                <p class="card-text">Data science, machine learning, and business intelligence scripts.</p>
                 <a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM" class="btn btn-warning">View Examples</a>
               </div>
             </div>
@@ -529,7 +422,7 @@
                   <i class="bi bi-graph-up" style="font-size: 2rem; color: #dc3545;"></i>
                 </div>
                 <h5 class="card-title">R</h5>
-                <p class="card-text">Data Manipulation, statistical computing and graphics</p>
+                <p class="card-text">Statistical computing and graphics programming fundamentals.</p>
                 <a href="https://github.com/pkmedu/r-basics" class="btn btn-danger">View Examples</a>
               </div>
             </div>
@@ -616,39 +509,7 @@
         </div>
       </div>
     </section>
-<!-- Contact Section -->
-<section id="contact" class="section light-background">
-  <div class="container">
-    <div class="section-header">
-      <h2>Contact</h2>
-    </div>
-    
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="content">
-          <h4>Get in Touch</h4>
-          <p>We'd love to hear from you! Whether you have questions about our code examples, suggestions for new content, or want to contribute to the CodeHurry community, feel free to reach out.</p>
-          
-          <h4>GitHub</h4>
-          <p>Visit our GitHub repository to explore code examples, report issues, or contribute to the project:</p>
-          <p><a href="https://github.com/pkmedu" class="btn btn-primary"><i class="bi bi-github"></i> Visit Our GitHub</a></p>
-          
-          <h4>Community Guidelines</h4>
-          <p>When reaching out or contributing, please keep in mind:</p>
-          <ul>
-            <li>Be respectful and constructive in all communications</li>
-            <li>Provide clear descriptions when reporting issues or suggesting improvements</li>
-            <li>Follow coding best practices when contributing examples</li>
-            <li>Help maintain the educational focus of our resources</li>
-          </ul>
-          
-          <h4>Contributing</h4>
-          <p>We welcome contributions from the community! If you have code examples in SAS, Stata, Python, or R that would benefit other learners, please consider contributing through our GitHub repositories.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
   </main>
 
   <footer id="footer" class="footer">
