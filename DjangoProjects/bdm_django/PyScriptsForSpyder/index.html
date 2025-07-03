@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Free code examples and tutorials for SAS, Python, R, and Stata. Open source programming resources for beginners to experts.">
-  <title>CodeHurry - Code Repository for SAS, Python, R & Stata</title>
+  <meta name="description" content="Free code examples and tutorials for SAS, Stata, Python, and R. Open source programming resources for beginners to experts.">
+  <title>CodeHurry - Code Repository for SAS, Stata, Python, and R</title>
   
   <!-- Bootstrap CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -43,39 +43,128 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      padding: 1rem 0;
+      padding: 2rem 0;
+    }
+
+    .header .container-fluid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      margin: 0;
     }
     
     .sitename {
       color: var(--primary-color);
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       font-weight: 700;
+      white-space: nowrap;
+      text-align: center;
     }
-    
-    .navmenu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 2rem;
-    }
-    
-    .navmenu a {
-      color: var(--dark-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    
-    .navmenu a:hover {
-      color: var(--primary-color);
-    }
-    
+
+/* Dropdown Menu Styling for Hero Navigation */
+#hero {
+  overflow: visible;
+}
+.hero-navmenu {
+  margin-top: 2rem;
+}
+
+.hero-navmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-navmenu li {
+  position: relative;
+}
+
+.hero-navmenu a,
+.hero-navmenu button {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hero-navmenu a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Dropdown styles - Bootstrap compatible */
+.hero-navmenu .dropdown {
+  position: relative;
+}
+
+.hero-navmenu .navbar-collapse {
+  justify-content: center;
+}
+
+.hero-navmenu .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  min-width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+}
+
+.hero-navmenu .dropdown-header {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+
+.hero-navmenu .dropdown-item {
+  color: var(--dark-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  font-size: 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.hero-navmenu .dropdown-item:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.hero-navmenu .dropdown-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.5rem 0;
+}
+
     .hero {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 120px 0 80px;
+      padding: 180px 0 80px;
+      margin-top: 120px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -96,20 +185,22 @@
       position: relative;
       z-index: 1;
     }
-    
+
     .hero h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
       font-weight: 700;
+      white-space: nowrap;
     }
     
     .hero p {
-      font-size: 1.2rem;
+      font-size: 2rem;
       opacity: 0.9;
+      white-space: nowrap;
     }
     
     .section {
-      padding: 80px 0;
+      padding: 60px 0;
     }
     
     .section-header {
@@ -118,38 +209,64 @@
     }
     
     .section-header h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: var(--dark-color);
       margin-bottom: 1rem;
     }
     
+    .section-header p {
+      font-size: 1.2rem;
+    }
+#languages .section-header h2 {
+  color: var(--primary-color);
+}
+  #acknowledgements .section-header h2 {
+  color: var(--primary-color); /* Blue color for "Acknowledgements" title */
+}
+#disclaimer .section-header h2 {
+  color: var(--primary-color); 
+}
+
     .about .content h3 {
       color: var(--primary-color);
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-    
-    .about ul li {
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-    
-    .about .bi-check2-all {
-      color: var(--success-color);
+
+    .about .fst-italic {
+      font-style: normal !important;
       font-size: 1.2rem;
-      margin-top: 0.2rem;
+    }
+
+    .about ul {
+      list-style-type: disc !important;
+      padding-left: 1.5rem;
+    }
+
+    .about ul li {
+      list-style: disc !important;
+      display: list-item !important;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      align-items: initial !important;
+      gap: initial !important;
+    }
+
+    .about ul li i {
+      display: none;
     }
     
+    #features {
+  padding-bottom: 30px; /* Reduce from default 60px */
+   }
     .features .content h3 {
       color: var(--primary-color);
       margin-bottom: 1rem;
     }
     
     .feature-item {
-      margin-bottom: 2rem;
-      padding: 1rem;
+      margin-bottom: 1rem;
+      padding: .8rem;
       border-radius: 8px;
       transition: transform 0.3s ease;
     }
@@ -162,10 +279,30 @@
     .feature-item i {
       font-size: 2rem;
       color: var(--primary-color);
-      margin-right: 1rem;
+      margin-right: 1.2rem;
       margin-top: 0.5rem;
     }
-    
+
+    .feature-item p {
+      font-size: 1.2rem;
+    }
+
+    .features .content > p {
+      font-size: 1.2rem;
+    }
+
+    #acknowledgements .content p {
+      font-size: 1.2rem;
+    }
+
+    #acknowledgements .acknowledgement-list li {
+      font-size: 1.2rem;
+    }
+
+    #disclaimer p {
+      font-size: 1.2rem;
+    }
+
     .card {
       border: none;
       border-radius: 15px;
@@ -182,7 +319,11 @@
     .card-body {
       padding: 2rem;
     }
-    
+
+    #languages .card-text {
+      font-size: 1.2rem;
+    }
+
     .icon {
       width: 80px;
       height: 80px;
@@ -247,42 +388,71 @@
       margin-top: 2rem;
     }
     
+    /* Smooth scrolling and offset for fixed header */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Add padding-top to sections to account for fixed header */
+    .section {
+      scroll-margin-top: 140px; /* Adjust based on header height */
+    }
+    
     @media (max-width: 768px) {
-      .navmenu ul {
+      .hero-navmenu ul {
         flex-direction: column;
+        gap: 1rem;
       }
       
       .hero h2 {
         font-size: 2rem;
       }
       
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .sitename {
+        font-size: 1.3rem;
+      }
+      
       .section {
         padding: 40px 0;
+        scroll-margin-top: 100px; /* Smaller offset for mobile */
       }
     }
+    #contact .section-header h2 {
+  color: var(--primary-color); 
+}
+
+#contact p {
+  font-size: 1.2rem;
+}
+
+#contact h4 {
+  color: var(--primary-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#contact ul li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+#contact .section-header {
+  margin-bottom: 1rem; /* Reduce from default 3rem */
+}
   </style>
 </head>
 
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0 text-decoration-none">
-        <h1 class="sitename">CodeHurry - Code Repository</h1>
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-center">
+      <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
+        <h1 class="sitename">CodeHurry<br>Save, Share, and Discover Multi-Language Code</h1>
       </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="https://codehurry.com">Home</a></li>
-          <li><a href="https://github.com/pkmedu/Explore/tree/main/SAS">SAS</a></li>
-          <li><a href="https://github.com/pkmedu/stata-complex-surveys">Stata</a></li>
-          <li><a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM">Python</a></li>
-          <li><a href="https://github.com/pkmedu/r-basics">R</a></li>
-          <li><a href="https://codehurry.com/dashboard.html">Dashboard</a></li>
-        </ul>
-      </nav>
-
     </div>
   </header>
 
@@ -292,9 +462,46 @@
     <section id="hero" class="hero section">
       <div class="container">
         <div class="row justify-content-center text-center">
-          <div class="col-xl-6 col-lg-8">
-            <h2>Powerful Coding Solutions With CodeHurry</h2>
-            <p>Software Programs and Dashboard Examples: SAS, Stata, Python, and R</p>
+          <div class="col-xl-8 col-lg-10">
+            <h2>Powerful Solutions</h2>
+            <p>Software-Centric Code Examples and Dashboards</p>
+            
+                  <!-- Navigation Menu -->
+            <nav id="navmenu" class="hero-navmenu navbar navbar-expand-lg">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                      <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><h6 class="dropdown-header">Site Navigation</h6></li>
+                        <li><a class="dropdown-item" href="#about">About CodeHurry</a></li>
+                        <li><a class="dropdown-item" href="#features">Features</a></li>
+                        <li><a class="dropdown-item" href="#languages">Programming Languages</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><h6 class="dropdown-header">Resources</h6></li>
+                        <li><a class="dropdown-item" href="https://codehurry.com">Main Homepage</a></li>
+                        <li><a class="dropdown-item" href="https://codehurry.com/dashboard.html">Interactive Dashboard</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><h6 class="dropdown-header">Information</h6></li>
+                        <li><a class="dropdown-item" href="#acknowledgements">Acknowledgements</a></li>
+                        <li><a class="dropdown-item" href="#disclaimer">Disclaimer</a></li>
+                        <li><a class="dropdown-item" href="#contact">Contact</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item"><a href="https://github.com/pkmedu/Explore/tree/main/SAS">SAS</a></li>
+                    <li><a href="https://github.com/pkmedu/Explore/tree/main/AnalyzeMEPS">SAS-SUDAAN</a></li>
+                    <li><a href="https://github.com/pkmedu/stata-complex-surveys">Stata</a></li>
+                    <li><a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM">Python</a></li>
+                    <li><a href="https://github.com/pkmedu/r-basics">R</a></li>
+                    <li><a href="https://codehurry.com/dashboard.html">Dashboard</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
           </div>
         </div>        
       </div>
@@ -315,9 +522,9 @@
               The example programs are open to everyone, from beginners to experts.
             </p>
             <ul>
-              <li><i class="bi bi-check2-all"></i> <span>Whether you're learning to code or building your next project, our example programs will help you.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>Choose an example program, review it, and demonstrate running it with your available software.</span></li>
-              <li><i class="bi bi-check2-all"></i> <span>We're dedicated to making programming accessible and enjoyable for anyone wanting to learn coding and web data extraction.</span></li>
+              <li>Whether you're learning to code or working on your next project, our example programs can be a valuable resource.</li>
+              <li>Choose an example program, review it, and demonstrate running it using your available software.</li>
+              <li>We are dedicated to making programming accessible and enjoyable for anyone who wants to learn coding and web data extraction.</li>
             </ul>
           </div>
         </div>
@@ -342,7 +549,7 @@
                 <i class="bi bi-code-square flex-shrink-0"></i>
                 <div>
                   <h4>Multi-Language Support</h4>
-                  <p>Access examples in SAS, Python, R, and Stata - all in one place.</p>
+                  <p>Code examples in SAS, Stata, Python, and R - all in one place.</p>
                 </div>
               </div>
 
@@ -371,7 +578,7 @@
     <section id="languages" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Programming Languages</h2>
+          <h2>Code Examples by Language</h2>
           <p>Explore our comprehensive collection of code examples</p>
         </div>
 
@@ -383,12 +590,25 @@
                   <i class="bi bi-bar-chart-line" style="font-size: 2rem; color: #007bff;"></i>
                 </div>
                 <h5 class="card-title">SAS</h5>
-                <p class="card-text">Statistical analysis and data management examples for SAS programming.</p>
+                <p class="card-text">DATA step, PROC steps (including PROC SQL, Complex Survey Analysis PROCs, and PROC IML), SAS Macro, and SASPy</p>
                 <a href="https://github.com/pkmedu/Explore/tree/main/SAS" class="btn btn-primary">View Examples</a>
               </div>
             </div>
           </div>
 
+         <div class="col-lg-3 col-md-6">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="icon mb-3">
+                <i class="bi bi-calculator" style="font-size: 2rem; color: #343a40;"></i>
+              </div>
+              <h5 class="card-title">SAS-SUDAAN</h5>
+              <p class="card-text">Medical Expenditure Panel Survey (MEPS) - Complex survey analysis</p>
+              <a href="https://github.com/pkmedu/Explore/tree/main/AnalyzeMEPS" class="btn" style="background-color: #343a40; color: white; border: 1px solid #343a40;">View Examples</a>
+            </div>
+          </div>
+        </div>  
+      
           <div class="col-lg-3 col-md-6">
             <div class="card h-100 text-center">
               <div class="card-body">
@@ -396,24 +616,26 @@
                   <i class="bi bi-calculator" style="font-size: 2rem; color: #28a745;"></i>
                 </div>
                 <h5 class="card-title">Stata</h5>
-                <p class="card-text">Complex survey analysis and statistical modeling with Stata.</p>
+                <p class="card-text">Complex survey analysis using MEPS and NHIS</p>
                 <a href="https://github.com/pkmedu/stata-complex-surveys" class="btn btn-success">View Examples</a>
               </div>
             </div>
           </div>
-
+       <!-- Force break to new line -->
+        <div class="w-100"></div>
           <div class="col-lg-3 col-md-6">
             <div class="card h-100 text-center">
               <div class="card-body">
-                <div class="icon mb-3">
-                  <i class="bi bi-code-slash" style="font-size: 2rem; color: #ffc107;"></i>
-                </div>
-                <h5 class="card-title">Python</h5>
-                <p class="card-text">Data science, machine learning, and business intelligence scripts.</p>
-                <a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM" class="btn btn-warning">View Examples</a>
-              </div>
-            </div>
-          </div>
+               <div class="icon mb-3">
+               <i class="bi bi-code-slash" style="font-size: 2rem; color: #ffc107;"></i>
+               </div>
+               <h5 class="card-title">Python</h5>
+              <p class="card-text">Data manipulation, and web data extraction</p>
+            <a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM" class="btn btn-warning">View Examples</a>
+    </div>
+  </div>
+</div>
+
 
           <div class="col-lg-3 col-md-6">
             <div class="card h-100 text-center">
@@ -422,7 +644,7 @@
                   <i class="bi bi-graph-up" style="font-size: 2rem; color: #dc3545;"></i>
                 </div>
                 <h5 class="card-title">R</h5>
-                <p class="card-text">Statistical computing and graphics programming fundamentals.</p>
+                <p class="card-text">Data Manipulation, statistical computing and graphics</p>
                 <a href="https://github.com/pkmedu/r-basics" class="btn btn-danger">View Examples</a>
               </div>
             </div>
@@ -461,9 +683,11 @@
                 <li><strong>BootstrapMade</strong> - For the GP template that serves as the foundation for this website design.</li>
 
                 <li><strong>Bootstrap Team</strong> - For the responsive framework that makes this site accessible across all devices.</li>
-              </ul>
               
+                <li><strong>GW Libraries & Academic Innovation (Max Turer, Senior Web Developer)</strong> - For website revision feedback and <!--[if !IE]><!--><!--<![endif]-->onsultation. </li>
+              </ul>
               <p>We also acknowledge the countless educators, researchers, and practitioners who contribute examples, documentation, and support to help others learn and grow in their programming journey.</p>
+            
             </div>
           </div>
         </div>
@@ -510,6 +734,40 @@
       </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="section light-background">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="content">
+              <h4>Get in Touch</h4>
+              <p>We'd love to hear from you! Whether you have questions about our code examples, suggestions for new content, or want to contribute to the CodeHurry community, feel free to reach out.</p>
+              
+              <h4>GitHub</h4>
+              <p>Visit our GitHub repository to explore code examples, report issues, or contribute to the project:</p>
+              <p><a href="https://github.com/pkmedu" class="btn btn-primary"><i class="bi bi-github"></i> Visit Our GitHub</a></p>
+              
+              <h4>Community Guidelines</h4>
+              <p>When reaching out or contributing, please keep in mind:</p>
+              <ul>
+                <li>Be respectful and constructive in all communications</li>
+                <li>Provide clear descriptions when reporting issues or suggesting improvements</li>
+                <li>Follow coding best practices when contributing examples</li>
+                <li>Help maintain the educational focus of our resources</li>
+              </ul>
+              
+              <h4>Contributing</h4>
+              <p>We welcome contributions from the community! If you have code examples in SAS, Stata, Python, or R that would benefit other learners, please consider contributing through our GitHub repositories.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer id="footer" class="footer">
@@ -534,6 +792,32 @@
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-</body>
+  <!-- Simple smooth scrolling for internal links -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add smooth scrolling to internal anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function (e) {
+          var href = this.getAttribute('href');
+          if (href && href !== '#' && href.length > 1) {
+            var target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              // Account for fixed header
+              var headerOffset = 140;
+              var elementPosition = target.offsetTop;
+              var offsetPosition = elementPosition - headerOffset;
+              
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
 
+</body>
 </html>
