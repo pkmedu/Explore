@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Components Demo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-bootstrap"></i> MyBootstrap Site
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-light py-5" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-primary">
+                        <i class="bi bi-bootstrap"></i> 
+                        Welcome to My Site
+                    </h1>
+                    <p class="lead mb-4">Built with Bootstrap 5 - featuring responsive design, modern components, and beautiful styling out of the box.</p>
+                    <div class="d-grid gap-2 d-md-flex">
+                        <button class="btn btn-primary btn-lg me-md-2" type="button">
+                            <i class="bi bi-play-circle"></i> Get Started
+                        </button>
+                        <button class="btn btn-outline-secondary btn-lg" type="button">
+                            <i class="bi bi-info-circle"></i> Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <i class="bi bi-laptop display-1 text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container my-5" id="about">
+        <div class="row text-center mb-5">
+            <div class="col">
+                <h2 class="display-5 fw-bold">Features</h2>
+                <p class="lead">Discover what makes our platform special</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-lightning-charge display-4 text-warning mb-3"></i>
+                        <h5 class="card-title">Fast Performance</h5>
+                        <p class="card-text">Lightning-fast loading times and optimized performance for the best user experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-shield-check display-4 text-success mb-3"></i>
+                        <h5 class="card-title">Secure & Reliable</h5>
+                        <p class="card-text">Built with security in mind, ensuring your data is safe and protected at all times.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="bi bi-phone display-4 text-info mb-3"></i>
+                        <h5 class="card-title">Mobile Responsive</h5>
+                        <p class="card-text">Perfect experience across all devices - desktop, tablet, and mobile phones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section with Tabs -->
+    <div class="bg-light py-5" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Our Services</h2>
+                    <p class="lead">Choose from our range of professional services</p>
+                </div>
+            </div>
+            
+            <ul class="nav nav-tabs justify-content-center mb-4" id="serviceTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab">
+                        <i class="bi bi-globe"></i> Web Development
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="mobile-tab" data-bs-toggle="tab" data-bs-target="#mobile" type="button" role="tab">
+                        <i class="bi bi-phone"></i> Mobile Apps
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="design-tab" data-bs-toggle="tab" data-bs-target="#design" type="button" role="tab">
+                        <i class="bi bi-palette"></i> UI/UX Design
+                    </button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="serviceTabContent">
+                <div class="tab-pane fade show active" id="web" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Professional Web Development</h4>
+                            <p>We create modern, responsive websites using the latest technologies including Bootstrap, React, and more.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Responsive Design</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> SEO Optimized</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Fast Loading</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-primary" role="alert">
+                                <i class="bi bi-info-circle"></i>
+                                <strong>Special Offer!</strong> Get 20% off your first web development project.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="mobile" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Mobile App Development</h4>
+                            <p>Native and cross-platform mobile applications that deliver exceptional user experiences.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> iOS & Android</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Cross-Platform</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> App Store Ready</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">95% Client Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="design" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>UI/UX Design Services</h4>
+                            <p>Beautiful, intuitive designs that enhance user experience and drive engagement.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success"></i> User Research</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Wireframing</li>
+                                <li><i class="bi bi-check-circle-fill text-success"></i> Prototyping</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="badge-group">
+                                <span class="badge bg-primary me-2">Figma</span>
+                                <span class="badge bg-success me-2">Adobe XD</span>
+                                <span class="badge bg-warning me-2">Sketch</span>
+                                <span class="badge bg-info">Photoshop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="container my-5" id="contact">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="bi bi-envelope"></i> Contact Us
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select class="form-select" id="subject">
+                                    <option selected>Choose...</option>
+                                    <option value="1">Web Development</option>
+                                    <option value="2">Mobile Apps</option>
+                                    <option value="3">UI/UX Design</option>
+                                    <option value="4">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter">
+                                <label class="form-check-label" for="newsletter">
+                                    Subscribe to our newsletter
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-send"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Example -->
+    <div class="container text-center my-5">
+        <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="bi bi-gift"></i> Show Special Offer
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <i class="bi bi-gift"></i> Special Offer
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="bi bi-percent display-1 text-success mb-3"></i>
+                        <h4>Get 30% Off Your First Project!</h4>
+                        <p>Limited time offer for new customers. Use code <code>BOOTSTRAP30</code> at checkout.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Claim Offer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-bootstrap"></i> MyBootstrap Site</h5>
+                    <p class="mb-0">Building amazing experiences with Bootstrap 5</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-github"></i></a>
+                    </div>
+                    <p class="mb-0 mt-2">&copy; 2025 MyBootstrap Site. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

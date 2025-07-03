@@ -64,7 +64,99 @@
       white-space: nowrap;
       text-align: center;
     }
-       
+
+/* Dropdown Menu Styling for Hero Navigation */
+.hero-navmenu {
+  margin-top: 2rem;
+}
+
+.hero-navmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-navmenu li {
+  position: relative;
+}
+
+.hero-navmenu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.hero-navmenu a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Dropdown styles - Bootstrap compatible */
+.hero-navmenu .dropdown {
+  position: relative;
+}
+
+.hero-navmenu .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  min-width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+}
+
+.hero-navmenu .dropdown-menu.show {
+  display: block;
+}
+
+.hero-navmenu .dropdown-header {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
+
+.hero-navmenu .dropdown-item {
+  color: var(--dark-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  font-size: 1rem;
+  text-decoration: none;
+  display: block;
+}
+
+.hero-navmenu .dropdown-item:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.hero-navmenu .dropdown-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.5rem 0;
+}
+
     .hero {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -73,37 +165,6 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .hero-navmenu {
-      margin-top: 2rem;
-    }
-
-    .hero-navmenu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .hero-navmenu a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.2rem;
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-
-    .hero-navmenu a:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: translateY(-2px);
     }
     
     .hero::before {
@@ -324,6 +385,16 @@
       margin-top: 2rem;
     }
     
+    /* Smooth scrolling and offset for fixed header */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Add padding-top to sections to account for fixed header */
+    .section {
+      scroll-margin-top: 140px; /* Adjust based on header height */
+    }
+    
     @media (max-width: 768px) {
       .hero-navmenu ul {
         flex-direction: column;
@@ -344,6 +415,7 @@
       
       .section {
         padding: 40px 0;
+        scroll-margin-top: 100px; /* Smaller offset for mobile */
       }
     }
     #contact .section-header h2 {
@@ -391,17 +463,38 @@
             <h2>Powerful Solutions</h2>
             <p>SAS, Stata, Python, and R Code Examples and Dashboard</p>
             
-            <!-- Navigation Menu -->
-            <nav id="navmenu" class="hero-navmenu">
-              <ul>
-                <li><a href="https://codehurry.com">Home</a></li>
-                <li><a href="https://github.com/pkmedu/Explore/tree/main/SAS">SAS</a></li>
-                <li><a href="https://github.com/pkmedu/stata-complex-surveys">Stata</a></li>
-                <li><a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM">Python</a></li>
-                <li><a href="https://github.com/pkmedu/r-basics">R</a></li>
-                <li><a href="https://codehurry.com/dashboard.html">Dashboard</a></li>
-              </ul>
-            </nav>
+      <!-- Navigation Menu -->
+<nav id="navmenu" class="hero-navmenu">
+  <ul>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Home <i class="bi bi-chevron-down"></i>
+      </a>
+      <ul class="dropdown-menu">
+        <li><h6 class="dropdown-header">Site Navigation</h6></li>
+        <li><a class="dropdown-item" href="#about">About CodeHurry</a></li>
+        <li><a class="dropdown-item" href="#features">Features</a></li>
+        <li><a class="dropdown-item" href="#languages">Programming Languages</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><h6 class="dropdown-header">Resources</h6></li>
+        <li><a class="dropdown-item" href="https://codehurry.com">Main Homepage</a></li>
+        <li><a class="dropdown-item" href="https://codehurry.com/dashboard.html">Interactive Dashboard</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><h6 class="dropdown-header">Information</h6></li>
+        <li><a class="dropdown-item" href="#acknowledgements">Acknowledgements</a></li>
+        <li><a class="dropdown-item" href="#disclaimer">Disclaimer</a></li>
+        <li><a class="dropdown-item" href="#contact">Contact</a></li>
+      </ul>
+    </li>
+    <li><a href="https://github.com/pkmedu/Explore/tree/main/SAS">SAS</a></li>
+    <li><a href="https://github.com/pkmedu/stata-complex-surveys">Stata</a></li>
+    <li><a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM">Python</a></li>
+    <li><a href="https://github.com/pkmedu/r-basics">R</a></li>
+    <li><a href="https://codehurry.com/dashboard.html">Dashboard</a></li>
+  </ul>
+</nav>
+
+            
           </div>
         </div>        
       </div>
@@ -616,39 +709,41 @@
         </div>
       </div>
     </section>
-<!-- Contact Section -->
-<section id="contact" class="section light-background">
-  <div class="container">
-    <div class="section-header">
-      <h2>Contact</h2>
-    </div>
-    
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="content">
-          <h4>Get in Touch</h4>
-          <p>We'd love to hear from you! Whether you have questions about our code examples, suggestions for new content, or want to contribute to the CodeHurry community, feel free to reach out.</p>
-          
-          <h4>GitHub</h4>
-          <p>Visit our GitHub repository to explore code examples, report issues, or contribute to the project:</p>
-          <p><a href="https://github.com/pkmedu" class="btn btn-primary"><i class="bi bi-github"></i> Visit Our GitHub</a></p>
-          
-          <h4>Community Guidelines</h4>
-          <p>When reaching out or contributing, please keep in mind:</p>
-          <ul>
-            <li>Be respectful and constructive in all communications</li>
-            <li>Provide clear descriptions when reporting issues or suggesting improvements</li>
-            <li>Follow coding best practices when contributing examples</li>
-            <li>Help maintain the educational focus of our resources</li>
-          </ul>
-          
-          <h4>Contributing</h4>
-          <p>We welcome contributions from the community! If you have code examples in SAS, Stata, Python, or R that would benefit other learners, please consider contributing through our GitHub repositories.</p>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section light-background">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="content">
+              <h4>Get in Touch</h4>
+              <p>We'd love to hear from you! Whether you have questions about our code examples, suggestions for new content, or want to contribute to the CodeHurry community, feel free to reach out.</p>
+              
+              <h4>GitHub</h4>
+              <p>Visit our GitHub repository to explore code examples, report issues, or contribute to the project:</p>
+              <p><a href="https://github.com/pkmedu" class="btn btn-primary"><i class="bi bi-github"></i> Visit Our GitHub</a></p>
+              
+              <h4>Community Guidelines</h4>
+              <p>When reaching out or contributing, please keep in mind:</p>
+              <ul>
+                <li>Be respectful and constructive in all communications</li>
+                <li>Provide clear descriptions when reporting issues or suggesting improvements</li>
+                <li>Follow coding best practices when contributing examples</li>
+                <li>Help maintain the educational focus of our resources</li>
+              </ul>
+              
+              <h4>Contributing</h4>
+              <p>We welcome contributions from the community! If you have code examples in SAS, Stata, Python, or R that would benefit other learners, please consider contributing through our GitHub repositories.</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
   </main>
 
   <footer id="footer" class="footer">
@@ -673,6 +768,32 @@
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-</body>
+  <!-- Simple smooth scrolling for internal links -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add smooth scrolling to internal anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function (e) {
+          var href = this.getAttribute('href');
+          if (href && href !== '#' && href.length > 1) {
+            var target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              // Account for fixed header
+              var headerOffset = 140;
+              var elementPosition = target.offsetTop;
+              var offsetPosition = elementPosition - headerOffset;
+              
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+    });
+  </script>
 
+</body>
 </html>

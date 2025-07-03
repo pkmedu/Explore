@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free code examples and tutorials for SAS, Stata, Python, and R. Open source programming resources for beginners to experts.">
+  <title>CodeHurry - Code Repository for SAS, Stata, Python, and R</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --success-color: #28a745;
+      --warning-color: #ffc107;
+      --danger-color: #dc3545;
+      --dark-color: #343a40;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+    
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 2rem 0;
+    }
+
+    .header .container-fluid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {
+      margin: 0;
+    }
+    
+    .sitename {
+      color: var(--primary-color);
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    /* Simple navigation menu */
+    .hero-navmenu {
+      margin-top: 2rem;
+    }
+
+    .hero-navmenu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-navmenu li {
+      position: relative;
+    }
+
+    .hero-navmenu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .hero-navmenu a:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Simple dropdown menu - hover based */
+    .hero-navmenu .dropdown {
+      position: relative;
+    }
+
+    .hero-navmenu .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: none;
+      border-radius: 15px;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      min-width: 280px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      z-index: 1050;
+      display: none;
+    }
+
+    .hero-navmenu .dropdown-menu.show {
+      display: block;
+    }
+
+    .hero-navmenu .dropdown-header {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      margin: 0;
+    }
+
+    .hero-navmenu .dropdown-item {
+      color: var(--dark-color);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      font-size: 1rem;
+      text-decoration: none;
+      display: block;
+    }
+
+    .hero-navmenu .dropdown-item:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .hero-navmenu .dropdown-divider {
+      border: none;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      margin: 0.5rem 0;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 180px 0 80px;
+      margin-top: 120px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    
+    .hero p {
+      font-size: 2rem;
+      opacity: 0.9;
+      white-space: nowrap;
+    }
+    
+    .section {
+      padding: 60px 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--dark-color);
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      font-size: 1.2rem;
+    }
+
+    #languages .section-header h2 {
+      color: var(--primary-color);
+    }
+
+    #acknowledgements .section-header h2 {
+      color: var(--primary-color);
+    }
+
+    #disclaimer .section-header h2 {
+      color: var(--primary-color); 
+    }
+
+    #contact .section-header h2 {
+      color: var(--primary-color); 
+    }
+
+    .about .content h3 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .about .fst-italic {
+      font-style: normal !important;
+      font-size: 1.2rem;
+    }
+
+    .about ul {
+      list-style-type: disc !important;
+      padding-left: 1.5rem;
+    }
+
+    .about ul li {
+      list-style: disc !important;
+      display: list-item !important;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    #features {
+      padding-bottom: 30px;
+    }
+
+    .features .content h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    .feature-item {
+      margin-bottom: 1rem;
+      padding: .8rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-item i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-right: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .feature-item p {
+      font-size: 1.2rem;
+    }
+
+    .features .content > p {
+      font-size: 1.2rem;
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-body {
+      padding: 2rem;
+    }
+
+    #languages .card-text {
+      font-size: 1.2rem;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(0, 123, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+    }
+    
+    .btn {
+      border-radius: 25px;
+      padding: 0.5rem 2rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .light-background {
+      background-color: #f8f9fa;
+    }
+    
+    .acknowledgement-list li {
+      margin-bottom: 1rem;
+      padding: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+    
+    .alert {
+      border-radius: 10px;
+      border: none;
+    }
+    
+    .footer {
+      background: var(--dark-color);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+    
+    .footer h3 {
+      color: var(--primary-color);
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      margin-left: 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--primary-color);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      margin-top: 2rem;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .section {
+      scroll-margin-top: 140px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-navmenu ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .hero h2 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .sitename {
+        font-size: 1.3rem;
+      }
+      
+      .section {
+        padding: 40px 0;
+        scroll-margin-top: 100px;
+      }
+    }
+
+    #contact p, #acknowledgements .content p, #disclaimer p {
+      font-size: 1.2rem;
+    }
+
+    #contact h4 {
+      color: var(--primary-color);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    #contact ul li {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #contact .section-header {
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-center">
+      <a href="#hero" class="logo d-flex align-items-center text-decoration-none">
+        <h1 class="sitename">CodeHurry<br>A Multi-Language Code Repository</h1>
+      </a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-xl-8 col-lg-10">
+            <h2>Powerful Solutions</h2>
+            <p>SAS, Stata, Python, and R Code Examples and Dashboard</p>
+            
+                <!-- Navigation Menu -->
+            <nav id="navmenu" class="hero-navmenu">
+              <ul>
+                <li style="position: relative;">
+                  <a href="#" onclick="showHideMenu(); return false;" style="cursor: pointer;">
+                    Home <i class="bi bi-chevron-down"></i>
+                  </a>
+                  <ul id="mainDropdown" style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: white; border-radius: 15px; padding: 1rem; min-width: 280px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); z-index: 9999; display: none; list-style: none; margin: 0;">
+                    <li style="padding: 0.5rem 1rem; color: #007bff; font-weight: 600; border-bottom: 1px solid #eee; margin-bottom: 0.5rem;">Site Navigation</li>
+                    <li><a href="#about" onclick="hideMenu()" style="display: block; padding: 0.5rem 1rem; color: #343a40; text-decoration: none; border-radius: 8px;" onmouseover="this.style.background='#007bff'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#343a40'">About CodeHurry</a></li>
+                    <li><a href="#features" onclick="hideMenu()" style="display: block; padding: 0.5rem 1rem; color: #343a40; text-decoration: none; border-radius: 8px;" onmouseover="this.style.background='#007bff'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#343a40'">Features</a></li>
+                    <li><a href="#languages" onclick="hideMenu()" style="display: block; padding: 0.5rem 1rem; color: #343a40; text-decoration: none; border-radius: 8px;" onmouseover="this.style.background='#007bff'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#343a40'">Programming Languages</a></li>
+                    <li style="border-top: 1px solid #eee; margin: 0.5rem 0; padding-top: 0.5rem; padding-bottom: 0;"></li>
+                    <li style="padding: 0.5rem 1rem; color: #007bff; font-weight: 600;">Resources</li>
+                    <li><a href="https://codehurry.com" style="display: block; padding: 0.5rem 1rem; color: #343a40; text-decoration: none; border-radius: 8px;" onmouseover="this.style.background='#007bff'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#343a40'">Main Homepage</a></li>
+                    <li><a href="https://codehurry.com/dashboard.html" style="display: block; padding: 0.5rem 1rem; color: #343a40; text-decoration: none; border-radius: 8px;" onmouseover="this.style.background='#007bff'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#343a40'">Interactive Dashboard</a></li>
+                    <li style="border-top: 1px solid #eee; margin: 0.5rem 0; padding-top: 0.5rem; padding-bottom: 0;"></li>
+                    <li style="padding: 0.5rem 1rem; color: #007bff; font-weight: 600;">Information</li>
+                    <li><a href="#acknowledgements" onclick="hideMenu()" style="display: block; padding: 0.5rem 1rem; color: #343a40; text-decoration: none; border-radius: 8px;" onmouseover="this.style.background='#007bff'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#343a40'">Acknowledgements</a></li>
+                    <li><a href="#disclaimer" onclick="hideMenu()" style="display: block; padding: 0.5rem 1rem; color: #343a40; text-decoration: none; border-radius: 8px;" onmouseover="this.style.background='#007bff'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#343a40'">Disclaimer</a></li>
+                    <li><a href="#contact" onclick="hideMenu()" style="display: block; padding: 0.5rem 1rem; color: #343a40; text-decoration: none; border-radius: 8px;" onmouseover="this.style.background='#007bff'; this.style.color='white'" onmouseout="this.style.background='transparent'; this.style.color='#343a40'">Contact</a></li>
+                  </ul>
+                </li>
+                <li><a href="https://github.com/pkmedu/Explore/tree/main/SAS">SAS</a></li>
+                <li><a href="https://github.com/pkmedu/stata-complex-surveys">Stata</a></li>
+                <li><a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM">Python</a></li>
+                <li><a href="https://github.com/pkmedu/r-basics">R</a></li>
+                <li><a href="https://codehurry.com/dashboard.html">Dashboard</a></li>
+              </ul>
+            </nav>
+            
+          </div>
+        </div>        
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div class="bg-light rounded p-4 text-center" style="height: 300px; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-code-square" style="font-size: 6rem; color: var(--primary-color);"></i>
+            </div>
+          </div>
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>Empowering the Future of Coding</h3>
+            <p class="fst-italic">
+              The example programs are open to everyone, from beginners to experts.
+            </p>
+            <ul>
+              <li>Whether you're learning to code or working on your next project, our example programs can be a valuable resource.</li>
+              <li>Choose an example program, review it, and demonstrate running it using your available software.</li>
+              <li>We are dedicated to making programming accessible and enjoyable for anyone who wants to learn coding and web data extraction.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features section light-background">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="features-image col-lg-6">
+            <div class="bg-white rounded p-4 text-center" style="height: 400px; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-laptop" style="font-size: 8rem; color: var(--primary-color);"></i>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="content">
+              <h3>Why Choose CodeHurry?</h3>
+              <p>Our comprehensive collection of programming examples across multiple languages provides you with the tools you need to succeed.</p>
+              
+              <div class="feature-item d-flex">
+                <i class="bi bi-code-square flex-shrink-0"></i>
+                <div>
+                  <h4>Multi-Language Support</h4>
+                  <p>Code examples in SAS, Stata, Python, and R - all in one place.</p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex">
+                <i class="bi bi-book flex-shrink-0"></i>
+                <div>
+                  <h4>Learning Resources</h4>
+                  <p>From basic syntax to advanced techniques, find examples for every skill level.</p>
+                </div>
+              </div>
+
+              <div class="feature-item d-flex">
+                <i class="bi bi-github flex-shrink-0"></i>
+                <div>
+                  <h4>Open Source</h4>
+                  <p>All code examples are freely available on GitHub for learning and collaboration.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programming Languages Section -->
+    <section id="languages" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Code Examples by Language</h2>
+          <p>Explore our comprehensive collection of code examples</p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="icon mb-3">
+                  <i class="bi bi-bar-chart-line" style="font-size: 2rem; color: #007bff;"></i>
+                </div>
+                <h5 class="card-title">SAS</h5>
+                <p class="card-text">DATA step, PROC steps (including PROC SQL, Complex Survey Analysis PROCs, and PROC IML), SAS Macro, and SASPy</p>
+                <a href="https://github.com/pkmedu/Explore/tree/main/SAS" class="btn btn-primary">View Examples</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="icon mb-3">
+                  <i class="bi bi-calculator" style="font-size: 2rem; color: #28a745;"></i>
+                </div>
+                <h5 class="card-title">Stata</h5>
+                <p class="card-text">Complex survey analysis and statistical modeling</p>
+                <a href="https://github.com/pkmedu/stata-complex-surveys" class="btn btn-success">View Examples</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="icon mb-3">
+                  <i class="bi bi-code-slash" style="font-size: 2rem; color: #ffc107;"></i>
+                </div>
+                <h5 class="card-title">Python</h5>
+                <p class="card-text">Data manipulation, and web data extraction</p>
+                <a href="https://github.com/pkmedu/Explore/tree/main/PythonScriptsBDM" class="btn btn-warning">View Examples</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="icon mb-3">
+                  <i class="bi bi-graph-up" style="font-size: 2rem; color: #dc3545;"></i>
+                </div>
+                <h5 class="card-title">R</h5>
+                <p class="card-text">Data Manipulation, statistical computing and graphics</p>
+                <a href="https://github.com/pkmedu/r-basics" class="btn btn-danger">View Examples</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acknowledgements Section -->
+    <section id="acknowledgements" class="section light-background">
+      <div class="container">
+        <div class="section-header">
+          <h2>Acknowledgements</h2>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="content">
+              <p>We extend our heartfelt gratitude to the open source community and the developers who have contributed to making programming knowledge accessible to all. Special thanks to:</p>
+              
+              <ul class="acknowledgement-list">
+                <li><strong>SAS Institute Inc.</strong> - For providing comprehensive documentation and resources that help users understand statistical analysis and data management.</li>
+                <li><strong>StataCorp LLC</strong> - For their excellent documentation and community support that enables complex survey analysis and statistical modeling.</li>
+                <li><strong>Python Software Foundation</strong> - For maintaining Python and its extensive ecosystem that powers data science and machine learning applications worldwide.</li>
+                <li><strong>The R Foundation</strong> - For developing and maintaining R, the premier language for statistical computing and graphics.</li>
+                <li><strong>GitHub</strong> - For providing the platform that enables us to share these resources freely with the global programming community.</li>
+                <li><strong>Claude.ai (Anthropic)</strong> - For assistance in website development, code optimization, and content creation that helped bring this platform to life.</li>
+                <li><strong>YouTube Content Creators</strong> - For the educational videos that inspired and informed many of our Python programming examples, particularly those involving video link extraction and data processing techniques.</li>
+                <li><strong>BootstrapMade</strong> - For the GP template that serves as the foundation for this website design.</li>
+                <li><strong>Bootstrap Team</strong> - For the responsive framework that makes this site accessible across all devices.</li>
+              </ul>
+              
+              <p>We also acknowledge the countless educators, researchers, and practitioners who contribute examples, documentation, and support to help others learn and grow in their programming journey.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer Section -->
+    <section id="disclaimer" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Disclaimer</h2>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="content">
+              <div class="alert alert-warning" role="alert">
+                <h5><i class="bi bi-exclamation-triangle"></i> Important Notice</h5>
+              </div>
+              
+              <h4>Educational Purpose</h4>
+              <p>The code examples and tutorials provided on CodeHurry are intended for educational and learning purposes only. While we strive to ensure accuracy and best practices, users should verify and test all code in their specific environments before implementation.</p>
+              
+              <h4>No Warranty</h4>
+              <p>The information, code examples, and resources are provided "as is" without any warranty of any kind, either express or implied. We do not guarantee the accuracy, completeness, or reliability of any content provided.</p>
+              
+              <h4>Software Licenses</h4>
+              <p>Users are responsible for ensuring they have appropriate licenses for any commercial software (SAS, Stata, etc.) before running the provided examples. Please respect the terms and conditions of each software vendor.</p>
+              
+              <h4>Data Privacy and Security</h4>
+              <p>When working with data, always ensure compliance with applicable data protection regulations (GDPR, HIPAA, etc.). Never use real sensitive or personal data when testing example code.</p>
+              
+              <h4>Professional Advice</h4>
+              <p>The examples provided should not be considered as professional statistical, financial, or technical advice. For critical applications, please consult with qualified professionals in the relevant field.</p>
+              
+              <h4>External Links</h4>
+              <p>CodeHurry contains links to external sites and repositories. We are not responsible for the content or availability of external websites.</p>
+              
+              <h4>Limitation of Liability</h4>
+              <p>In no event shall CodeHurry or its contributors be liable for any direct, indirect, incidental, special, or consequential damages arising from the use of this website or its content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section light-background">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+        </div>
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="content">
+              <h4>Get in Touch</h4>
+              <p>We'd love to hear from you! Whether you have questions about our code examples, suggestions for new content, or want to contribute to the CodeHurry community, feel free to reach out.</p>
+              
+              <h4>GitHub</h4>
+              <p>Visit our GitHub repository to explore code examples, report issues, or contribute to the project:</p>
+              <p><a href="https://github.com/pkmedu" class="btn btn-primary"><i class="bi bi-github"></i> Visit Our GitHub</a></p>
+              
+              <h4>Community Guidelines</h4>
+              <p>When reaching out or contributing, please keep in mind:</p>
+              <ul>
+                <li>Be respectful and constructive in all communications</li>
+                <li>Provide clear descriptions when reporting issues or suggesting improvements</li>
+                <li>Follow coding best practices when contributing examples</li>
+                <li>Help maintain the educational focus of our resources</li>
+              </ul>
+              
+              <h4>Contributing</h4>
+              <p>We welcome contributions from the community! If you have code examples in SAS, Stata, Python, or R that would benefit other learners, please consider contributing through our GitHub repositories.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-6">
+          <h3 class="sitename">CodeHurry</h3>
+          <p>Empowering developers with comprehensive programming resources across multiple languages.</p>
+        </div>
+        <div class="col-lg-6 text-lg-end">
+          <div class="social-links">
+            <a href="https://github.com/pkmedu" class="github"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="container copyright text-center mt-4">
+        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">CodeHurry</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Ultra-simple dropdown script -->
+  <script>
+    function showHideMenu() {
+      var menu = document.getElementById('mainDropdown');
+      if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'block';
+      }
+    }
+
+    function hideMenu() {
+      document.getElementById('mainDropdown').style.display = 'none';
+    }
+
+    // Close when clicking outside
+    document.onclick = function(event) {
+      var menu = document.getElementById('mainDropdown');
+      var homeLink = event.target.closest('a[onclick*="showHideMenu"]');
+      
+      if (!homeLink && !menu.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    };
+  </script>
+
+</body>
+</html>
