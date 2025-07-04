@@ -15,7 +15,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
-    /* CSS Variables for consistent theming */
     :root {
       --primary-color: #007bff;
       --secondary-color: #6c757d;
@@ -25,7 +24,6 @@
       --dark-color: #343a40;
     }
     
-    /* Base typography */
     body {
       font-family: 'Roboto', sans-serif;
       line-height: 1.6;
@@ -36,7 +34,6 @@
       font-weight: 600;
     }
     
-    /* Fixed header styling with glassmorphism effect */
     .header {
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
@@ -55,7 +52,6 @@
       justify-content: center;
     }
 
-    /* Logo and site name styling */
     .logo {
       margin: 0;
     }
@@ -69,7 +65,7 @@
       text-align: center;
     }
 
-/* Hero section navigation dropdown styling */
+/* Dropdown Menu Styling for Hero Navigation */
 #hero {
   overflow: visible;
 }
@@ -90,7 +86,6 @@
   position: relative;
 }
 
-/* Navigation buttons with glassmorphism */
 .hero-navmenu a,
 .hero-navmenu button {
   color: white;
@@ -110,7 +105,7 @@
   transform: translateY(-2px);
 }
 
-/* Dropdown menu styling */
+/* Dropdown styles - Bootstrap compatible */
 .hero-navmenu .dropdown {
   position: relative;
 }
@@ -165,7 +160,6 @@
   margin: 0.5rem 0;
 }
 
-    /* Hero section with gradient background and grid overlay */
     .hero {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -176,7 +170,6 @@
       overflow: hidden;
     }
     
-    /* Grid pattern overlay for hero section */
     .hero::before {
       content: '';
       position: absolute;
@@ -193,7 +186,6 @@
       z-index: 1;
     }
 
-    /* Hero typography */
     .hero h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
@@ -207,12 +199,10 @@
       white-space: nowrap;
     }
     
-    /* General section styling */
     .section {
       padding: 60px 0;
     }
     
-    /* Section header styling */
     .section-header {
       text-align: center;
       margin-bottom: 3rem;
@@ -227,8 +217,6 @@
     .section-header p {
       font-size: 1.2rem;
     }
-
-/* Specific section header colors */
 #languages .section-header h2 {
   color: var(--primary-color);
 }
@@ -239,7 +227,6 @@
   color: var(--primary-color); 
 }
 
-    /* About section styling */
     .about .content h3 {
       color: var(--primary-color);
       font-size: 2rem;
@@ -269,7 +256,6 @@
       display: none;
     }
     
-    /* Features section spacing */
     #features {
   padding-bottom: 30px; /* Reduce from default 60px */
    }
@@ -278,7 +264,6 @@
       margin-bottom: 1rem;
     }
     
-    /* Feature item styling with hover effects */
     .feature-item {
       margin-bottom: 1rem;
       padding: .8rem;
@@ -306,7 +291,6 @@
       font-size: 1.2rem;
     }
 
-    /* Acknowledgements section typography */
     #acknowledgements .content p {
       font-size: 1.2rem;
     }
@@ -315,12 +299,10 @@
       font-size: 1.2rem;
     }
 
-    /* Disclaimer section typography */
     #disclaimer p {
       font-size: 1.2rem;
     }
 
-    /* Card styling with hover effects */
     .card {
       border: none;
       border-radius: 15px;
@@ -342,7 +324,6 @@
       font-size: 1.2rem;
     }
 
-    /* Icon styling for cards */
     .icon {
       width: 80px;
       height: 80px;
@@ -354,7 +335,6 @@
       margin: 0 auto;
     }
     
-    /* Button styling with hover effects */
     .btn {
       border-radius: 25px;
       padding: 0.5rem 2rem;
@@ -367,24 +347,20 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
     
-    /* Light background sections */
     .light-background {
       background-color: #f8f9fa;
     }
     
-    /* Acknowledgement list styling */
     .acknowledgement-list li {
       margin-bottom: 1rem;
       padding: 0.5rem 0;
     }
     
-    /* Alert styling */
     .alert {
       border-radius: 10px;
       border: none;
     }
     
-    /* Footer styling */
     .footer {
       background: var(--dark-color);
       color: white;
@@ -395,7 +371,6 @@
       color: var(--primary-color);
     }
     
-    /* Social links styling */
     .social-links a {
       color: white;
       font-size: 1.5rem;
@@ -407,7 +382,6 @@
       color: var(--primary-color);
     }
     
-    /* Copyright section */
     .copyright {
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 2rem;
@@ -424,7 +398,6 @@
       scroll-margin-top: 140px; /* Adjust based on header height */
     }
     
-    /* Mobile responsiveness */
     @media (max-width: 768px) {
       .hero-navmenu ul {
         flex-direction: column;
@@ -448,9 +421,7 @@
         scroll-margin-top: 100px; /* Smaller offset for mobile */
       }
     }
-    
-/* Contact section styling */
-#contact .section-header h2 {
+    #contact .section-header h2 {
   color: var(--primary-color); 
 }
 
@@ -477,7 +448,6 @@
 
 <body class="index-page">
 
-  <!-- Fixed header with site branding -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-center">
       <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
@@ -488,7 +458,7 @@
 
   <main class="main">
 
-    <!-- Hero Section with navigation and main branding -->
+    <!-- Hero Section -->
     <section id="hero" class="hero section">
       <div class="container">
         <div class="row justify-content-center text-center">
@@ -496,13 +466,12 @@
             <h2>Powerful Solutions</h2>
             <p>Software-Centric Code Examples and Dashboards</p>
             
-            <!-- Main Navigation Menu with dropdown -->
+                  <!-- Navigation Menu -->
             <nav id="navmenu" class="hero-navmenu navbar navbar-expand-lg">
               <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul class="navbar-nav">
-                    <!-- Categories dropdown menu -->
                     <li class="nav-item dropdown">
                       <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         Categories
@@ -523,7 +492,6 @@
                         <li><a class="dropdown-item" href="#contact">Contact</a></li>
                       </ul>
                     </li>
-                    <!-- Direct language links -->
                     <li class="nav-item"><a href="https://github.com/pkmedu/Explore/tree/main/SAS">SAS</a></li>
                     <li><a href="https://github.com/pkmedu/Explore/tree/main/AnalyzeMEPS">SUDAAN</a></li>
                     <li><a href="https://github.com/pkmedu/stata-complex-surveys">Stata</a></li>
@@ -540,17 +508,15 @@
       </div>
     </section>
 
-    <!-- About Section - Introduction to CodeHurry -->
+    <!-- About Section -->
     <section id="about" class="about section">
       <div class="container">
         <div class="row gy-4">
-          <!-- Visual element -->
           <div class="col-lg-6 order-1 order-lg-2">
             <div class="bg-light rounded p-4 text-center" style="height: 300px; display: flex; align-items: center; justify-content: center;">
               <i class="bi bi-code-square" style="font-size: 6rem; color: var(--primary-color);"></i>
             </div>
           </div>
-          <!-- About content -->
           <div class="col-lg-6 order-2 order-lg-1 content">
             <h3>Empowering the Future of Coding</h3>
             <p class="fst-italic">
@@ -566,23 +532,20 @@
       </div>
     </section>
 
-    <!-- Features Section - Why choose CodeHurry -->
+    <!-- Features Section -->
     <section id="features" class="features section light-background">
       <div class="container">
         <div class="row gy-4">
-          <!-- Features visual element -->
           <div class="features-image col-lg-6">
             <div class="bg-white rounded p-4 text-center" style="height: 400px; display: flex; align-items: center; justify-content: center;">
               <i class="bi bi-laptop" style="font-size: 8rem; color: var(--primary-color);"></i>
             </div>
           </div>
-          <!-- Features content -->
           <div class="col-lg-6">
             <div class="content">
               <h3>Why Choose CodeHurry?</h3>
               <p>Our comprehensive collection of programming examples across multiple languages provides you with the tools you need to succeed.</p>
               
-              <!-- Multi-Language Support feature -->
               <div class="feature-item d-flex">
                 <i class="bi bi-code-square flex-shrink-0"></i>
                 <div>
@@ -591,7 +554,6 @@
                 </div>
               </div>
 
-              <!-- Learning Resources feature -->
               <div class="feature-item d-flex">
                 <i class="bi bi-book flex-shrink-0"></i>
                 <div>
@@ -600,7 +562,6 @@
                 </div>
               </div>
 
-              <!-- Open Source feature -->
               <div class="feature-item d-flex">
                 <i class="bi bi-github flex-shrink-0"></i>
                 <div>
@@ -614,21 +575,22 @@
       </div>
     </section>
 
-    <!-- Programming Languages Section - Showcase of supported languages -->
+    <!-- Programming Languages Section -->
     <section id="languages" class="section">
       <div class="container">
         <div class="section-header">
           <h2>Code Examples by Language</h2>
           <p>Explore our comprehensive collection of code examples</p>
         </div>
-
-        <div class="row gy-4">
-          <!-- SAS Programming Language Card -->
+        <div class="row gy-4 justify-content-center">
+          <!-- SAS Card -->
           <div class="col-lg-3 col-md-6">
             <div class="card h-100 text-center">
               <div class="card-body">
                 <div class="icon mb-3">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/SAS_logo_horiz.svg" alt="SAS Logo" style="width: 64px; height: 64px; object-fit: contain;">
+                  <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #0066cc, #004499); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 8px rgba(0,102,204,0.3);">
+                    SAS
+                  </div>
                 </div>
                 <h5 class="card-title">SAS</h5>
                 <p class="card-text">DATA step, PROC steps (including PROC SQL, Complex Survey Analysis PROCs, and PROC IML), SAS Macro, and SASPy</p>
@@ -637,48 +599,49 @@
             </div>
           </div>
 
-         <!-- SUDAAN Programming Language Card -->
+          <!-- SUDAAN Card -->
           <div class="col-lg-3 col-md-6">
             <div class="card h-100 text-center">
               <div class="card-body">
                 <div class="icon mb-3">
-                  <div style="width: 64px; height: 64px; background-color: #ced4da; color: #343a40; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; border-radius: 8px; margin: 0 auto;">
+                  <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #343a40, #495057); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 8px rgba(52,58,64,0.3);">
                     SUDAAN
                   </div>
                 </div>
                 <h5 class="card-title">SUDAAN</h5>
-                <p class="card-text">Examples using SUDAAN for analyzing MEPS data with complex survey design adjustments.</p>
-                <a href="https://github.com/pkmedu/Explore/tree/main/AnalyzeMEPS" class="btn" style="background-color: #ced4da; color: #343a40; border: 1px solid #adb5bd;">View Examples</a>
+                <p class="card-text">Medical Expenditure Panel Survey (MEPS) - Complex survey analysis</p>
+                <a href="https://github.com/pkmedu/Explore/tree/main/AnalyzeMEPS" class="btn" style="background-color: #343a40; color: white; border: 1px solid #343a40;">View Examples</a>
               </div>
             </div>
           </div>
 
-
-      
-        <!-- Stata Programming Language Card -->
-        <div class="col-lg-3 col-md-6">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <div class="icon mb-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Stata_Logo.svg" alt="Stata Logo" style="width: 64px; height: 64px; object-fit: contain;">
-              </div>
-              <h5 class="card-title">Stata</h5>
-              <p class="card-text">Complex survey analysis using MEPS and NHIS</p>
-              <a href="https://github.com/pkmedu/stata-complex-surveys" class="btn btn-success">View Examples</a>
-            </div>
-          </div>
-        </div>
-          
-          
-          <!-- Force break to new line for layout -->
-          <div class="w-100"></div>
-          
-          <!-- Python Programming Language Card -->
+          <!-- Stata Card -->
           <div class="col-lg-3 col-md-6">
             <div class="card h-100 text-center">
               <div class="card-body">
                 <div class="icon mb-3">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo" style="width: 64px; height: 64px; object-fit: contain;">
+                  <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #28a745, #20c997); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 8px rgba(40,167,69,0.3);">
+                    Stata
+                  </div>
+                </div>
+                <h5 class="card-title">Stata</h5>
+                <p class="card-text">Complex survey analysis using MEPS and NHIS</p>
+                <a href="https://github.com/pkmedu/stata-complex-surveys" class="btn btn-success">View Examples</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Python Card -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="icon mb-3">
+                  <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #3776ab, #ffd43b); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 8px rgba(55,118,171,0.3); position: relative;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.26-.02.2-.01h4.22l.97-.07.89-.2.8-.33.7-.45.58-.57.48-.67.37-.77.26-.87.14-.96.05-1.05-.02-.92-.1-.8-.15-.66-.2-.52-.27-.37-.31-.23-.33-.1-.35.01-.32.05-.24.08-.17.09-.1.08-.04.07-.02.07.18-.02z"/>
+                      <path d="M9.75 23.82l-.9-.2-.73-.26-.59-.3-.45-.32-.34-.34-.25-.34-.16-.33-.1-.3-.04-.26-.02-.2.01-.13V15.5l.05-.63.13-.55.21-.46.26-.38.3-.31.33-.25.35-.19.35-.14.33-.1.3-.07.26-.04.21-.02h5.53l.69-.05.59-.14.5-.22.41-.27.33-.32.27-.35.2-.36.15-.37.1-.35.07-.32.04-.27.02-.21V9.94h3.17l.21.03.28.07.32.12.35.18.36.26.36.36.35.46.32.59.28.73.21.88.14 1.05.05 1.23-.06 1.22-.16 1.04-.24.87-.32.71-.36.57-.4.44-.42.33-.42.24-.4.16-.36.1-.32.05-.26.02-.2.01H15.78l-.97.07-.89.2-.8.33-.7.45-.58.57-.48.67-.37.77-.26.87-.14.96-.05 1.05.02.92.1.8.15.66.2.52.27.37.31.23.33.1.35-.01.32-.05.24-.08.17-.09.1-.08.04-.07.02-.07z"/>
+                    </svg>
+                  </div>
                 </div>
                 <h5 class="card-title">Python</h5>
                 <p class="card-text">Data manipulation, and web data extraction</p>
@@ -687,40 +650,58 @@
             </div>
           </div>
 
-       <!-- R Programming Language Card -->
+          <!-- R Card -->
           <div class="col-lg-3 col-md-6">
             <div class="card h-100 text-center">
               <div class="card-body">
                 <div class="icon mb-3">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg" alt="R Logo" style="width: 64px; height: 64px; object-fit: contain;">
+                  <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #276DC3, #75AADB); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 24px; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 8px rgba(39,109,195,0.3);">
+                    R
+                  </div>
                 </div>
                 <h5 class="card-title">R</h5>
                 <p class="card-text">Data Manipulation, statistical computing and graphics</p>
-                <a href="https://github.com/pkmedu/r-basics" class="btn btn-info">View Examples</a>
+                <a href="https://github.com/pkmedu/r-basics" class="btn btn-danger">View Examples</a>
               </div>
             </div>
           </div>
 
-         <!-- HTML Language Card -->
-         <div class="col-lg-3 col-md-6">
-          <div class="card h-100 text-center">
-            <div class="card-body">
-              <div class="icon mb-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo" style="width: 64px; height: 64px; object-fit: contain;">
+          <!-- HTML Card -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="icon mb-3">
+                  <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #e34c26, #f06529); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 32px; border-radius: 12px; margin: 0 auto; box-shadow: 0 4px 8px rgba(227,76,38,0.3); position: relative;">
+                    <svg width="28" height="32" viewBox="0 0 384 512" fill="currentColor">
+                      <path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/>
+                    </svg>
+                  </div>
+                </div>
+                <h5 class="card-title">HTML</h5>
+                <p class="card-text">HTML for website construction and interactive dashboards</p>
+                <a href="https://github.com/pkmedu/Explore/tree/main/HTML" class="btn btn-info">View Examples</a>
               </div>
-              <h5 class="card-title">HTML</h5>
-              <p class="card-text">HTML for the website construction</p>
-              <a href="https://github.com/pkmedu/Explore/tree/main/HTML" class="btn btn-danger">View Examples</a>
             </div>
           </div>
-        </div>
 
+          <!-- Dashboard Card -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <div class="icon mb-3">
+                  <i class="bi bi-bar-chart" style="font-size: 4rem; color: var(--primary-color);"></i>
+                </div>
+                <h5 class="card-title">Interactive Dashboard</h5>
+                <p class="card-text">Explore live data visualizations and interactive code examples</p>
+                <a href="https://codehurry.com/dashboard.html" class="btn btn-primary">Launch Dashboard</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-      
-    <!-- Acknowledgements Section - Credits and thanks -->
+    <!-- Acknowledgements Section -->
     <section id="acknowledgements" class="section light-background">
       <div class="container">
         <div class="section-header">
@@ -732,11 +713,8 @@
             <div class="content">
               <p>We extend our heartfelt gratitude to the open source community and the developers who have contributed to making programming knowledge accessible to all. Special thanks to:</p>
               
-              <!-- List of acknowledgements -->
               <ul class="acknowledgement-list">
                 <li><strong>SAS Institute Inc.</strong> - For providing comprehensive documentation and resources that help users understand statistical analysis and data management.</li>
-
-                <li><strong>RTI International (SUDAAN® Statistical Software for Analyzing Correlated Data)</strong> - For offering robust documentation and resources that assist users in executing design-corrected analyses of complex data.</li>
 
                 <li><strong>StataCorp LLC</strong> - For their excellent documentation and community support that enables complex survey analysis and statistical modeling.</li>
 
@@ -764,8 +742,8 @@
       </div>
     </section>
 
-   <!-- Disclaimer Section -->
-    <section id="disclaimer" class="section light-background">
+    <!-- Disclaimer Section -->
+    <section id="disclaimer" class="section">
       <div class="container">
         <div class="section-header">
           <h2>Disclaimer</h2>
@@ -780,114 +758,3 @@
               
               <h4>Educational Purpose</h4>
               <p>The code examples and tutorials provided on CodeHurry are intended for educational and learning purposes only. While we strive to ensure accuracy and best practices, users should verify and test all code in their specific environments before implementation.</p>
-              
-              <h4>No Warranty</h4>
-              <p>The information, code examples, and resources are provided "as is" without any warranty of any kind, either express or implied. We do not guarantee the accuracy, completeness, or reliability of any content provided.</p>
-              
-              <h4>Software Licenses</h4>
-              <p>Users are responsible for ensuring they have appropriate licenses for any commercial software (SAS, Stata, etc.) before running the provided examples. Please respect the terms and conditions of each software vendor.</p>
-              
-              <h4>Data Privacy and Security</h4>
-              <p>When working with data, always ensure compliance with applicable data protection regulations (GDPR, HIPAA, etc.). Never use real sensitive or personal data when testing example code.</p>
-              
-              <h4>Professional Advice</h4>
-              <p>The examples provided should not be considered as professional statistical, financial, or technical advice. For critical applications, please consult with qualified professionals in the relevant field.</p>
-              
-              <h4>External Links</h4>
-              <p>CodeHurry contains links to external sites and repositories. We are not responsible for the content or availability of external websites.</p>
-              
-              <h4>Limitation of Liability</h4>
-              <p>In no event shall CodeHurry or its contributors be liable for any direct, indirect, incidental, special, or consequential damages arising from the use of this website or its content.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section light-background">
-      <div class="container">
-        <div class="section-header">
-          <h2>Contact</h2>
-        </div>
-        
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="content">
-              <h4>Get in Touch</h4>
-              <p>We'd love to hear from you! Whether you have questions about our code examples, suggestions for new content, or want to contribute to the CodeHurry community, feel free to reach out.</p>
-              
-              <h4>GitHub</h4>
-              <p>Visit our GitHub repository to explore code examples, report issues, or contribute to the project:</p>
-              <p><a href="https://github.com/pkmedu" class="btn btn-primary"><i class="bi bi-github"></i> Visit Our GitHub</a></p>
-              
-              <h4>Community Guidelines</h4>
-              <p>When reaching out or contributing, please keep in mind:</p>
-              <ul>
-                <li>Be respectful and constructive in all communications</li>
-                <li>Provide clear descriptions when reporting issues or suggesting improvements</li>
-                <li>Follow coding best practices when contributing examples</li>
-                <li>Help maintain the educational focus of our resources</li>
-              </ul>
-              
-              <h4>Contributing</h4>
-              <p>We welcome contributions from the community! If you have code examples in SAS, Stata, Python, or R that would benefit other learners, please consider contributing through our GitHub repositories.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="row gy-3">
-        <div class="col-lg-6">
-          <h3 class="sitename">CodeHurry</h3>
-          <p>Empowering developers with comprehensive programming resources across multiple languages.</p>
-        </div>
-        <div class="col-lg-6 text-lg-end">
-          <div class="social-links">
-            <a href="https://github.com/pkmedu" class="github"><i class="bi bi-github"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="container copyright text-center mt-4">
-        <p>&copy; <span>Copyright</span> <strong class="px-1 sitename">CodeHurry</strong> <span>All Rights Reserved</span></p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Simple smooth scrolling for internal links -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Add smooth scrolling to internal anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function (e) {
-          var href = this.getAttribute('href');
-          if (href && href !== '#' && href.length > 1) {
-            var target = document.querySelector(href);
-            if (target) {
-              e.preventDefault();
-              // Account for fixed header
-              var headerOffset = 140;
-              var elementPosition = target.offsetTop;
-              var offsetPosition = elementPosition - headerOffset;
-              
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-              });
-            }
-          }
-        });
-      });
-    });
-  </script>
-
-</body>
-</html>
