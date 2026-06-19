@@ -1,0 +1,314 @@
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+3044  
+3045  /* Clear log, output, and ODSRESULTS from the previous run automatically */
+3046  DM "Log; clear; output; clear; odsresults; clear";
+3047  
+3048  /* Delete all files in the WORK library */
+3049  proc datasets lib=work kill nolist;
+NOTE: Deleting WORK.PSAQ_DATA (memtype=DATA).
+NOTE: Deleting WORK.PSAQ_FRAME_2013 (memtype=DATA).
+3049!                                     quit;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+3050  
+3051  options nocenter nodate nonumber obs=max formchar="|----|+|---+=|-/\<>*";
+3052  libname library 'C:\Data';
+NOTE: Directory for library LIBRARY contains files of mixed engine types.
+NOTE: Libref LIBRARY was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Data
+3053  libname sds 'C:\Data\SDS_Folder';
+NOTE: Libref SDS was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Data\SDS_Folder
+3053!                                      /* Assign libref to the output SAS data set */
+3054  
+3055  /* Use LIBRARY= option only specifies libref to store formats
+3056     permanently in libref.formats */
+3057  
+3058  proc format LIBRARY=library;
+3059  
+3060  value age_f
+3061      35-64 = 'Ages 35-64'
+3062      65-High ='Ages 65+';
+NOTE: Format AGE_F is already on the library LIBRARY.FORMATS.
+NOTE: Format AGE_F has been written to LIBRARY.FORMATS.
+3063  
+3064  value resp53_fmt 1 = 'Self-Respondent'
+3065                    2 = 'Household Proxy';
+NOTE: Format RESP53_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format RESP53_FMT has been written to LIBRARY.FORMATS.
+3066  
+3067  value sex_fmt   1 = 'Male'
+3068                  2 = 'Female';
+NOTE: Format SEX_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format SEX_FMT has been written to LIBRARY.FORMATS.
+3069  
+3070  VALUE Racethx2_fmt
+3071    1 = 'NH White Only'
+3072    2 = 'Racial/Ethnic Minority' ;
+NOTE: Format RACETHX2_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format RACETHX2_FMT has been written to LIBRARY.FORMATS.
+3073  
+3074   value edu2_fmt
+3075             1 = 'Up to High School'
+3076             2 = 'Some College';
+NOTE: Format EDU2_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format EDU2_FMT has been written to LIBRARY.FORMATS.
+3077  
+3078  value povcat_fmt
+3079     1 = 'P/NPR/LOW INCOME'
+3080     2 = 'MIDDLE INCOME'
+3081     3 = 'HIGH INCOME'
+3082     4 = 'Missing';
+NOTE: Format POVCAT_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format POVCAT_FMT has been written to LIBRARY.FORMATS.
+3083  
+3084    VALUE HEALTH_fmt
+3085        1='EXCELLENT/VERY GOOD'
+3086        2 ='GOOD'
+3087        3='FAIR/POOR'
+3088        4='MISSING';
+NOTE: Format HEALTH_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format HEALTH_FMT has been written to LIBRARY.FORMATS.
+3089  
+3090    value Marital_fmt
+3091          1 = 'Currently Married'
+3092          2 = 'Wid-Div-Sep'
+3093          3 = 'Never married';
+NOTE: Format MARITAL_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format MARITAL_FMT has been written to LIBRARY.FORMATS.
+3094  
+3095    value emp_fmt 1 = 'Employed'
+3096                2 = 'Not Employed';
+NOTE: Format EMP_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format EMP_FMT has been written to LIBRARY.FORMATS.
+3097  
+3098    value fms_fmt 1 = '1 Person'
+3099                  2 =  '2 Persons'
+3100                  3 =  '3 Persons'
+3101                  4 =  '4+ Persons';
+NOTE: Format FMS_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format FMS_FMT has been written to LIBRARY.FORMATS.
+3102  
+3103    VALUE inscov_fmt
+3104          1='ANY PRIVATE'
+3105          2='PUBLIC ONLY'
+3106          3='UNINSURED';
+NOTE: Format INSCOV_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format INSCOV_FMT has been written to LIBRARY.FORMATS.
+3107  
+3108    value obv10_p_fmt 1 = '10+ Office-based visits'
+3109              2 = '0-9 Office-based visits';
+NOTE: Format OBV10_P_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format OBV10_P_FMT has been written to LIBRARY.FORMATS.
+3110  
+3111    value region_fmt
+3112        1 = 'Northeast'
+3113        2 = 'Midwest'
+3114        3 = 'South'
+3115        4 = 'West';
+NOTE: Format REGION_FMT is already on the library LIBRARY.FORMATS.
+NOTE: Format REGION_FMT has been written to LIBRARY.FORMATS.
+3116  run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+3117  *** Create a macro variable that holds variable names from the 2013 MEPS;
+3118  
+3119  %let kept_vars = dupersid resp53 perwt13f varstr varpsu agelast sex INSURC13
+3120                   edrecode povcat13 racethx resp53 RTHLTH53 totexp13
+3121                   OBVEXP13 OPTEXP13 ERTEXP13  IPTEXP13 RXEXP13
+3122                   MARRY53X FAMSZE53 EMPST53 REGION53
+3123                   inscov13 obtotv13 IPNGTD13
+3124                   panel insc1231;
+3125  
+3126  **** Create a temporary SAS data file (PSAQ Frame) with source and derived variables
+3127                   from the 2013 MEPS Full Year File based on certain conditions;
+3128  
+3129   Data work.PSAQ_Frame_2013;
+3130    set SDS.h163 (keep=&kept_vars
+3131                       where = (panel = 18
+3132                                & insc1231=1
+3133                                & agelast >=34
+3134                                & perwt13f>0 )
+3135                      );
+3136  
+3137            *** Racethx_x variable (Dichotomous);
+3138            if racethx =2 then r_racethx2 = 1;
+3139            else if racethx in (1,3,4,5) then r_racethx2 = 2;
+3140            else if racethx in (-7,-8,-9) then r_racethx2 = .;
+3141  
+3142           *** New education variable (dichotomous);
+3143            if edrecode in (1,2,13) then r_edrecode2=1; /* up to high school */
+3144            else if edrecode in (14,15,16) then r_edrecode2=2;   /* Some College  */
+3145            else if edrecode in (-1,-7,-8,-9) then r_edrecode2 = .; /* Missing/NA */
+3146  
+3147           *** Marital Status;
+3148            if MARRY53X in (-7,-8,-9,6) then marital_s = .;
+3149            else if MARRY53X in (1,7) then marital_s = 1;
+3150            else if MARRY53X in (2,3,4,8,9,10) then marital_s = 2;
+3151            else if MARRY53X = 5 then marital_s = 3;
+3152  
+3153           *** Family size;
+3154           if FAMSZE53 = 1 then d_famscat=1;
+3155           else if FAMSZE53  = 2 then d_famscat=2;
+3156           else if FAMSZE53  = 3 then d_famscat=3;
+3157           else if FAMSZE53 >=4 then d_famscat=4;
+3158  
+3159           *** Employment status;
+3160           if EMPST53 =1 then empstat13=1;
+3161           else if EMPST53 in (2,3,4) then empstat13=2;  /*Need to check */
+3162  
+3163            *** New POVCAT variable;
+3164            if povcat13 in (1,2,3 ) then r_povcat = 1;
+3165            else if povcat13 =4 then r_povcat = 2;
+3166            else if povcat13 =5 then r_povcat = 3;
+3167            else if povcat13 in (-7,-8,-9) then r_povcat = 4;
+3168  
+3169           *** Region;
+3170           r_region = region53;
+3171           if region53 = -1 then r_region = .;
+3172  
+3173           * New Perceived health status variable;
+3174  
+3175            if RTHLTH53 in (1,2) then health = 1;
+3176            else if RTHLTH53 = 3 then health = 2;
+3177            else if RTHLTH53 in (4,5) then health = 3;
+3178            else if RTHLTH53 in (-7,-8,-9) then health = 4;
+3179  
+3180           *** office-based provider visits;
+3181              if obtotv13 >=10 then obv10_plus=1;
+3182             else obv10_plus = 2;
+3183    run;
+
+NOTE: There were 8407 observations read from the data set SDS.H163.
+      WHERE (panel=18) and (insc1231=1) and (agelast>=34) and (perwt13f>0);
+NOTE: The data set WORK.PSAQ_FRAME_2013 has 8407 observations and 36 variables.
+NOTE: DATA statement used (Total process time):
+      real time           1.00 seconds
+      cpu time            0.15 seconds
+      
+
+3184  
+3185  * Sort the data files before merging them in a DATA step;
+3186  proc sort data=PSAQ_Frame_2013;
+3187   by dupersid;
+3188  run;
+
+NOTE: There were 8407 observations read from the data set WORK.PSAQ_FRAME_2013.
+NOTE: The data set WORK.PSAQ_FRAME_2013 has 8407 observations and 36 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+3189  proc sort data=SDS.h173 out=work.PSAQ_data;  /* Create a temporary sorted data set */
+3190     by dupersid;
+3191  run;
+
+NOTE: There were 2185 observations read from the data set SDS.H173.
+NOTE: The data set WORK.PSAQ_DATA has 2185 observations and 50 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+3192  
+3193  * Create a PSAQ analytic data file by mergeing the PSAQ data file with the FRAME data file;
+3194  
+3195  data sds.MatchMergePSAQ;
+3196    merge work.psaq_data (in=a)
+3197          work.PSAQ_Frame_2013; by dupersid;
+3198  
+3199          * Create a new PSAQ age  variable replacing -9 with a value from age53x;
+3200    x_psaqage = psaqage;
+3201    if psaqage = -9 then x_psaqage=age53x;
+3202  
+3203    * Create a new flushot variable ;
+3204    if flushot = 1 then x_flushot = 1;
+3205    else if flushot = 2 then x_flushot = 0;
+3206    else if flushot = -9 then x_flushot = .;
+3207  
+3208    * Create a Smoke_Every_day variable;
+3209  
+3210    if ofttobac = -9 then x_ofttobac = .;
+3211    else if ofttobac = 1 then x_ofttobac = 1;
+3212    else if ofttobac in (2,3) then x_ofttobac = 0;
+3213  
+3214     label r_racethx2 = 'Race/Ethnicity Recode'
+3215                  r_edrecode2 = 'Education Recode'
+3216                  marital_s = 'Marital Status'
+3217                  d_famscat = 'Family Size'
+3218                  r_povcat =  'Federal Poverty Levels Recode'
+3219                  empstat13 = 'Employment Status Recode'
+3220                  r_region = 'Geographic Region'
+3221                  health = 'Perceived Health Status Recode'
+3222                  obv10_plus = 'Office-Based Provider Visits (12-Month Period) Recode'
+3223                  x_psaqage = 'PSAQ Respondent Age'
+3224                  x_flushot = 'Whether Took Flu Shot (12-Month Period) Recode'
+3225                  x_ofttobac = 'Whether Smoke Everyday in Past Year Recode';
+3226    if a;     /* uniquely identifies the source data set and keeps the same number
+3227                 of observations in the output data set */
+3228  run;
+
+NOTE: There were 2185 observations read from the data set WORK.PSAQ_DATA.
+NOTE: There were 8407 observations read from the data set WORK.PSAQ_FRAME_2013.
+NOTE: The data set SDS.MATCHMERGEPSAQ has 2185 observations and 84 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+3229  
+3230  title '2014 PSAQ Analytic File - Frequency Tables for Selected Variables';
+3231  proc freq data=sds.MatchMergePSAQ;
+3232  tables resp53 sex r_racethx2 r_edrecode2 marital_s d_famscat empstat13 r_povcat r_region health inscov13 obv10_plus;
+3233  format
+3234      resp53 resp53_fmt.
+3235      sex sex_fmt.
+3236      r_racethx2 Racethx2_fmt.
+3237      r_edrecode2 edu2_fmt.
+3238      marital_s marital_fmt.
+3239      d_famscat fms_fmt.
+3240      empstat13 emp_fmt.
+3241      r_povcat povcat_fmt.
+3242      r_region region_fmt.
+3243      health  health_fmt.
+3244      inscov13 inscov_fmt.
+3245      obv10_plus obv10_p_fmt.;
+3246  run;
+
+NOTE: There were 2185 observations read from the data set SDS.MATCHMERGEPSAQ.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+3247  
+3248  
+3249  *** Check the range of variables in the data set create;
+3250  proc means data=sds.MatchMergePSAQ N min max maxdec=0;
+3251  run;
+
+NOTE: There were 2185 observations read from the data set SDS.MATCHMERGEPSAQ.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+3252  
+3253  proc printto;
+3254  run;
+

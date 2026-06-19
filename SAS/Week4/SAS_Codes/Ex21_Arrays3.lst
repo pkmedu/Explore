@@ -1,0 +1,34 @@
+                                    Method 1 (Implicit Array)                                    1
+                                                                   23:59 Wednesday, April 24, 2024
+
+                        city          ymm_T1    ymm_T2    ymm_T3    ymm_T4
+
+                        Sacramento       .       94.7      72.9      65.3 
+                        Miami 	        51.1      52.8      60.7      72.4 
+                        Albany         59.9      57.7      74.4      75.9 
+                                    Method 2 (Explicit Array)                                    2
+                                                                   23:59 Wednesday, April 24, 2024
+
+                          city          mm_T1    mm_T2    mm_T3    mm_T4
+
+                          Sacramento       .      94.7     72.9     65.3
+                          Miami 	        51.1     52.8     60.7     72.4
+                          Albany         59.9     57.7     74.4     75.9
+                         Method 3 - Explicit Arrays with the DIM Function                        3
+                                                                   23:59 Wednesday, April 24, 2024
+
+                        city          zmm_T1    zmm_T2    zmm_T3    zmm_T4
+
+                        Sacramento       .       94.7      72.9      65.3 
+                        Miami 	        51.1      52.8      60.7      72.4 
+                        Albany         59.9      57.7      74.4      75.9 
+                       Creating multiple new variables with ARRAY staements                      4
+                                                                   23:59 Wednesday, April 24, 2024
+
+                       mtm1    mtm2    final    c_mtm1    c_mtm2    c_final
+
+                       3.73    2.87     4.00      B+        C          A   
+                       3.80    3.53     2.73      A         B+         C   
+                        .      3.31     3.93      C         B          A   
+                       2.92    3.08     2.39      C         B          C   
+                        .      2.36     2.27      C         C          C   

@@ -1,0 +1,715 @@
+Files in the ZIP file
+
+--------------------------------------------------------------------
+|                               |      |      |      |c_inp-|      |
+|                               |c_tot-|c_amb-|c_pme-|atien-|c_oth-|
+|                               |exp_G-|u_GT_-|d_GT_-|t_GT_-|er_GT-|
+|                               |T_zero| zero | zero | Zero |_Zero |
+|                               |------+------+------+------+------|
+|                               | Sum  | Sum  | Sum  | Sum  | Sum  |
+|-------------------------------+------+------+------+------+------|
+|year                           |      |      |      |      |      |
+|-------------------------------|      |      |      |      |      |
+|1996                           | 18562| 15883| 14041|  1585| 10961|
+|-------------------------------+------+------+------+------+------|
+|1997                           | 27731| 23725| 20508|  2681| 15540|
+|-------------------------------+------+------+------+------+------|
+|1998                           | 19354| 16555| 14339|  1864| 10835|
+|-------------------------------+------+------+------+------+------|
+|1999                           | 19935| 17010| 14686|  1768| 11356|
+|-------------------------------+------+------+------+------+------|
+|2000                           | 20137| 17171| 14963|  1852| 11223|
+|-------------------------------+------+------+------+------+------|
+|2001                           | 27460| 23668| 20679|  2482| 15631|
+|-------------------------------+------+------+------+------+------|
+|2002                           | 31834| 27743| 23660|  2904| 17900|
+|-------------------------------+------+------+------+------+------|
+|2003                           | 27599| 24026| 20474|  2528| 15506|
+|-------------------------------+------+------+------+------+------|
+|2004                           | 27493| 23850| 20043|  2552| 15523|
+|-------------------------------+------+------+------+------+------|
+|2005                           | 27086| 23460| 19774|  2523| 15363|
+|-------------------------------+------+------+------+------+------|
+|2006                           | 27332| 23749| 19942|  2454| 15481|
+|-------------------------------+------+------+------+------+------|
+|2007                           | 24964| 21538| 17923|  2280| 14164|
+|-------------------------------+------+------+------+------+------|
+|2008                           | 26205| 22692| 18592|  2173| 14654|
+|-------------------------------+------+------+------+------+------|
+|2009                           | 29246| 25458| 20773|  2487| 16005|
+|-------------------------------+------+------+------+------+------|
+|2010                           | 25654| 21895| 17804|  2133| 14142|
+|-------------------------------+------+------+------+------+------|
+|2011                           | 27380| 23485| 19132|  2193| 14701|
+|-------------------------------+------+------+------+------+------|
+|2012                           | 29807| 25542| 20376|  2361| 15847|
+|-------------------------------+------+------+------+------+------|
+|2013                           | 29109| 25521| 19921|  2220| 16173|
+|-------------------------------+------+------+------+------+------|
+|2014                           | 27650| 24344| 18927|  2193| 15232|
+|-------------------------------+------+------+------+------+------|
+|2015                           | 28491| 24912| 19564|  2129| 16213|
+--------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        1996   22601  totexp               TOTAL HEALTH CARE EXP 96                   22601       0             0     427086.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  22601       0             0      31764.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           22601       0             0      30564.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           22601       0             0      10527.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   22601       0             0      28724.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             22601       0             0       5154.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    22601       0             0     354161.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   22601       0             0      57364.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   22601       0             0      15593.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            22601       0             0     116667.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         22601       0             0      43311.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          22601       0             0       2000.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    22601       0             0      23420.00
+                      rxexp                TOTAL RX-EXP 96                            22601       0             0      31106.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   22601       0             0      69380.20
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         22601       0     1.0000000   140.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             22601       0     1.0000000    45.0000000
+                      year                                                            22601       0       1996.00       1996.00
+                      ambu                                                            22601       0             0      53252.00
+                      pmed                                                            22601       0             0      31106.00
+                      inpatient                                                       22601       0             0     411525.00
+                      other                                                           22601       0             0     116667.00
+                      c_totexp_GT_zero                                                22601       0             0     1.0000000
+                      c_ambu_GT_zero                                                  22601       0             0     1.0000000
+                      c_pmed_GT_zero                                                  22601       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             22601       0             0     1.0000000
+                      c_other_GT_Zero                                                 22601       0             0     1.0000000
+                      all                                                             22601       0     1.0000000     1.0000000
+
+        1997   34551  totexp               TOTAL HEALTH CARE EXP 96                   34551       0             0     351156.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  34551       0             0      58436.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           34551       0             0      67443.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           34551       0             0      20456.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   34551       0             0      67870.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             34551       0             0      11946.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    34551       0             0     339518.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   34551       0             0      38904.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   34551       0             0      20050.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            34551       0             0      67089.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         34551       0             0      75530.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          34551       0             0       1520.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    34551       0             0      51597.00
+                      rxexp                TOTAL RX-EXP 96                            34551       0             0      17301.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   34551       0             0      68517.71
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         34551       0     1.0000000   254.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             34551       0     1.0000000    34.0000000
+                      year                                                            34551       0       1997.00       1997.00
+                      ambu                                                            34551       0             0      74183.00
+                      pmed                                                            34551       0             0      17301.00
+                      inpatient                                                       34551       0             0     345534.00
+                      other                                                           34551       0             0      76384.00
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        1997   34551  c_totexp_GT_zero                                                34551       0             0     1.0000000
+                      c_ambu_GT_zero                                                  34551       0             0     1.0000000
+                      c_pmed_GT_zero                                                  34551       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             34551       0             0     1.0000000
+                      c_other_GT_Zero                                                 34551       0             0     1.0000000
+                      all                                                             34551       0     1.0000000     1.0000000
+
+        1998   24072  totexp               TOTAL HEALTH CARE EXP 96                   24072       0             0     378588.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  24072       0             0      34682.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           24072       0             0      46441.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           24072       0             0      20503.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   24072       0             0      14038.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             24072       0             0       3565.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    24072       0             0     368809.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   24072       0             0      39635.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   24072       0             0      12696.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            24072       0             0     155094.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         24072       0             0      69900.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          24072       0             0       1520.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    24072       0             0      28606.00
+                      rxexp                TOTAL RX-EXP 96                            24072       0             0      35517.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   24072       0             0      84587.12
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         24072       0     1.0000000   100.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             24072       0     1.0000000    56.0000000
+                      year                                                            24072       0       1998.00       1998.00
+                      ambu                                                            24072       0             0      50149.00
+                      pmed                                                            24072       0             0      35517.00
+                      inpatient                                                       24072       0             0     375241.00
+                      other                                                           24072       0             0     155094.00
+                      c_totexp_GT_zero                                                24072       0             0     1.0000000
+                      c_ambu_GT_zero                                                  24072       0             0     1.0000000
+                      c_pmed_GT_zero                                                  24072       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             24072       0             0     1.0000000
+                      c_other_GT_Zero                                                 24072       0             0     1.0000000
+                      all                                                             24072       0     1.0000000     1.0000000
+
+        1999   24618  totexp               TOTAL HEALTH CARE EXP 96                   24618       0             0     206721.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  24618       0             0      49661.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           24618       0             0      73560.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           24618       0             0      13165.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   24618       0             0      34873.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             24618       0             0      13097.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    24618       0             0     184107.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   24618       0             0      24704.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   24618       0             0      20119.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            24618       0             0     116302.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         24618       0             0      45290.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          24618       0             0       1665.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    24618       0             0      51313.00
+                      rxexp                TOTAL RX-EXP 96                            24618       0             0      36676.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   24618       0             0      80061.61
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        1999   24618  varstr               VARIANCE ESTIMATION STRATUM - 1996         24618       0     1.0000000   143.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             24618       0     1.0000000    39.0000000
+                      year                                                            24618       0       1999.00       1999.00
+                      ambu                                                            24618       0             0      86725.00
+                      pmed                                                            24618       0             0      36676.00
+                      inpatient                                                       24618       0             0     197619.00
+                      other                                                           24618       0             0     116302.00
+                      c_totexp_GT_zero                                                24618       0             0     1.0000000
+                      c_ambu_GT_zero                                                  24618       0             0     1.0000000
+                      c_pmed_GT_zero                                                  24618       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             24618       0             0     1.0000000
+                      c_other_GT_Zero                                                 24618       0             0     1.0000000
+                      all                                                             24618       0     1.0000000     1.0000000
+
+        2000   25096  totexp               TOTAL HEALTH CARE EXP 96                   25096       0             0     275730.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  25096       0             0      82027.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           25096       0             0      76610.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           25096       0             0      17856.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   25096       0             0      25621.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             25096       0             0       4979.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    25096       0             0     230961.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   25096       0             0      31523.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   25096       0             0      61550.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            25096       0             0     136773.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         25096       0             0      53690.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          25096       0             0       2520.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    25096       0             0      11305.00
+                      rxexp                TOTAL RX-EXP 96                            25096       0             0      26836.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   25096       0             0      78156.97
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         25096       0     1.0000000    56.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             25096       0     1.0000000    30.0000000
+                      year                                                            25096       0       2000.00       2000.00
+                      ambu                                                            25096       0             0     137335.00
+                      pmed                                                            25096       0             0      26836.00
+                      inpatient                                                       25096       0             0     230961.00
+                      other                                                           25096       0             0     136969.00
+                      c_totexp_GT_zero                                                25096       0             0     1.0000000
+                      c_ambu_GT_zero                                                  25096       0             0     1.0000000
+                      c_pmed_GT_zero                                                  25096       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             25096       0             0     1.0000000
+                      c_other_GT_Zero                                                 25096       0             0     1.0000000
+                      all                                                             25096       0     1.0000000     1.0000000
+
+        2001   33556  totexp               TOTAL HEALTH CARE EXP 96                   33556       0             0     225445.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  33556       0             0      85000.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           33556       0             0      96096.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           33556       0             0      10789.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   33556       0             0      38505.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             33556       0             0       5471.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    33556       0             0     206851.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   33556       0             0      32664.00
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        2001   33556  dvtexp               TOTAL DENTAL CARE EXP 96                   33556       0             0      21001.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            33556       0             0     182361.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         33556       0             0      11950.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          33556       0             0       2000.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    33556       0             0      23023.00
+                      rxexp                TOTAL RX-EXP 96                            33556       0             0      54648.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   33556       0             0      67537.17
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         33556       0     1.0000000   145.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             33556       0     1.0000000    59.0000000
+                      year                                                            33556       0       2001.00       2001.00
+                      ambu                                                            33556       0             0     134434.00
+                      pmed                                                            33556       0             0      54648.00
+                      inpatient                                                       33556       0             0     216742.00
+                      other                                                           33556       0             0     182396.00
+                      c_totexp_GT_zero                                                33556       0             0     1.0000000
+                      c_ambu_GT_zero                                                  33556       0             0     1.0000000
+                      c_pmed_GT_zero                                                  33556       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             33556       0             0     1.0000000
+                      c_other_GT_Zero                                                 33556       0             0     1.0000000
+                      all                                                             33556       0     1.0000000     1.0000000
+
+        2002   39165  totexp               TOTAL HEALTH CARE EXP 96                   39165       0             0     407500.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  39165       0             0      80649.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           39165       0             0     108407.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           39165       0             0      21373.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   39165       0             0      43035.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             39165       0             0       6741.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    39165       0             0     380465.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   39165       0             0      32302.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   39165       0             0      17109.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            39165       0             0     153598.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         39165       0             0      20310.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          39165       0             0       1450.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    39165       0             0      26000.00
+                      rxexp                TOTAL RX-EXP 96                            39165       0             0     274135.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   39165       0             0      46765.60
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         39165       0     1.0000000   203.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             39165       0     1.0000000     3.0000000
+                      year                                                            39165       0       2002.00       2002.00
+                      ambu                                                            39165       0             0     120226.00
+                      pmed                                                            39165       0             0     274135.00
+                      inpatient                                                       39165       0             0     401894.00
+                      other                                                           39165       0             0     153927.00
+                      c_totexp_GT_zero                                                39165       0             0     1.0000000
+                      c_ambu_GT_zero                                                  39165       0             0     1.0000000
+                      c_pmed_GT_zero                                                  39165       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             39165       0             0     1.0000000
+                      c_other_GT_Zero                                                 39165       0             0     1.0000000
+                      all                                                             39165       0     1.0000000     1.0000000
+
+        2003   34215  totexp               TOTAL HEALTH CARE EXP 96                   34215       0             0     966587.00
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        2003   34215  obvexp               TOTAL OFFICE-BASED EXP 96                  34215       0             0      49457.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           34215       0             0      80932.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           34215       0             0      28625.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   34215       0             0      27494.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             34215       0             0       5213.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    34215       0             0     937517.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   34215       0             0      33197.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   34215       0             0      16302.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            34215       0             0      99144.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         34215       0             0      19200.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          34215       0             0       1600.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    34215       0             0      29745.00
+                      rxexp                TOTAL RX-EXP 96                            34215       0             0      99251.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   34215       0             0      60272.82
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         34215       0     1.0000000   203.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             34215       0     1.0000000     3.0000000
+                      year                                                            34215       0       2003.00       2003.00
+                      ambu                                                            34215       0             0      87290.00
+                      pmed                                                            34215       0             0      99251.00
+                      inpatient                                                       34215       0             0     966504.00
+                      other                                                           34215       0             0     100964.00
+                      c_totexp_GT_zero                                                34215       0             0     1.0000000
+                      c_ambu_GT_zero                                                  34215       0             0     1.0000000
+                      c_pmed_GT_zero                                                  34215       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             34215       0             0     1.0000000
+                      c_other_GT_Zero                                                 34215       0             0     1.0000000
+                      all                                                             34215       0     1.0000000     1.0000000
+
+        2004   34403  totexp               TOTAL HEALTH CARE EXP 96                   34403       0             0     645980.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  34403       0             0     152695.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           34403       0             0      61648.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           34403       0             0      12764.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   34403       0             0      53940.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             34403       0             0       6150.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    34403       0             0     637900.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   34403       0             0      23203.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   34403       0             0      26520.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            34403       0             0     304751.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         34403       0             0      33451.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          34403       0             0       2400.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    34403       0             0      25630.00
+                      rxexp                TOTAL RX-EXP 96                            34403       0             0      76126.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   34403       0             0      63727.50
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         34403       0     1.0000000   203.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             34403       0     1.0000000     3.0000000
+                      year                                                            34403       0       2004.00       2004.00
+                      ambu                                                            34403       0             0     152695.00
+                      pmed                                                            34403       0             0      76126.00
+                      inpatient                                                       34403       0             0     645378.00
+                      other                                                           34403       0             0     304751.00
+                      c_totexp_GT_zero                                                34403       0             0     1.0000000
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        2004   34403  c_ambu_GT_zero                                                  34403       0             0     1.0000000
+                      c_pmed_GT_zero                                                  34403       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             34403       0             0     1.0000000
+                      c_other_GT_Zero                                                 34403       0             0     1.0000000
+                      all                                                             34403       0     1.0000000     1.0000000
+
+        2005   33961  totexp               TOTAL HEALTH CARE EXP 96                   33961       0             0     403440.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  33961       0             0     335860.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           33961       0             0     224632.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           33961       0             0      11087.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   33961       0             0      29483.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             33961       0             0       5748.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    33961       0             0     360361.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   33961       0             0      86894.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   33961       0             0      30989.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            33961       0             0     247665.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         33961       0             0      43400.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          33961       0             0       2100.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    33961       0             0      25336.00
+                      rxexp                TOTAL RX-EXP 96                            33961       0             0     183512.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   33961       0             0      62479.04
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         33961       0     1.0000000   203.0000000
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             33961       0     1.0000000     3.0000000
+                      year                                                            33961       0       2005.00       2005.00
+                      ambu                                                            33961       0             0     335860.00
+                      pmed                                                            33961       0             0     183512.00
+                      inpatient                                                       33961       0             0     403439.00
+                      other                                                           33961       0             0     247665.00
+                      c_totexp_GT_zero                                                33961       0             0     1.0000000
+                      c_ambu_GT_zero                                                  33961       0             0     1.0000000
+                      c_pmed_GT_zero                                                  33961       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             33961       0             0     1.0000000
+                      c_other_GT_Zero                                                 33961       0             0     1.0000000
+                      all                                                             33961       0     1.0000000     1.0000000
+
+        2006   34145  totexp               TOTAL HEALTH CARE EXP 96                   34145       0             0     521209.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  34145       0             0     141539.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           34145       0             0      94738.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           34145       0             0      15049.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   34145       0             0      31988.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             34145       0             0       9788.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    34145       0             0     517123.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   34145       0             0      44670.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   34145       0             0      25762.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            34145       0             0     106291.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         34145       0             0      26264.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          34145       0             0       2000.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    34145       0             0      22178.00
+                      rxexp                TOTAL RX-EXP 96                            34145       0             0     219462.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   34145       0             0      64968.63
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         34145       0     1.0000000   203.0000000
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        2006   34145  varpsu               VARIANCE ESTIMATION PSU - 1996             34145       0     1.0000000     3.0000000
+                      year                                                            34145       0       2006.00       2006.00
+                      ambu                                                            34145       0             0     162498.00
+                      pmed                                                            34145       0             0     219462.00
+                      inpatient                                                       34145       0             0     517123.00
+                      other                                                           34145       0             0     108016.00
+                      c_totexp_GT_zero                                                34145       0             0     1.0000000
+                      c_ambu_GT_zero                                                  34145       0             0     1.0000000
+                      c_pmed_GT_zero                                                  34145       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             34145       0             0     1.0000000
+                      c_other_GT_Zero                                                 34145       0             0     1.0000000
+                      all                                                             34145       0     1.0000000     1.0000000
+
+        2007   30964  totexp               TOTAL HEALTH CARE EXP 96                   30964       0             0     510393.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  30964       0             0     209031.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           30964       0             0     134475.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           30964       0             0      10833.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   30964       0             0      70000.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             30964       0             0       3065.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    30964       0             0     396099.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   30964       0             0      41506.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   30964       0             0      27630.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            30964       0             0     201768.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         30964       0             0      34200.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          30964       0             0       2500.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    30964       0             0      48741.00
+                      rxexp                TOTAL RX-EXP 96                            30964       0             0      96103.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   30964       0             0      67153.73
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         30964       0     1.0000000       1165.00
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             30964       0     1.0000000     3.0000000
+                      year                                                            30964       0       2007.00       2007.00
+                      ambu                                                            30964       0             0     226382.00
+                      pmed                                                            30964       0             0      96103.00
+                      inpatient                                                       30964       0             0     416861.00
+                      other                                                           30964       0             0     202151.00
+                      c_totexp_GT_zero                                                30964       0             0     1.0000000
+                      c_ambu_GT_zero                                                  30964       0             0     1.0000000
+                      c_pmed_GT_zero                                                  30964       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             30964       0             0     1.0000000
+                      c_other_GT_Zero                                                 30964       0             0     1.0000000
+                      all                                                             30964       0     1.0000000     1.0000000
+
+        2008   33066  totexp               TOTAL HEALTH CARE EXP 96                   33066       0             0     553493.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  33066       0             0     120369.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           33066       0             0     131706.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           33066       0             0      17052.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   33066       0             0     142986.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             33066       0             0       5133.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    33066       0             0     410305.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   33066       0             0     140049.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   33066       0             0      31634.00
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        2008   33066  hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            33066       0             0      76171.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         33066       0             0      24000.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          33066       0             0       1680.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    33066       0             0      22000.00
+                      rxexp                TOTAL RX-EXP 96                            33066       0             0      72342.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   33066       0             0      69862.00
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         33066       0       1001.00       1165.00
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             33066       0     1.0000000     3.0000000
+                      year                                                            33066       0       2008.00       2008.00
+                      ambu                                                            33066       0             0     144077.00
+                      pmed                                                            33066       0             0      72342.00
+                      inpatient                                                       33066       0             0     550354.00
+                      other                                                           33066       0             0      76291.00
+                      c_totexp_GT_zero                                                33066       0             0     1.0000000
+                      c_ambu_GT_zero                                                  33066       0             0     1.0000000
+                      c_pmed_GT_zero                                                  33066       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             33066       0             0     1.0000000
+                      c_other_GT_Zero                                                 33066       0             0     1.0000000
+                      all                                                             33066       0     1.0000000     1.0000000
+
+        2009   36855  totexp               TOTAL HEALTH CARE EXP 96                   36855       0             0     616631.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  36855       0             0     160822.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           36855       0             0     303022.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           36855       0             0      34685.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   36855       0             0      43347.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             36855       0             0      10051.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    36855       0             0     292536.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   36855       0             0      51388.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   36855       0             0      38000.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            36855       0             0     279894.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         36855       0             0      38960.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          36855       0             0       2084.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    36855       0             0      22970.00
+                      rxexp                TOTAL RX-EXP 96                            36855       0             0     238050.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   36855       0             0      76509.66
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         36855       0       1001.00       1165.00
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             36855       0     1.0000000     3.0000000
+                      year                                                            36855       0       2009.00       2009.00
+                      ambu                                                            36855       0             0     327363.00
+                      pmed                                                            36855       0             0     238050.00
+                      inpatient                                                       36855       0             0     294473.00
+                      other                                                           36855       0             0     279894.00
+                      c_totexp_GT_zero                                                36855       0             0     1.0000000
+                      c_ambu_GT_zero                                                  36855       0             0     1.0000000
+                      c_pmed_GT_zero                                                  36855       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             36855       0             0     1.0000000
+                      c_other_GT_Zero                                                 36855       0             0     1.0000000
+                      all                                                             36855       0     1.0000000     1.0000000
+
+        2010   32846  totexp               TOTAL HEALTH CARE EXP 96                   32846       0             0     727849.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  32846       0             0     229242.00
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        2010   32846  opfexp               TOTAL OUTPATIENT FACILITY EXP 96           32846       0             0     115325.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           32846       0             0      18626.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   32846       0             0      50903.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             32846       0             0      10316.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    32846       0             0     317739.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   32846       0             0      58794.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   32846       0             0      37360.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            32846       0             0     168068.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         32846       0             0      19166.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          32846       0             0       4000.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    32846       0             0      14357.00
+                      rxexp                TOTAL RX-EXP 96                            32846       0             0     727356.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   32846       0             0      80966.71
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         32846       0       1001.00       1165.00
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             32846       0     1.0000000     3.0000000
+                      year                                                            32846       0       2010.00       2010.00
+                      ambu                                                            32846       0             0     323574.00
+                      pmed                                                            32846       0             0     727356.00
+                      inpatient                                                       32846       0             0     318118.00
+                      other                                                           32846       0             0     168124.00
+                      c_totexp_GT_zero                                                32846       0             0     1.0000000
+                      c_ambu_GT_zero                                                  32846       0             0     1.0000000
+                      c_pmed_GT_zero                                                  32846       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             32846       0             0     1.0000000
+                      c_other_GT_Zero                                                 32846       0             0     1.0000000
+                      all                                                             32846       0     1.0000000     1.0000000
+
+        2011   35313  totexp               TOTAL HEALTH CARE EXP 96                   35313       0             0    2226997.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  35313       0             0     175332.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           35313       0             0     186616.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           35313       0             0      23753.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   35313       0             0      31835.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             35313       0             0       7831.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    35313       0             0     471176.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   35313       0             0      65019.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   35313       0             0      22348.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            35313       0             0     138423.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         35313       0             0      92720.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          35313       0             0      15290.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    35313       0             0      18040.00
+                      rxexp                TOTAL RX-EXP 96                            35313       0             0    2226997.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   35313       0             0     102133.75
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         35313       0       1001.00       1165.00
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             35313       0     1.0000000     3.0000000
+                      year                                                            35313       0       2011.00       2011.00
+                      ambu                                                            35313       0             0     194315.00
+                      pmed                                                            35313       0             0    2226997.00
+                      inpatient                                                       35313       0             0     536195.00
+                      other                                                           35313       0             0     138423.00
+                      c_totexp_GT_zero                                                35313       0             0     1.0000000
+                      c_ambu_GT_zero                                                  35313       0             0     1.0000000
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        2011   35313  c_pmed_GT_zero                                                  35313       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             35313       0             0     1.0000000
+                      c_other_GT_Zero                                                 35313       0             0     1.0000000
+                      all                                                             35313       0     1.0000000     1.0000000
+
+        2012   38974  totexp               TOTAL HEALTH CARE EXP 96                   38974       0             0     748317.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  38974       0             0      81859.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           38974       0             0     142164.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           38974       0             0      41680.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   38974       0             0      47713.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             38974       0             0      10350.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    38974       0             0     434076.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   38974       0             0      51353.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   38974       0             0      41944.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            38974       0             0     173627.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         38974       0             0     113680.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          38974       0             0       6000.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    38974       0             0      38540.00
+                      rxexp                TOTAL RX-EXP 96                            38974       0             0     685290.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   38974       0             0      84025.78
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         38974       0       1001.00       1165.00
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             38974       0     1.0000000     3.0000000
+                      year                                                            38974       0       2012.00       2012.00
+                      ambu                                                            38974       0             0     148761.00
+                      pmed                                                            38974       0             0     685290.00
+                      inpatient                                                       38974       0             0     485429.00
+                      other                                                           38974       0             0     173627.00
+                      c_totexp_GT_zero                                                38974       0             0     1.0000000
+                      c_ambu_GT_zero                                                  38974       0             0     1.0000000
+                      c_pmed_GT_zero                                                  38974       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             38974       0             0     1.0000000
+                      c_other_GT_Zero                                                 38974       0             0     1.0000000
+                      all                                                             38974       0     1.0000000     1.0000000
+
+        2013   36940  totexp               TOTAL HEALTH CARE EXP 96                   36940       0             0     514670.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  36940       0             0     195295.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           36940       0             0     289758.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           36940       0             0      26703.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   36940       0             0      63179.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             36940       0             0       4972.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    36940       0             0     292515.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   36940       0             0      93592.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   36940       0             0      37646.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            36940       0             0     473192.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         36940       0             0      47352.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          36940       0             0      22225.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    36940       0             0      38235.00
+                      rxexp                TOTAL RX-EXP 96                            36940       0             0     181224.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   36940       0             0      88242.17
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         36940       0       1001.00       1165.00
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             36940       0     1.0000000     3.0000000
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        2013   36940  year                                                            36940       0       2013.00       2013.00
+                      ambu                                                            36940       0             0     304056.00
+                      pmed                                                            36940       0             0     181224.00
+                      inpatient                                                       36940       0             0     320929.00
+                      other                                                           36940       0             0     481592.00
+                      c_totexp_GT_zero                                                36940       0             0     1.0000000
+                      c_ambu_GT_zero                                                  36940       0             0     1.0000000
+                      c_pmed_GT_zero                                                  36940       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             36940       0             0     1.0000000
+                      c_other_GT_Zero                                                 36940       0             0     1.0000000
+                      all                                                             36940       0     1.0000000     1.0000000
+
+        2014   34875  totexp               TOTAL HEALTH CARE EXP 96                   34875       0             0     491858.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  34875       0             0     173102.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           34875       0             0     468954.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           34875       0             0      39801.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   34875       0             0     123947.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             34875       0             0      14814.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    34875       0             0     407027.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   34875       0             0      56655.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   34875       0             0      38432.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            34875       0             0     172132.00
+                      hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         34875       0             0      34325.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          34875       0             0      26294.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    34875       0             0     117796.00
+                      rxexp                TOTAL RX-EXP 96                            34875       0             0     269756.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   34875       0             0      94410.39
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         34875       0       1001.00       1165.00
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             34875       0     1.0000000     3.0000000
+                      year                                                            34875       0       2014.00       2014.00
+                      ambu                                                            34875       0             0     488881.00
+                      pmed                                                            34875       0             0     269756.00
+                      inpatient                                                       34875       0             0     414748.00
+                      other                                                           34875       0             0     172842.00
+                      c_totexp_GT_zero                                                34875       0             0     1.0000000
+                      c_ambu_GT_zero                                                  34875       0             0     1.0000000
+                      c_pmed_GT_zero                                                  34875       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             34875       0             0     1.0000000
+                      c_other_GT_Zero                                                 34875       0             0     1.0000000
+                      all                                                             34875       0     1.0000000     1.0000000
+
+        2015   35427  totexp               TOTAL HEALTH CARE EXP 96                   35427       0             0     700771.00
+                      obvexp               TOTAL OFFICE-BASED EXP 96                  35427       0             0     526744.00
+                      opfexp               TOTAL OUTPATIENT FACILITY EXP 96           35427       0             0     134736.00
+                      opdexp               TOTAL OUTPATIENT PROVIDER EXP 96           35427       0             0      30068.00
+                      erfexp               TOTAL ER FACILITY EXP 96                   35427       0             0     102011.00
+                      erdexp               TOTAL EMERGENCY ROOM DR EXP 96             35427       0             0       5472.00
+                      ipfexp               TOT HOSP IP FACILITY EXP-INC 0 NITES 96    35427       0             0     656333.00
+                      ipdexp               TOTL HOSP STAZ DR EXP 96                   35427       0             0      51328.00
+                      dvtexp               TOTAL DENTAL CARE EXP 96                   35427       0             0      30000.00
+                      hhaexp               TOTAL HOME HEALTH AGENCY EXP 96            35427       0             0     201150.00
+-------------------------------------------------------------------------------------------------------------------------------
+Files in the ZIP file
+
+The MEANS Procedure
+
+        year   N Obs  Variable             Label                                          N  N Miss       Minimum       Maximum
+-------------------------------------------------------------------------------------------------------------------------------
+        2015   35427  hhnexp               TOTAL HOME HEALTH NON-AGNCY EXP 96         35427       0             0      35200.00
+                      visexp               TOTAL GLASSES/CONTACT LENS EXP 96          35427       0             0       5000.00
+                      othexp               TOT OTHER EQUIP/SPLY (EXCL DIAB) EXP 96    35427       0             0      67417.00
+                      rxexp                TOTAL RX-EXP 96                            35427       0             0     414941.00
+                      perwtf               POVERTY/MORTALITY ADJUSTED PERS LEVL WGT   35427       0             0      98103.98
+                      varstr               VARIANCE ESTIMATION STRATUM - 1996         35427       0       1001.00       1165.00
+                      varpsu               VARIANCE ESTIMATION PSU - 1996             35427       0     1.0000000     3.0000000
+                      year                                                            35427       0       2015.00       2015.00
+                      ambu                                                            35427       0             0     531259.00
+                      pmed                                                            35427       0             0     414941.00
+                      inpatient                                                       35427       0             0     663916.00
+                      other                                                           35427       0             0     201150.00
+                      c_totexp_GT_zero                                                35427       0             0     1.0000000
+                      c_ambu_GT_zero                                                  35427       0             0     1.0000000
+                      c_pmed_GT_zero                                                  35427       0             0     1.0000000
+                      c_inpatient_GT_Zero                                             35427       0             0     1.0000000
+                      c_other_GT_Zero                                                 35427       0             0     1.0000000
+                      all                                                             35427       0     1.0000000     1.0000000
+-------------------------------------------------------------------------------------------------------------------------------

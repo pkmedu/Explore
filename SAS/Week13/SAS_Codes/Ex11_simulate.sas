@@ -1,0 +1,20 @@
+*Ex11_simulate.sas;
+data have;
+call streaminit(123);
+  LENGTH grp $13.;
+  array x[5] quiz1-quiz5;
+  do rec=1 to 45;  
+      do idx=1 to 5;
+        x[idx]=10+ceilz(10*(RAND("Uniform")));
+  end;
+  grp=ifc(mod(rec,3),'Graduate','Undergraduate');
+  drop idx REC;
+  output;
+  end;
+run;
+PROC print  data=have; 
+run;
+
+proc means data=have;
+var quiz1-quiz5;
+run;

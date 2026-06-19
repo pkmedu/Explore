@@ -1,0 +1,3 @@
+NAGE              SEX        HEIGHT  WEIGHT
+Alfred              M  14   69.00  112.50
+Alice               F  13   56.50   84.00

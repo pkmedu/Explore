@@ -1,0 +1,12 @@
+*Ex29_Create_Varnames_from_array.sas;
+options nocenter nodate nonumber;
+data have;
+ array var[10] (10*5);
+ do i=1 to 10;
+   output;
+ end;
+ drop i;
+run;
+title1 'Create variable names from arrays';
+proc print data=have noobs; run;
+title1;

@@ -1,0 +1,223 @@
+1                                                          The SAS System                            23:59 Wednesday, April 24, 2024
+
+NOTE: Unable to open SASUSER.REGSTRY. WORK.REGSTRY will be opened instead.
+NOTE: All registry changes will be lost at the end of the session.
+
+WARNING: Unable to copy SASUSER registry to WORK registry. Because of this, you will not see registry customizations during this 
+         session.
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7) 
+      Licensed to GEORGE WASHINGTON UNIVERSITY - SFA T&R, Site 70158136.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.2
+      SAS/ETS 15.2
+      SAS/IML 15.2
+      SAS/QC 15.2
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.19041  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.81 seconds
+      cpu time            0.35 seconds
+      
+1          *Ex21_Arrays3.sas (Part 1);
+2          *Convert inches to millimeters
+3          *Method 1 (Implicit Array);
+4          data work.Implicit_array;
+5           infile datalines;
+6           input city  $10. inch_T1-inch_T4;
+7          array  yinch  inch_T1-inch_T4;
+8          array ymm	ymm_T1-ymm_T4;
+9          do over  yinch;
+10           ymm = round((yinch/0.03937007874),.1);
+11         end;
+12         datalines;
+
+NOTE: Invalid data for inch_T1 in line 13 12-12.
+RULE:      ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+--
+
+13  CHAR   Sacramento .  3.73 .2.87 .2.57 .1.16                                            
+    ZONE   56676666762022323320323320323320323322222222222222222222222222222222222222222222
+    NUMR   31321D5E4F09003E73092E87092E57091E1600000000000000000000000000000000000000000000
+city=Sacramento inch_T1=. inch_T2=3.73 inch_T3=2.87 inch_T4=2.57 _I_=5 ymm_T1=. ymm_T2=94.7
+ymm_T3=72.9 ymm_T4=65.3 _ERROR_=1 _N_=1
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      1 at 10:9    1 at 10:21   
+2                                         The SAS System           23:59 Wednesday, April 24, 2024
+
+NOTE: The data set WORK.IMPLICIT_ARRAY has 3 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.01 seconds
+      
+
+16         ;
+17         Title1 'Method 1 (Implicit Array)';
+18         proc print data=Implicit_array noobs;
+19          var city  ymm_T1-ymm_T4;
+20         run;
+
+NOTE: There were 3 observations read from the data set WORK.IMPLICIT_ARRAY.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.17 seconds
+      cpu time            0.03 seconds
+      
+
+21         
+22         *Ex21_Arrays3.sas (Part 2);
+23         *Method 2 (Explicit Array);
+24         data work.Explicit_array;
+25          infile datalines;
+26          input city  $10. inch_T1-inch_T4;
+27         array inch {4} inch_T1-inch_T4;
+28         array mm {4}	mm_T1-mm_T4;
+29         do i = 1 to 4;
+30           mm{i} = round((inch{i}/0.03937007874),.1);
+31         end;
+32         datalines;
+
+NOTE: Invalid data for inch_T1 in line 33 12-12.
+RULE:      ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+--
+
+33  CHAR   Sacramento .  3.73 .2.87 .2.57 .1.16                                            
+    ZONE   56676666762022323320323320323320323322222222222222222222222222222222222222222222
+    NUMR   31321D5E4F09003E73092E87092E57091E1600000000000000000000000000000000000000000000
+city=Sacramento inch_T1=. inch_T2=3.73 inch_T3=2.87 inch_T4=2.57 mm_T1=. mm_T2=94.7 mm_T3=72.9
+mm_T4=65.3 i=5 _ERROR_=1 _N_=1
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      1 at 30:11   1 at 30:25   
+NOTE: The data set WORK.EXPLICIT_ARRAY has 3 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+36         ;
+37         title1 'Method 2 (Explicit Array)';
+38         proc print data=work.Explicit_array noobs;
+39          var  city mm_T1-mm_T4;
+3                                         The SAS System           23:59 Wednesday, April 24, 2024
+
+40         run;
+
+NOTE: There were 3 observations read from the data set WORK.EXPLICIT_ARRAY.
+NOTE: The PROCEDURE PRINT printed page 2.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+41         
+42         *Ex21_Arrays3.sas (Part 3);
+43         *Method 3 - DIM FUNCTION;
+44         data work.Dim_function;
+45          infile datalines;
+46          input city  $10. inch_T1-inch_T4;
+47         array zinch {*} inch_T1-inch_T4;
+48         array zmm  {*} zmm_T1-zmm_T4;
+49             do i = 1 to dim(zinch);
+50         	zmm{i} = round((zinch{i}/0.03937007874),.1);
+51           end;
+52         datalines;
+
+NOTE: Invalid data for inch_T1 in line 53 12-12.
+RULE:      ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+--
+
+53  CHAR   Sacramento .  3.73 .2.87 .2.57 .1.16                                            
+    ZONE   56676666762022323320323320323320323322222222222222222222222222222222222222222222
+    NUMR   31321D5E4F09003E73092E87092E57091E1600000000000000000000000000000000000000000000
+city=Sacramento inch_T1=. inch_T2=3.73 inch_T3=2.87 inch_T4=2.57 zmm_T1=. zmm_T2=94.7 zmm_T3=72.9
+zmm_T4=65.3 i=5 _ERROR_=1 _N_=1
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      1 at 50:11   1 at 50:26   
+NOTE: The data set WORK.DIM_FUNCTION has 3 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+56         ;
+57         title1 'Method 3 - Explicit Arrays with the DIM Function';
+58         proc print data=work.Dim_function noobs;
+59          var  city zmm_T1-zmm_T4;
+60         run;
+
+NOTE: There were 3 observations read from the data set WORK.DIM_FUNCTION.
+NOTE: The PROCEDURE PRINT printed page 3.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+61         
+4                                         The SAS System           23:59 Wednesday, April 24, 2024
+
+62         *Ex21_Arrays3.sas (Part 4);
+63         data work.score_to_grade;
+64          infile datalines;
+65          input id :$2. mtm1 mtm2 final ;
+66         array exam {3} mtm1 mtm2 final ;
+67         array c_exam {3} $2 c_mtm1 c_mtm2 c_final ;
+68         do i = 1 to 3;
+69            if exam{i} >=3.80 then c_exam{i} = 'A';
+70            else if 3.50<=exam{i} <=3.80 then c_exam{i} = 'B+';
+71            else if 3.00<=exam{i} <=3.49 then c_exam{i} = 'B';
+72            else if exam{i} <3.00 then c_exam{i} = 'C';
+73         end;
+74         datalines;
+
+NOTE: Invalid data for mtm1 in line 77 4-4.
+RULE:      ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8----+--
+
+77  CHAR   G3 . 3.31 .3.93 .3.83                                                           
+    ZONE   43202323320323320323322222222222222222222222222222222222222222222222222222222222
+    NUMR   730903E31093E93093E8300000000000000000000000000000000000000000000000000000000000
+id=G3 mtm1=. mtm2=3.31 final=3.93 c_mtm1=C c_mtm2=B c_final=A i=4 _ERROR_=1 _N_=3
+NOTE: Invalid data for mtm1 in line 79 4-4.
+
+79  CHAR   G5 . 2.36 .2.27 .1.93                                                           
+    ZONE   43202323320323320323322222222222222222222222222222222222222222222222222222222222
+    NUMR   750902E36092E27091E9300000000000000000000000000000000000000000000000000000000000
+id=G5 mtm1=. mtm2=2.36 final=2.27 c_mtm1=C c_mtm2=C c_final=C i=4 _ERROR_=1 _N_=5
+NOTE: The data set WORK.SCORE_TO_GRADE has 5 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+80         ;
+81         title1 'Creating multiple new variables with ARRAY staements';
+82         proc print data=work.score_to_grade noobs;
+83          var  mtm1 mtm2 final c_mtm1 c_mtm2 c_final;
+84         run;
+
+NOTE: There were 5 observations read from the data set WORK.SCORE_TO_GRADE.
+NOTE: The PROCEDURE PRINT printed page 4.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+85         
+86         
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.21 seconds
+      cpu time            0.48 seconds
+5                                         The SAS System           23:59 Wednesday, April 24, 2024
+
+      

@@ -1,0 +1,20 @@
+           Health care expenditures for the civillian noninstitutionalized population,
+                                  United States, MEPS 2006-2018
+
+                     Number of      Mean HC                   Total HC        Std
+                      sampled     expenditure               expenditures     Error
+             Year     persons     per person          SE     stddev STD      of Sum
+
+             2006       32,577       $3,452          $67      $1.03 T       $31.18 B
+             2007       29,370       $3,737          $87      $1.12 T       $31.90 B
+             2008       31,262       $3,773          $83      $1.14 T       $34.22 B
+             2009       34,920       $4,107         $104      $1.25 T       $43.22 B
+             2010       31,228       $4,094          $93      $1.26 T       $35.82 B
+             2011       33,622       $4,277         $111      $1.33 T       $42.32 B
+             2012       37,182       $4,309         $117      $1.35 T       $43.35 B
+             2013       35,068       $4,436         $105      $1.40 T       $43.37 B
+             2014       33,162       $4,708         $118      $1.49 T       $49.77 B
+             2015       33,893       $4,978         $134      $1.59 T       $52.73 B
+             2016       33,259       $5,006         $117      $1.61 T       $50.63 B
+             2017       30,716       $5,306         $126      $1.72 T       $46.58 B
+             2018       29,415       $6,063         $128      $1.97 T       $62.12 B

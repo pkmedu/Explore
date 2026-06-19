@@ -1,0 +1,89 @@
+/*
+What the macro does
+
+The macro we just built:
+
+Takes a dataset (sashelp.class).
+Stores all rows in a single macro variable, using a safe delimiter (|) for columns and spaces for rows.
+Loops through each row (student) using macro logic.
+Extracts variables (name, sex, age) from each row.
+Performs an action per row (e.g., prints a report for that student).
+
+
+*/
+options nosymbolgen;
+
+proc sql noprint;
+  select catx('|', name, sex, age)
+    into :student_list separated by ' '
+  from sashelp.class;
+quit;
+
+%put %superq(student_list); /* safe display */
+
+%macro student_reports;
+    %local i n obs name sex age;
+
+    /* Count number of students */
+    %let n = %sysfunc(countw(%superq(student_list), %str( )));
+
+    %do i = 1 %to &n;
+
+        /* Extract one student record */
+        %let obs = %qscan(%superq(student_list), &i, %str( ));
+
+        /* Parse name, sex, age */
+        %let name = %qscan(&obs,1,|);
+        %let sex  = %qscan(&obs,2,|);
+        %let age  = %qscan(&obs,3,|);
+
+        /* Dynamic report for this student */
+        title "Report for &name (Sex: &sex, Age: &age)";
+        proc print data=sashelp.class noobs;
+            where name="&name";
+        run;
+
+    %end;
+%mend;
+
+%student_reports;
+
+/*
+
+
+Summary
+
+The macro’s utility is in automation, dynamic processing, and safety:
+
+Dynamically loop over rows in a dataset
+Extract variables safely, even if they contain & or %
+Generate reports, filters, or custom SAS code for each row
+Avoid manual, repetitive coding
+
+This macro is a pattern for dynamic code generation:
+
+Loop through each entity
+Generate customized code for each entity
+Optionally write reports or files automatically
+
+Example real-world applications:
+
+Generate one PDF per student (or per customer)
+Send automated emails or notifications
+Run conditional calculations per entity
+
+D. Macro-based automation
+
+This approach is often used for:
+
+Batch reporting (one report per customer/row)
+Dynamic WHERE clauses
+Parameter-driven calculations
+
+You can completely automate tasks without manually changing SAS code each time.
+
+*/
+
+
+
+
