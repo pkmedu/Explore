@@ -1,0 +1,195 @@
+dm "log; clear; output; clear; odsresults; clear;";
+
+libname mydata 'C:\Explore\BDMDataTables\SASData';
+
+proc sort data=mydata.EMB_2025 out=emb_2025_s;
+    by district i_date i_sn;
+run;
+
+/*-----------------------------------------------------------
+   Summary Statistics
+-----------------------------------------------------------*/
+proc sql noprint;
+    select count(*) into :n_cases trimmed
+    from emb_2025_s;
+
+    select count(distinct district)
+           into :n_districts trimmed
+    from emb_2025_s;
+quit;
+
+/*-----------------------------------------------------------
+   Open HTML
+-----------------------------------------------------------*/
+ods html file="EMB_2025_data_table.html"
+         style=journal;
+
+ods escapechar='^';
+
+/*-----------------------------------------------------------
+   Dashboard Banner
+-----------------------------------------------------------*/
+proc odstext;
+p "
+<div style='background:#1F4E78;
+            padding:15px;
+            text-align:center;
+            color:white;
+            font-family:Arial;'>
+
+<div style='font-size:22pt;font-weight:bold;'>
+Violence Against Religious Minorities in Bangladesh (2025)
+</div>
+
+<div style='font-size:14pt;font-weight:bold;margin-top:8px;'>
+Killings | Rape & Sexual Violence | Blasphemy-Related Attacks |
+Religious Violence | Property Damage | Land Grabbing
+</div>
+
+<div style='font-size:12pt;margin-top:8px;'>
+January 1 - December 31, 2025
+</div>
+
+</div>
+
+<br>
+";
+run;
+
+/*-----------------------------------------------------------
+   Main Report
+-----------------------------------------------------------*/
+proc report data=emb_2025_s nowd missing
+    style(report)=[
+        rules=all
+        frame=box
+        cellpadding=4
+    ]
+    style(header)=[
+        fontfamily='Arial'
+        fontsize=12pt
+        fontweight=bold
+        background=cxD9EAF7
+    ]
+    style(column)=[
+        fontfamily='Arial'
+        fontsize=11pt
+    ];
+
+    columns district
+            i_sn
+            i_loc
+            i_date
+            i_description
+            i_info_s;
+
+    define district
+        / order
+          "District of Incident"
+          width=18;
+
+    define i_sn
+        / display
+          "Serial Number (From Source Data)"
+          center
+          width=6;
+
+    define i_loc
+        / display
+          "Detailed Incident Location"
+          flow
+          width=24;
+
+    define i_date
+        / display
+          "Date of Incident"
+          center
+          width=12;
+
+    define i_description
+        / display
+          "Description of Incident"
+          flow
+          width=60;
+
+    define i_info_s
+        / display
+          "Source of Information"
+          flow
+          width=30;
+
+    break after district / skip;
+
+run;
+
+/*-----------------------------------------------------------
+   Totals After Table
+-----------------------------------------------------------*/
+proc odstext;
+p "
+<br>
+
+<table style='width:40%;
+              margin-left:auto;
+              margin-right:auto;
+              border-collapse:collapse;
+              font-family:Arial;
+              font-size:12pt;'>
+
+<tr>
+<th style='border:1px solid #999999;padding:8px;background:#D9EAF7;'>
+Total Incidents
+</th>
+
+<th style='border:1px solid #999999;padding:8px;background:#D9EAF7;'>
+Districts Affected
+</th>
+</tr>
+
+<tr>
+<td style='border:1px solid #999999;padding:8px;text-align:center;font-weight:bold;'>
+&n_cases
+</td>
+
+<td style='border:1px solid #999999;padding:8px;text-align:center;font-weight:bold;'>
+&n_districts
+</td>
+</tr>
+
+</table>
+
+<br>
+";
+run;
+
+/*-----------------------------------------------------------
+   Footer
+-----------------------------------------------------------*/
+proc odstext;
+p "
+<hr>
+
+<div style='font-family:Arial;
+            font-size:10pt;
+            text-align:left;'>
+
+<b>Data Source:</b>
+Bangladesh Hindu Buddhist Christian Unity Council
+
+<br><br>
+
+<b>Data processed using SAS and Python</b>
+
+<br><br>
+
+Generated:
+%sysfunc(datetime(),datetime20.)
+
+</div>
+";
+run;
+
+/*-----------------------------------------------------------
+   Close HTML
+-----------------------------------------------------------*/
+ods html close;
