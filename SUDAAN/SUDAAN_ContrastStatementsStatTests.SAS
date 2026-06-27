@@ -5,7 +5,6 @@
 * Wtitten by Pradip Muhuri
 * Use the program at your own risk (no warranties).
 **** Program: 		Figures_FourFive_2014_2015.sas     		    ****
-**** Author: 		Pradip Muhuri, Steve Machlin     		    ****
 **** Purpose:  		Generate the estimates reported	        	    ****
 **** 				in Figures 4 and 5 of                       ****
 ****                    Stat Brief #504    				    ****

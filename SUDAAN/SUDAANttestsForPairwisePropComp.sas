@@ -1,7 +1,6 @@
 
 /*********************************************************************************
 * Topic: t-test for pairwise comparison (propotions) using SUDAAN;
-* Wtitten by Pradip Muhuri
 * Use the program at your own risk (no warranties).
 **********************************************************************************/
 
